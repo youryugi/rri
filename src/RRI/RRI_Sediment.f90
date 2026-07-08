@@ -82,7 +82,7 @@
 	  endif
 
 	if(Frn.ge.100.0) then
-!	 if(Frn.ge.1.0) then !Fr?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Èï¿½Ìê‡
+!	 if(Frn.ge.1.0) then !Fr?E½E½?E½E½?E½E½?E½E½Èï¿½Ìê‡
 
 !	 pause'Frn>1.0'
 
@@ -93,7 +93,7 @@
             sed_idx(k)%qdsum(m) = sed_idx(k)%qdsum(m) + sed_idx(kk)%qbi(m) !m3/s
 	  enddo
 
-	 else !Frn?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½È‰ï¿½?ï¿½ï¿½Ìê‡
+	 else !Frn?E½E½?E½E½?E½E½?E½E½È‰ï¿½?E½E½Ìê‡
 
 !	 pause'Frn<1.0'
  	 if (riv_0th_idx(k)== 1)then ! set the sediment supply condition from the 0th order channel;modified by Qin 2021/6/23		
@@ -121,16 +121,16 @@
     enddo !do k = 1, riv_count
 
 !pause'after sediment equation'
-!----?ï¿½ï¿½|?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ÌŒv?ï¿½ï¿½Z
+!----?E½E½|?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½ÌŒv?E½E½Z
     do k = 1, riv_count
 	  do m = 1, Np
-!	   sed_idx(k)%ffd(m) = sed_idx(k)%qdsum(m)/width_idx(k)/dis_riv_idx(k) !?ï¿½ï¿½P?ï¿½ï¿½Ê‚ï¿½[m/s]
-	   sed_idx(k)%ffd(m) = sed_idx(k)%qdsum(m)/area_idx(k) !?ï¿½ï¿½P?ï¿½ï¿½Ê‚ï¿½[m/s]
+!	   sed_idx(k)%ffd(m) = sed_idx(k)%qdsum(m)/width_idx(k)/dis_riv_idx(k) !?E½E½P?E½E½Ê‚ï¿½[m/s]
+	   sed_idx(k)%ffd(m) = sed_idx(k)%qdsum(m)/area_idx(k) !?E½E½P?E½E½Ê‚ï¿½[m/s]
 	  enddo
 	enddo
 
     do k = 1, riv_count
-!----?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½V?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ì‘ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Z
+!----?E½E½?E½E½?E½E½V?E½E½?E½E½?E½E½Ì‘ï¿½?E½E½?E½E½?E½E½Z
 		kk = down_riv_idx(k)
 !	if(domain_riv_idx(k)==2.and.domain_riv_idx(kk).ne.0)then ! modified by Qin 2021/6/18
 	if (riv_0th_idx(k)==1)then ! no bed deformation at 0th order channel +modified by Qin 2021/6/23	
@@ -140,12 +140,12 @@
 		enddo
 	else
 		do m = 1, Np
-			sed_idx(k)%ffd(m) = sed_idx(k)%ffd(m) + (sed_idx(k)%Esi(m) - sed_idx(k)%Dsi(m)) !?ï¿½ï¿½P?ï¿½ï¿½Ê‚ï¿½[m/s]
+			sed_idx(k)%ffd(m) = sed_idx(k)%ffd(m) + (sed_idx(k)%Esi(m) - sed_idx(k)%Dsi(m)) !?E½E½P?E½E½Ê‚ï¿½[m/s]
 		enddo	
 	endif	
 
 	  do m = 1, Np
-	   sed_idx(k)%dzbpr(m) = - ddt * sed_idx(k)%ffd(m) * dlambda !?ï¿½ï¿½P?ï¿½ï¿½Ê‚ï¿½[m]
+	   sed_idx(k)%dzbpr(m) = - ddt * sed_idx(k)%ffd(m) * dlambda !?E½E½P?E½E½Ê‚ï¿½[m]
 	   dzb_temp(k) = dzb_temp(k) + sed_idx(k)%dzbpr(m) ![m]
 	  enddo
 
@@ -158,7 +158,7 @@
 !dzb_temp(k) = dzb_cap * 0.01
 !endif
 
-!?ï¿½ï¿½Íï¿½?ï¿½ï¿½Ï“ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½å‚«?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½??ï¿½ï¿½C?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½}?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½D(?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ê‚¼?ï¿½ï¿½?ï¿½ï¿½Ì—ï¿½?ï¿½ï¿½a?ï¿½ï¿½É‚ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Íï¿½?ï¿½ï¿½Ï“ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½l?ï¿½ï¿½É‰ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½K?ï¿½ï¿½v?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½D)
+!?E½E½Íï¿½?E½E½Ï“ï¿½?E½E½?E½E½?E½E½å‚«?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½E½??E½E½C?E½E½?E½E½?E½E½?E½E½?E½E½}?E½E½?E½E½?E½E½?E½E½D(?E½E½?E½E½?E½E½ê‚¼?E½E½?E½E½Ì—ï¿½?E½E½a?E½E½É‚ï¿½?E½E½?E½E½?E½E½?E½E½Íï¿½?E½E½Ï“ï¿½?E½E½?E½E½?E½E½?E½E½?E½E½l?E½E½É‰ï¿½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½K?E½E½v?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½D)
 
 !	if(dzb_temp(k).gt.mzbt) then
 !	  dzb_temp(k) = mzbt
@@ -309,7 +309,7 @@
 		   Frn = u_flax/sqrt(9.81*hr_idxa(k))
 
 		 if(Frn.ge.100.0) then 
-!		 if(Frn.lt.1.0) then !!Fr?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Èï¿½Ìê‡
+!		 if(Frn.lt.1.0) then !!Fr?E½E½?E½E½?E½E½?E½E½Èï¿½Ìê‡
 
 		 do m = 1, Np
 		   sed_idx(k)%qswisum(m) = sed_idx(k)%qswisum(m) - sed_idx(k)%qswi(m)
@@ -720,15 +720,15 @@ enddo !end of do k = 1, riv_count
 		else !-----revised by Harada 2021/5/21	
 			sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) + (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k)
 			if(sed_idx(k)%ssi(m).le.0.0) then
-			sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) - (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½É–ß‚ï¿½?ï¿½ï¿½?ï¿½ï¿½
-			sed_idx(k)%Dsi(m) = -1.* sed_idx(k)%qsisum(m)/area_idx(k) + sed_idx(k)%Esi(m)      !D?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½C?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
-			if(sed_idx(k)%Dsi(m) < 0.) sed_idx(k)%Dsi(m) = 0.d0 !?ï¿½ï¿½Ü‚ï¿½D?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ìï¿½?ï¿½ï¿½Íã‰º?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ÌƒA?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½o?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½X?ï¿½ï¿½É‚ï¿½?ï¿½ï¿½Ì‚ï¿½D?ï¿½ï¿½?ï¿½ï¿½0?ï¿½ï¿½Æ‚È‚ï¿½
-			sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) + (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?ï¿½ï¿½V?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½D?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½g?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ä‚ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½xssi?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½v?ï¿½ï¿½Z
+			sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) - (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?E½E½?E½E½?E½E½É–ß‚ï¿½?E½E½?E½E½
+			sed_idx(k)%Dsi(m) = -1.* sed_idx(k)%qsisum(m)/area_idx(k) + sed_idx(k)%Esi(m)      !D?E½E½?E½E½?E½E½C?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½
+			if(sed_idx(k)%Dsi(m) < 0.) sed_idx(k)%Dsi(m) = 0.d0 !?E½E½Ü‚ï¿½D?E½E½?E½E½?E½E½?E½E½?E½E½Ìï¿½?E½E½Íã‰º?E½E½?E½E½?E½E½ÌƒA?E½E½?E½E½?E½E½o?E½E½?E½E½?E½E½?E½E½?E½E½X?E½E½É‚ï¿½?E½E½Ì‚ï¿½D?E½E½?E½E½0?E½E½Æ‚È‚ï¿½
+			sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) + (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?E½E½V?E½E½?E½E½?E½E½?E½E½D?E½E½?E½E½?E½E½g?E½E½?E½E½?E½E½Ä‚ï¿½?E½E½?E½E½?E½E½?E½E½xssi?E½E½?E½E½?E½E½v?E½E½Z
 		 !----modified by Qin 2021/5/30
 			 if(sed_idx(k)%ssi(m).lt.0.d0) then
-				sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) - (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½É–ß‚ï¿½?ï¿½ï¿½?ï¿½ï¿½
-				sed_idx(k)%Esi(m) = sed_idx(k)%qsisum(m)/area_idx(k)!E?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½C?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½
-!				sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) + (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?ï¿½ï¿½V?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½E?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½g?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ä‚ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½xssi?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½v?ï¿½ï¿½Z	 
+				sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) - (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½É–ß‚ï¿½?E½E½?E½E½
+				sed_idx(k)%Esi(m) = sed_idx(k)%qsisum(m)/area_idx(k)!E?E½E½?E½E½?E½E½C?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½
+!				sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) + (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?E½E½V?E½E½?E½E½?E½E½?E½E½E?E½E½?E½E½?E½E½g?E½E½?E½E½?E½E½Ä‚ï¿½?E½E½?E½E½?E½E½?E½E½xssi?E½E½?E½E½?E½E½v?E½E½Z	 
 				sed_idx(k)%ssi(m) = 0.d0
 			endif	
 			  if (sed_idx(k)%ssi(m)<0.d0) then
@@ -839,7 +839,7 @@ end subroutine susload
 !enddo
 !pause'in bedload'
 
-!-----------?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ê‚ÌÄŒv?ï¿½ï¿½Z?ï¿½ï¿½n?ï¿½ï¿½?ï¿½ï¿½----------------
+!-----------?E½E½?E½E½?E½E½Ê‚ÌÄŒv?E½E½Z?E½E½n?E½E½?E½E½----------------
 
 !write(*,*) 'tan(45.)=', tan(45.*3.14159/180.)
 
@@ -882,7 +882,7 @@ enddo
 
 
 !pause'in bedload'
-!-----------?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ê‚ÌÄŒv?ï¿½ï¿½Z?ï¿½ï¿½I?ï¿½ï¿½?ï¿½ï¿½----------------
+!-----------?E½E½?E½E½?E½E½Ê‚ÌÄŒv?E½E½Z?E½E½I?E½E½?E½E½----------------
 !pause'1'
 
 do k = 1, riv_count
@@ -912,7 +912,7 @@ do k = 1, riv_count
       !           else
 				 u_flax = qr_ave_idx(k)/width_idx(k)/hr_idxa(k)
       !           endif    
-	!?ï¿½ï¿½}?ï¿½ï¿½j?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½O?ï¿½ï¿½Ì‘e?ï¿½ï¿½x?ï¿½ï¿½W?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½p?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½C?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½x?ï¿½ï¿½ÌZ?ï¿½ï¿½?ï¿½ï¿½
+	!?E½E½}?E½E½j?E½E½?E½E½?E½E½O?E½E½Ì‘e?E½E½x?E½E½W?E½E½?E½E½?E½E½?E½E½p?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½C?E½E½?E½E½?E½E½x?E½E½ÌZ?E½E½?E½E½
 	!			if(hr_idxa(k).lt.0.001) then
 	!		         ust_idx1 = 0.0
 	!			else
@@ -928,7 +928,7 @@ do k = 1, riv_count
                     Frn = u_flax/sqrt(9.81*hr_idxa(k))
                     endif
 	
-	!?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ÊŒï¿½?ï¿½ï¿½z?ï¿½ï¿½?ï¿½ï¿½p?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½C?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½x?ï¿½ï¿½ÌZ?ï¿½ï¿½?ï¿½ï¿½
+	!?E½E½?E½E½?E½E½ÊŒï¿½?E½E½z?E½E½?E½E½p?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½C?E½E½?E½E½?E½E½x?E½E½ÌZ?E½E½?E½E½
 	
 	!if(Frn.ge.100.0) then !Fr >= 1.0
 	!if(Frn.ge.1.0) then !Fr < 1.0
@@ -1004,9 +1004,9 @@ endif
 
 !                if (hr_idxa(k).lt.1.0) then
 !                if (hr_idxa(k).lt.100.0) then
-!                  ust_idx33 = ust_idx22 !?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½l?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ì—p?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?
+!                  ust_idx33 = ust_idx22 !?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½l?E½E½?E½E½?E½E½Ì—p?E½E½?E½E½?E½E½?E½E½E½?
 !			     else
-!                 ust_idx33 = ust_idx1 !?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½l?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½Ì—p?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½ï¿½?
+!                 ust_idx33 = ust_idx1 !?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½l?E½E½?E½E½?E½E½Ì—p?E½E½?E½E½?E½E½?E½E½E½?
 !			     endif
 
 !                if (hr_idxa(k).gt.0.1) then
@@ -1049,7 +1049,7 @@ endif
 
 
 			do m = 1, Np
-!	if(dsi.ge.0.0001) then ! di=> 0.1mm?ï¿½ï¿½?ï¿½ï¿½bedload ?ï¿½ï¿½?ï¿½ï¿½?ï¿½ï¿½v?ï¿½ï¿½Z
+!	if(dsi.ge.0.0001) then ! di=> 0.1mm?E½E½?E½E½bedload ?E½E½?E½E½?E½E½v?E½E½Z
 			  fp = sed_idx(k)%fm(m)
 			  if (dsi(m)/dsm .le. 0.4) then
 !			     R_tcts = 0.85
@@ -1088,7 +1088,7 @@ endif
 		!MPM equation
 		           if (ust_idx(k).gt.usci) then
 		             qbe = 8.0 * (t_star - t_Crit)**1.5
-		             sed_idx(k)%qbi(m) = qbe*sqrt((s-1)*grav*dsi(m)**3.)*width_idx(k)*fp*alfa !?ï¿½ï¿½P?ï¿½ï¿½Ê‚ï¿½m3/s
+		             sed_idx(k)%qbi(m) = qbe*sqrt((s-1)*grav*dsi(m)**3.)*width_idx(k)*fp*alfa !?E½E½P?E½E½Ê‚ï¿½m3/s
                    else
 		             sed_idx(k)%qbi(m) = 0.0
 	               end if 
@@ -1178,6 +1178,7 @@ endif
 		use globals
 		use sediment_mod
 		use dam_mod!, only:dam_switch,dam_num,dam_loc, damflg, dam_w_vol,dam_reserv_area ! added by Qin 
+		use omp_lib
 		implicit none
 
 		type(sed_struct) sed_lin(link_count)
@@ -1222,6 +1223,7 @@ endif
 	end do
 			
 		call bedload2(sed_lin, hr_idxa, hr_lin, qr_ave_idx, ust_idx, ust_lin, qsb_lin) !--modified by Qin 21/5/20
+
         call susload2(sed_lin, hr_idxa, hr_lin, ust_idx, ust_lin, qss_lin, qr_ave_idx, t, water_v_lin, qss_b)
 
 !----sum of sediment volume in the dam; Added by Qin
@@ -1353,7 +1355,7 @@ endif
 		!				if(up_riv_lin(l,n)==0) cycle !revised by Qin 2021/5/27
 						if(up_riv_lin(l,n) == 0) exit 	
 						lll = up_riv_lin(l, n)
-						sed_lin(l)%qdsum(m) = sed_lin(l)%qdsum(m) - sed_lin(lll)%qbi(m)*divloss !m3/s   !?????????!!!  ffd ??-???????ï¿½ï¿½?ï¿½ï¿½A+?????N?H modified for diversion 20250329
+						sed_lin(l)%qdsum(m) = sed_lin(l)%qdsum(m) - sed_lin(lll)%qbi(m)*divloss !m3/s   !?????????!!!  ffd ??-???????E½E½?E½E½A+?????N?H modified for diversion 20250329
 					end do
 					sed_lin(l)%qdsum(m) = sed_lin(l)%qdsum(m) + sed_lin(l)%qbi(m)
 				end do
@@ -1653,7 +1655,29 @@ end if
 			endif	
 			!endif
 		enddo
-   endif			
+   endif
+
+!  Downstream end unit channel is the outlet boundary.
+!  Positive bed change there is exported out of the basin instead of raising the outlet bed.
+  do l = 1, link_count
+    k = link_idx_k(l)
+    if(domain_riv_idx(k).eq.2)then
+        dzb_temp_lin(l)=0.d0
+        do m = 1, Np
+            if(overdepo_sedi_di(l,m).gt.0.d0)then
+                qsb_total = qsb_total + overdepo_sedi_di(l,m)*area_lin(l)
+                overdepo_sedi_di(l,m)=0.d0
+            endif
+            if(sed_lin(l)%dzbpr(m).gt.0.d0)then
+                qsb_total = qsb_total + sed_lin(l)%dzbpr(m)*area_lin(l)/dlambda
+                sed_lin(l)%stor_sed_sum_i(m) = sed_lin(l)%stor_sed_sum_i(m) - sed_lin(l)%dzbpr(m)*area_lin(l)/dlambda
+                sed_lin(l)%stor_sed_sum = sed_lin(l)%stor_sed_sum - sed_lin(l)%dzbpr(m)*area_lin(l)/dlambda
+                sed_lin(l)%dzbpr(m)=0.d0
+            endif
+            dzb_temp_lin(l)=dzb_temp_lin(l)+sed_lin(l)%dzbpr(m)
+        enddo
+    endif
+  enddo
   !j_sedput = 0 
 
 if(j_drf == 1)then
@@ -1724,7 +1748,7 @@ end if
 !			else	
 !			do m = 1, Np
 !			sed_lin(l)%ffd(m) = sed_lin(l)%ffd(m) + (sed_lin(l)%Ewi(m) - sed_lin(l)%Dwi(m)) !?P???[m/s]
-!			if(link_0th_order(l) == 0) sed_lin(l)%ffd(m) = 0.         !0?????????ï¿½ï¿½p??????????B???V???Awashload????????s????????????????u??ffd??0??
+!			if(link_0th_order(l) == 0) sed_lin(l)%ffd(m) = 0.         !0?????????E½E½p??????????B???V???Awashload????????s????????????????u??ffd??0??
 !			sed_lin(l)%dzbpr(m) = - ddt * sed_lin(l)%ffd(m) * dlambda !?P???[m]
 !			dzb_temp_lin(l) = dzb_temp_lin(l) + sed_lin(l)%dzbpr(m) ![m]
 !			enddo	
@@ -1732,7 +1756,7 @@ end if
 !		else	
 !		do m = 1, Np
 !			sed_lin(l)%ffd(m) = sed_lin(l)%ffd(m) + (sed_lin(l)%Ewi(m) - sed_lin(l)%Dwi(m)) !?P???[m/s]
-!			if(link_0th_order(l) == 0) sed_lin(l)%ffd(m) = 0.         !0?????????ï¿½ï¿½p??????????B???V???Awashload????????s????????????????u??ffd??0??
+!			if(link_0th_order(l) == 0) sed_lin(l)%ffd(m) = 0.         !0?????????E½E½p??????????B???V???Awashload????????s????????????????u??ffd??0??
 !			sed_lin(l)%dzbpr(m) = - ddt * sed_lin(l)%ffd(m) * dlambda !?P???[m]
 !			dzb_temp_lin(l) = dzb_temp_lin(l) + sed_lin(l)%dzbpr(m) ![m]
 !		enddo
@@ -1741,7 +1765,6 @@ end if
 !	   enddo
 
 !----sum of sediment transport at downstream boundary
-!$omp parallel do private(l,k) reduction(+ : qsb_total, qss_total, qsw_total, qwood_total) 
     do l = 1, link_count
 		k = link_idx_k(l)
 !-----for check the qss budget 2021/5/28
@@ -1833,7 +1856,7 @@ end if
 	if(link_0th_order(l) == 0)then
 		do m = 1, Np
 			!sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m) + sed_lin(l)%qsi(m)    !?????????
-			sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m)    !????????ï¿½ï¿½??
+			sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m)    !????????E½E½??
 		end do
 	else
 			
@@ -1842,7 +1865,7 @@ end if
 !				if(up_riv_lin(l,n) == 0) cycle !revised by Qin 2021/5/27
 			if(up_riv_lin(l,n) == 0) exit 
 				lll = up_riv_lin(l, n)
-				sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m) - sed_lin(lll)%qswi(m) !m3/s   !?????????!!!  ffd ??-???????ï¿½ï¿½?ï¿½ï¿½A+?????N?H
+				sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m) - sed_lin(lll)%qswi(m) !m3/s   !?????????!!!  ffd ??-???????E½E½?E½E½A+?????N?H
 			end do
 			sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m) + sed_lin(l)%qswi(m)
 		end do
@@ -1948,6 +1971,7 @@ end subroutine washload2
 	use globals
 	use sediment_mod
 	use dam_mod!, only:damflg
+	use omp_lib
 	implicit none
 
 	type(sed_struct) sed_lin(link_count)	      
@@ -1991,7 +2015,7 @@ Emb_min = Emc
 divloss =1.d0
 
 
-!$omp parallel do private(m)
+!$omp parallel do private(k,m)
 	  do l = 1, link_count
 		qss_lin(l) = 0.d0
 		ss_lin(l) = 0.d0  !????
@@ -2001,12 +2025,7 @@ divloss =1.d0
 !			sed_lin(l)%ssi(m) = 0.d0 
 			sed_lin(l)%Dsi(m) = 0.d0 !20220511
 			sed_lin(l)%Esi(m) = 0.d0 !20220924
-	   enddo
-	  enddo
-
-!pause'1'
-!$omp parallel do private(k,m)
-    do l = 1, link_count
+	    enddo
 		k = link_idx_k(l)
 		if(damflg(k)>0) cycle
 !modified 20230924	
@@ -2224,7 +2243,7 @@ divloss =1.d0
 	!				if(up_riv_lin(l,n) == 0) cycle !revised by Qin 2021/5/27
 					if(up_riv_lin(l,n) == 0) exit 
 					lll = up_riv_lin(l, n)
-					sed_lin(l)%qsisum(m) = sed_lin(l)%qsisum(m) - sed_lin(lll)%qsi(m)*divloss !m3/s   !ç¬¦å·ã«æ³¨ï¿½?!!!  ffd ï¿½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µï¿½? modified for diversion 20250329
+					sed_lin(l)%qsisum(m) = sed_lin(l)%qsisum(m) - sed_lin(lll)%qsi(m)*divloss !m3/s   !ç¬¦å·ã«æ³¨E½?!!!  ffd E½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µE½? modified for diversion 20250329
 				end do
 					sed_lin(l)%qsisum(m) = sed_lin(l)%qsisum(m) + sed_lin(l)%qsi(m)
 		end do
@@ -2238,7 +2257,7 @@ divloss =1.d0
 !					if(up_riv_lin(l,n) == 0) cycle !revised by Qin 2021/5/27
 					if(up_riv_lin(l,n) == 0) exit 
 					lll = up_riv_lin(l, n)
-					qwsum(l) = qwsum(l) - qw(lll)*divloss !m3/s   !ç¬¦å·ã«æ³¨ï¿½?!!!  ffd ï¿½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µï¿½? modified for diversion 20250329
+					qwsum(l) = qwsum(l) - qw(lll)*divloss !m3/s   !ç¬¦å·ã«æ³¨E½?!!!  ffd E½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µE½? modified for diversion 20250329
 				end do
 				qwsum(l) = qwsum(l) + qw(l)
 			end if
@@ -2250,7 +2269,14 @@ divloss =1.d0
 	do l = 1, link_count
 		k = link_idx_k(l) 	
 		ss_lin(l) = 0.d0 !20220512 
-		if(damflg(k)>0) cycle ! 	 
+		qss_lin(l) = 0.d0
+		if(damflg(k)>0) then !
+			do m = 1, Np
+				sed_lin(l)%qsi(m) = sed_lin(l)%ssi(m) * qr_ave_idx(k) !m3/s
+				qss_lin(l) = qss_lin(l) + sed_lin(l)%qsi(m) !m3/s
+			enddo
+			cycle
+		endif
 		!if (hr_idxa(k).le.0.d0 .or. water_v_lin(l).lt.0.01 .or. qr_ave_idx(k).le.0.) then  !modified 20231025
 		if (hr_idxa(k).le.min_hr .or. water_v_lin(l).lt.0.01 .or. qr_ave_idx(k).le.0.) then !modified 20240616
 				do m = 1, Np
@@ -2277,7 +2303,7 @@ divloss =1.d0
 					if(sed_lin(l)%ssi(m).lt.0.d0) then
 						sed_lin(l)%ssi(m) = sed_lin(l)%ssi(m) - (-1.* sed_lin(l)%qsisum(m) + sed_lin(l)%Esi(m)*area_lin(l) - sed_lin(l)%Dsi(m)*area_lin(l)) * ddt/water_v_lin(l) !ä¸€å›ï¿½??ã«æˆ»ã—ã¦
 						sed_lin(l)%Dsi(m) = -1.* sed_lin(l)%qsisum(m)/area_lin(l) + sed_lin(l)%Esi(m)      !Dã‚’ä¿®æ­£ã—ã¦
-						if(sed_lin(l)%Dsi(m) < 0.) sed_lin(l)%Dsi(m) = 0.d0 !ã¾ï¿½?DãŒï¿½?ã®æ™‚ï¿½?ï¿½ä¸Šä¸‹æµï¿½?ï¿½ã‚¢ãƒ³ãƒãƒ©ãƒ³ã‚¹ã«ã‚ˆã‚‹ã®ã§Dã¯0ã¨ãªï¿½?
+						if(sed_lin(l)%Dsi(m) < 0.) sed_lin(l)%Dsi(m) = 0.d0 !ã¾E½?DãŒï¿½?ã®æ™‚ï¿½?E½ä¸Šä¸‹æµE¿½?E½ã‚¢ãƒ³ãƒãƒ©ãƒ³ã‚¹ã«ã‚ˆã‚‹ã®ã§Dã¯0ã¨ãªE½?
 						sed_lin(l)%ssi(m) = sed_lin(l)%ssi(m) + (-1.* sed_lin(l)%qsisum(m) + sed_lin(l)%Esi(m)*area_lin(l) - sed_lin(l)%Dsi(m)*area_lin(l)) * ddt/water_v_lin(l) !æ–°ã—ã„Dã‚’ä½¿ã£ã¦ã‚‚ã†ä¸€åº¦ssiã‚’è¨ˆï¿½?
 						if(sed_lin(l)%ssi(m).lt.0.d0) sed_lin(l)%ssi(m) = 0.d0 !modified 20240101	
 						if (isnan(sed_lin(l)%ssi(m))) then
@@ -2301,18 +2327,12 @@ divloss =1.d0
 			enddo
 			ss_lin(l) = alpha_ss2 !modified 20240315
 		endif	
-	enddo
 
-!$omp parallel do private(m,k)
-! modified for avoiding the large concetration 20220512
-	do l = 1, link_count
-		k = link_idx_k(l)
 		do m = 1, Np
-			sed_lin(l)%qsi(m) = sed_lin(l)%ssi(m) * qr_ave_idx(k) !m3/s  
+			sed_lin(l)%qsi(m) = sed_lin(l)%ssi(m) * qr_ave_idx(k) !m3/s
 			qss_lin(l) = qss_lin(l) + sed_lin(l)%qsi(m) !m3/s
-		enddo	 
-
-	enddo ! end of do l = 1, link_count
+		enddo
+	enddo
 !pause'end of suspended sediment'
 
 end subroutine susload2
@@ -2926,7 +2946,7 @@ do
 				if(up_slo_idx(k,n) == 0) exit 
 					kkk = up_slo_idx(k, n)
 					if(domain_riv_idx(kkk)==0)then !20250513
-					slo_qsisum(k,m) = slo_qsisum(k,m) - slo_qsi(kkk,m)  !m3/s   !ç¬¦å·ã«æ³¨ï¿½?!!!  ffd ï¿½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µï¿½? !modified 20230924
+					slo_qsisum(k,m) = slo_qsisum(k,m) - slo_qsi(kkk,m)  !m3/s   !ç¬¦å·ã«æ³¨E½?!!!  ffd E½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µE½? !modified 20230924
 					endif
 				end do		
 				!if(riv(i,j)==1.and. qrs(i,j).ge.0.d0)then !modified 20250503
@@ -3051,7 +3071,7 @@ do
 					if(slo_ssi(k,m).lt.0.d0) then
 						slo_ssi(k,m) = slo_ssi(k,m) - (-1.* slo_qsisum(k,m) + (slo_Esi(k,m)- slo_Dsi(k,m))*area)*ddt_slo/water_v_cell(k)!modified for inundation 20230711
 						slo_Dsi(k,m)  = -1.* slo_qsisum(k,m)/area + slo_Esi(k,m)      !Dã‚’ä¿®æ­£ã—ã¦  !modified for inundation 20230711
-						if(slo_Dsi(k,m)  < 0.) slo_Dsi(k,m)  = 0.d0 !ã¾ï¿½?DãŒï¿½?ã®æ™‚ï¿½?ï¿½ä¸Šä¸‹æµï¿½?ï¿½ã‚¢ãƒ³ãƒãƒ©ãƒ³ã‚¹ã«ã‚ˆã‚‹ã®ã§Dã¯0ã¨ãªï¿½?
+						if(slo_Dsi(k,m)  < 0.) slo_Dsi(k,m)  = 0.d0 !ã¾E½?DãŒï¿½?ã®æ™‚ï¿½?E½ä¸Šä¸‹æµE¿½?E½ã‚¢ãƒ³ãƒãƒ©ãƒ³ã‚¹ã«ã‚ˆã‚‹ã®ã§Dã¯0ã¨ãªE½?
 						!if(slo_Dsi(k,m).le.1e-7) slo_Dsi(k,m) = 0.d0 !added 20240101						
 						slo_ssi(k,m) = slo_ssi(k,m) + (-1.* slo_qsisum(k,m) + (slo_Esi(k,m)- slo_Dsi(k,m))*area)*ddt_slo/water_v_cell(k) !modified for inundation 20230711
 						if(slo_ssi(k,m).lt.0.d0) slo_ssi(k,m) = 0.d0 !modified 20240101	
@@ -3234,8 +3254,9 @@ enddo
 		real(8):: sedi
 		inflow_sedi(:) = 0.d0
 		overflow_sedi(:) =0.d0
+		overflow_sedi_di(:,:) = 0.d0
 		lin_to_slo_idx_di(:,:)=0.d0
-!$omp parallel do private( i, j, riv_k, ll, m, sedi)
+		! Keep this loop serial: multiple river cells can map to the same unit-channel link.
 		do k = 1, slo_count		
 		    i=slo_idx2i(k)
 			j=slo_idx2j(k)
@@ -3249,7 +3270,6 @@ enddo
 				stop "river and cell flow exchange value is Nan"
 			endif  
 			do m = 1, Np
-				overflow_sedi_di(ll,m) = 0.d0
 				if ( cut_overdepo_switch > 0 .and. overdepo_sedi_di(ll,m)>0.d0)then
 					overflow_sedi_di(ll,m) = overdepo_sedi_di(ll,m) * width_lin(ll) * dis_riv_idx(riv_k)
 					lin_to_slo_sum_di(ll,m) = lin_to_slo_sum_di(ll,m) + overflow_sedi_di(ll,m)
@@ -3445,7 +3465,7 @@ enddo
 				if( d_mp == 0.d0 )exit
 				if( riv(i,j) == 1 )then
 !					write(*,*) 'kk,ao,vo',kk,ao,vo
-					vo_total(slo_riv_idx(kk)) = vo    !ã“ï¿½?ï¿½kã¯æ–œé¢ã®kã§ã‚ã£ã¦rivã®kã§ã¯ãªï¿½?
+					vo_total(slo_riv_idx(kk)) = vo    !ã“ï¿½?E½kã¯æ–œé¢ã®kã§ã‚ã£ã¦rivã®kã§ã¯ãªE½?
 					debris_total = debris_total + vo
 					hki_area(slo_riv_idx(kk)) = hkiarea
 					hki_total = hki_total + hkiarea
@@ -3630,3 +3650,4 @@ enddo
 
 
 !>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+

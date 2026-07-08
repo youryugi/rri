@@ -12,6 +12,7 @@ program RRI
     use tecout_mod
     use RRI_iric
     use iric
+    use omp_lib
     implicit none
 
 ! variable definition
@@ -122,6 +123,12 @@ program RRI
 !!! STEP 0: FILE NAME AND PARAMETER SETTING
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     call RRI_Read
+    if (omp_num_threads .gt. 0) then
+        call omp_set_num_threads(omp_num_threads)
+        write (*, '("OpenMP threads : ", i5)') omp_num_threads
+    else
+        write (*, '("OpenMP threads : auto (max ", i5, ")")') omp_get_max_threads()
+    end if
     if (run_type == 0) then
         call iric_cgns_close()
         write (*, "(a)") "***** check grid attributes *****"
@@ -568,6 +575,7 @@ end do
          allocate (slo_s_dsum(riv_count,Np),slo_s_sum(riv_count))
 ! dynamic allocation for link model (Added by harada 2020_11_19)
          allocate (Emb_lin(link_count), Et_lin(link_count), zb_roc_lin(link_count))
+	     allocate (Nb_lin(link_count))
          allocate (ust_lin(link_count), qsb_lin(link_count), qss_lin(link_count), qsw_lin(link_count),qss_b(link_count))  !---added by Qin 2021/5/27
          allocate (zb_riv_slope_lin(link_count)) !moved zb_riv_slope0_lin to subroutine riv_set4sedi;20240601
 	     allocate (zb_riv0_lin(link_count))
@@ -698,6 +706,7 @@ end do
 ! Sediment variables initialization (Added by harada 2020_11_19)--
 	     Emb_lin(:) = 0.d0
 	     Et_lin(:) = 0.d0
+	     Nb_lin(:) = 0
 	     zb_roc_lin(:) = 0.d0
          zb_riv0_lin(:) = 0.d0
 
@@ -829,6 +838,9 @@ end do
       ! define downstream k
       if(domain_riv_idx(k) == 2 ) downstream_k = k 
 	enddo
+    do l = 1, link_count
+      Nb_lin(l) = Nl
+    enddo
 !need to modify
 if( dam_switch .eq. 1) then!for dam
     do i = 1, dam_num
@@ -980,6 +992,9 @@ if (sed_switch.ne.0) then
         call sub_sed_idxlin( sed_idx, sed_lin )
         call sub_riv_idxlin( Emb_idx, Emb_lin )  !this subroutine was moved to RRI_sed2.f90 !20240724
         call sub_riv_idxlin( Et_idx, Et_lin )
+        do l = 1, link_count
+            Nb_lin(l) = Nb_idx(link_idx_k(l))
+        end do
         sumdzb_lin(:) = 0.d0 !added by Qin
         qsb_total = 0.d0
         qss_total = 0.d0
@@ -1126,8 +1141,7 @@ end if
         end do
     end do
 
-!初期値出力
-    call iric_cgns_output_result(sum_qp_t, qp_t, hs, hr, hg, qr_ave, qs_ave, qg_ave,qsb, qss, sumdzb, sumqsb, sumqss) !this line was modified for RSR 20240724 for slope erosion
+!初期値出劁E    call iric_cgns_output_result(sum_qp_t, qp_t, hs, hr, hg, qr_ave, qs_ave, qg_ave,qsb, qss, sumdzb, sumqsb, sumqss) !this line was modified for RSR 20240724 for slope erosion
 
     do t = 1, maxt
 
@@ -1411,8 +1425,6 @@ elseif(sed_switch == 2) then
 
         call funcd2( sed_lin, hr_idx, hr_idx2,hr_idxa, hr_lin, qr_ave_idx, ust_idx, ust_lin, qsb_lin, qss_lin, qsw_idx, qsw_lin, t,water_v_lin, dzb_temp_lin,qss_b,sumdzb_lin)
 
-        !----link -> 1D 
-        call sub_sed_linidx(sed_lin, sed_idx)
         call sub_riv_linidx(dzb_temp_lin, dzb_temp)
         call sub_riv_linidx(Emb_lin, Emb_idx)
         call sub_riv_linidx(qsb_lin, qsb_idx)
@@ -1421,11 +1433,8 @@ elseif(sed_switch == 2) then
         call sub_riv_linidx(ust_lin, ust_idx)
         call sub_riv_linidx(ss_lin, ssc_idx) !added 20250405
 
-        !---Mean diameter computation for all river cells
-        call mean_diameter(dzb_temp, sed_idx, qsb_idx,qss_idx)
-!------1D->link: sediment size distribution change !added by Qin 20210924
-        call sub_sed_idxlin( sed_idx, sed_lin )
-        call sub_riv_idxlin( Et_idx, Et_lin )
+        !---Mean diameter computation on link variables
+        call mean_diameter_lin(dzb_temp_lin, sed_lin, qsb_lin, qss_lin)
 !added 20240422
         call sub_riv_linidx(width_lin, width_idx)   
 
@@ -1433,6 +1442,7 @@ elseif(sed_switch == 2) then
 !!$omp parallel do      
         do k = 1, riv_count
             if(damflg(k).gt.0) dzb_temp(k) = 0.d0 !---- There is no bed elevation change of dam cell; added by Qin         
+            if(domain_riv_idx(k).eq.2 .and. dzb_temp(k).gt.0.d0) dzb_temp(k) = 0.d0
             zb_riv_idx(k) = zb_riv_idx(k) + dzb_temp(k)
             !modified 20240419 for setting depth_idx2 as the channel depth of previous time step 
             depth_idx(k) = depth_idx(k) - dzb_temp(k) !---addedby Qin 20230924        
@@ -1461,6 +1471,13 @@ elseif(sed_switch == 2) then
         time = time + ddt
         if(time.ge.t * dt) exit ! finish for this timestep		
 
+    end do
+
+    !----link -> 1D sync for output and 2D conversion
+    call sub_sed_linidx(sed_lin, sed_idx)
+    call sub_riv_linidx(Et_lin, Et_idx)
+    do k = 1, riv_count
+        Nb_idx(k) = Nb_lin(link_to_riv(k))
     end do
 
 !$omp parallel do 
@@ -1952,7 +1969,9 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
         call sub_riv_ij2idx(hr, hr_idx)
         call sub_slo_ij2idx(hs, hs_idx)
 
-        if(t*dt.ge.t_beddeform_start-0.00001.and.sed_switch==2 ) call sed_exchange(sed_lin, hs_idx) !modified for slope erosion
+        if(t*dt.ge.t_beddeform_start-0.00001.and.sed_switch==2 ) then
+            call sed_exchange(sed_lin, hs_idx) !modified for slope erosion
+        end if
 
         !******* INFILTRATION (Green Ampt) **********************
 
@@ -2485,6 +2504,9 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
         end if
 !$omp end single
     end do
+
+    if (sed_switch .ne. 0) then
+    end if
 
     call iric_cgns_close
 

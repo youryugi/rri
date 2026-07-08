@@ -1589,6 +1589,7 @@ end subroutine debris_setting
 		use globals
 		use sediment_mod
 		use dam_mod!, only: dam_switch,damflg ! added by Qin
+		use omp_lib
 		implicit none
 
 		real(8) hr_idx(riv_count),hr_idxa(riv_count),qr_ave_idx(riv_count) !added 20240422
@@ -1597,7 +1598,7 @@ end subroutine debris_setting
 		integer l,ll, lll,k, kk, kkk,kkkk,n, m, f
 
 ! water volume(m3) of each link modified 20230924	!moved to here 20240426
-!!$omp parallel do private(k,water_v)	
+!!$omp parallel do private(k,water_v) schedule(static)
 	do l = 1, link_count
 		k = link_idx_k(l)
 		water_v = 0.
@@ -1650,7 +1651,7 @@ end subroutine debris_setting
 	endif
 
 !added parallel 20231028		
-!!$omp parallel do private(slope, thet, thetr,zbtemp,hrtemp,ll,lll, k, kk, kkk,kkkk,n, m)			
+!!$omp parallel do private(slope, thet, thetr,zbtemp,hrtemp,ll,lll, k, kk, kkk,kkkk,n, m) schedule(static)
 		do l = 1, link_count
 			k = link_ups_k(l)
 			kk = link_idx_k(l)
@@ -1766,7 +1767,7 @@ end subroutine debris_setting
 		endif		
 	end do
 
-	!$omp parallel do private(l)
+	!!$omp parallel do private(l) schedule(static)
 	do k = 1, riv_count
 		l = link_to_riv(k)
 		hr_idxa(k) = hr_lin(l)
@@ -2107,6 +2108,256 @@ endif
 !pause'end of subroutine mean diameter'
 
       end subroutine mean_diameter
+!------------------------------------------------------------------------------------------------------------------
+		subroutine mean_diameter_lin(dzb_temp_lin, sed_lin, qsb_lin, qss_lin)
+	     use globals
+	     use sediment_mod
+
+	     implicit none
+
+	     type(sed_struct) sed_lin(link_count)
+	     real(8) dzb_temp_lin(link_count)
+		 real(8) qsb_lin(link_count), qss_lin(link_count)
+		 real(8) Etnew, Fmnew, Ftnew, dzb
+	     real(8) FM, FT, DZBPR1, Fmall, Ftall, Fdall, Fsur_all, f90
+	     integer l, k, m, n, Nbnew, Nbl, nn
+		real(8),parameter:: csta = 0.6d0
+		real(8) De_depo, De_Emb, qdi, c_ave, Bed_depth
+		integer DNl
+
+		c_ave  = csta/2.d0
+
+!$omp parallel do private(k,m,n,Nbnew,Nbl,nn,DNl,Etnew,Fmnew,Ftnew,dzb,FM,FT,DZBPR1, &
+!$omp                     Fmall,Ftall,Fdall,Fsur_all,f90,De_depo,De_Emb,qdi,Bed_depth) schedule(static)
+        do l = 1, link_count
+          k = link_idx_k(l)
+		  dzb = dzb_temp_lin(l)
+          sed_lin(l)%dmean = 0.0
+
+	      if(dzb.ge.0.) then
+			if (Et_lin(l)+dzb .le. Ed) then
+			  Etnew = Et_lin(l) + dzb
+			  Nbnew = Nb_lin(l)
+			else
+			  Etnew = Et_lin(l) + dzb - Ed
+			  Nbnew = Nb_lin(l) + 1
+			endif
+		  else
+			if(Et_lin(l)+dzb .le. 0.) then
+			  Etnew = Ed + Et_lin(l) + dzb
+			  Nbnew = Nb_lin(l) - 1
+			else
+			  Etnew = Et_lin(l) + dzb
+			  Nbnew = Nb_lin(l)
+			endif
+		  endif
+
+		  if(Etnew .le. 0.) Etnew = dabs(dzb)*0.000001
+		  if(Nbnew .eq. 0) then
+		    Nbnew = Nl
+			do m = 1, Np
+			  do n = 1, Nl
+			    sed_lin(l)%fd(m,n) = sed_lin(l)%fm1(m)
+			  end do
+			end do
+		  elseif(Nbnew .eq. Nl+1) then
+		    Nbnew = Nl
+			do m = 1, Np
+			  do n = 1, Nl
+			    if (n.ne.Nl) sed_lin(l)%fd(m,n) = sed_lin(l)%fd(m,n+1)
+			  end do
+			end do
+		  endif
+
+          do m = 1, Np
+		    Nbl = Nb_lin(l)
+		    FM = sed_lin(l)%fm(m)
+		    FT = sed_lin(l)%ft(m)
+		    DZBPR1 = sed_lin(l)%dzbpr(m)
+
+	        if (dzb .ge. 0.) then
+			  Fmnew = (1.-(1.-lambda)*dzb/(Emb_lin(l)*C_ave))*FM + DZBPR1*(1-lambda)/(Emb_lin(l)*c_ave)
+		      if (Et_lin(l)+dzb .le. Ed) then
+		        Ftnew = Et_lin(l)/Etnew*FT + dzb/Etnew*FM
+		        sed_lin(l)%fd(m,Nbnew) = sed_lin(l)%fd(m,Nbnew)
+		      else
+		        Ftnew = FM
+		        sed_lin(l)%fd(m,Nbnew) = Et_lin(l)/Ed*FT+(1.-Et_lin(l)/Ed)*FM
+		      endif
+		    else
+		      if (Et_lin(l)+dzb .le. 0.) then
+		   	    Fmnew = FM + ((1.-lambda)*Et_lin(l)/(Emb_lin(l)*c_ave))*FT &
+                         -(1.-lambda)*(Et_lin(l)+dzb)/(Emb_lin(l)*C_ave)*sed_lin(l)%fd(m,Nbl) &
+                         + DZBPR1*(1-lambda)/(Emb_lin(l)*c_ave)
+			    Ftnew = sed_lin(l)%fd(m,Nbl)
+			  else
+			    Fmnew = FM-((1.-lambda)*dzb/(Emb_lin(l)*c_ave))*FT + DZBPR1*(1-lambda)/(Emb_lin(l)*c_ave)
+			    Ftnew = FT
+			  endif
+		    endif
+
+		    if(Fmnew.lt.0.0) then
+	          sed_lin(l)%fm(m) = 0.0
+		    else
+	          sed_lin(l)%fm(m) = Fmnew
+		    endif
+
+		    if(Ftnew.lt.0.0) then
+	          sed_lin(l)%ft(m) = 0.0
+		    else
+	          sed_lin(l)%ft(m) = Ftnew
+		    endif
+
+	        Et_lin(l) = Etnew
+	        Nb_lin(l) = Nbnew
+          enddo
+
+	      Fmall = 0.
+	      Ftall = 0.
+	      Fdall = 0.
+		  Nbl = Nb_lin(l)
+	      do m = 1, Np
+		    Fmall = Fmall + sed_lin(l)%fm(m)
+		    Ftall = Ftall + sed_lin(l)%ft(m)
+		    Fdall = Fdall + sed_lin(l)%fd(m,Nbl)
+	      end do
+
+		  fsur_all=0.d0
+		  nn = 0
+		  f90=0.d0
+		  De_Emb = Emb_lin(l)*c_ave*dlambda
+		  Bed_depth = zb_riv_idx(k) - zb_roc_idx(k)+De_Emb
+		  qdi = 0.d0
+
+	      do m = 1, Np
+		    if(Fdall ==0.d0)then
+			  if(Nb_lin(l)-1==0.d0) then
+			    sed_lin(l)%fd(m,Nbl) = sed_lin(l)%fm1(m)
+			  else
+			    Nb_lin(l)= Nb_lin(l)-1
+			    Nbl = Nb_lin(l)
+			  endif
+		    else
+		      sed_lin(l)%fd(m,Nbl) = sed_lin(l)%fd(m,Nbl)/Fdall
+		    endif
+
+		    sed_lin(l)%ft(m) = sed_lin(l)%ft(m)/Ftall
+			if(Ftall==0.d0) sed_lin(l)%ft(m)=sed_lin(l)%fd(m,Nbl)
+			if(fmall.ne.0.d0)then
+		      sed_lin(l)%fm(m) = sed_lin(l)%fm(m)/Fmall
+			else
+  			  sed_lin(l)%fm(m)= sed_lin(l)%ft(m)
+			endif
+	        sed_lin(l)%dmean = sed_lin(l)%dsed(m) * sed_lin(l)%fm(m) + sed_lin(l)%dmean
+
+			sed_lin(l)%fqbi(m) = sed_lin(l)%qbi(m)/qsb_lin(l)
+			sed_lin(l)%fqsi(m) = sed_lin(l)%qsi(m)/qss_lin(l)
+			if (qsb_lin(l)==0.d0) sed_lin(l)%fqbi(m) = 0.d0
+			if (qss_lin(l)==0.d0) sed_lin(l)%fqsi(m) = 0.d0
+
+			if(isnan(sed_lin(l)%fm(m)))then
+			  write(*,*) k, m, dzb,sed_lin(l)%fm(m),sed_lin(l)%ft(m),sed_lin(l)%fd(m,Nbl),sed_lin(l)%dzbpr(m),fdall,ftall,fmall
+			  write(*,*)
+			  write(*,*)sed_lin(l)%dzbpr(1),sed_lin(l)%dzbpr(2),sed_lin(l)%dzbpr(3),sed_lin(l)%dzbpr(4)
+			  write(*,*)
+			  write(*,*)ddt,dlambda,sed_lin(l)%ffd(m)
+			  stop"fm(m) is nan value"
+			  write(*,*)"fm(m) is nan value"
+			endif
+			if(isnan(sed_lin(l)%fm(m)).or.isnan(sed_lin(l)%ft(m)).or.isnan(sed_lin(l)%fd(m,Nbl)))then
+			  write(*,*) k, m, dzb,sed_lin(l)%fm(m),sed_lin(l)%ft(m),sed_lin(l)%fd(m,Nbl),sed_lin(l)%dzbpr(m),fdall,ftall,fmall, Et_lin(l)+dzb, Ed,Emb_lin(l),Nbl, Nbnew, Nb_lin(l), Nl
+			  stop"nan value"
+			endif
+
+		    if(sed_lin(l)%Bed_D90 .gt. samp_dep_min) then
+		      sed_lin(l)%samp_dep = sed_lin(l)%Bed_D90
+		    else
+		      sed_lin(l)%samp_dep = samp_dep_min
+		    endif
+		    if(De_Emb+Et_lin(l).ge.sed_lin(l)%samp_dep)then
+			  if(De_Emb.ge.sed_lin(l)%samp_dep)then
+		        sed_lin(l)%fsur(m) = sed_lin(l)%fm(m)
+			  else
+			    sed_lin(l)%fsur(m)= (Emb_lin(l)*c_ave*sed_lin(l)%fm(m)+sed_lin(l)%ft(m)*(sed_lin(l)%samp_dep-De_Emb)*(1.d0-lambda))/(sed_lin(l)%samp_dep*(1.d0-lambda))
+		  	  endif
+		    else
+		      if(sed_lin(l)%samp_dep.ge. Bed_depth)then
+		  	    De_depo=Bed_depth- De_Emb -Et_lin(l)
+		      else
+			    De_depo= sed_lin(l)%samp_dep- De_Emb -Et_lin(l)
+		      endif
+		      if(de_depo.le.Ed)then
+			    DNl = 1
+			    if (de_depo.le.0.) DNl=0
+		      else
+			    if(dmod(de_depo,Ed).le.0.001*Ed)then
+				  DNl = int(de_depo/Ed)
+			    else
+				  DNl=int(De_depo/Ed)+1
+			    endif
+		      endif
+
+			  if (DNL.gt.0)then
+			    do n = 1, DNl
+			      if(n==DNl)then
+			        qdi = qdi+(1.d0-lambda)*(sed_lin(l)%fd(m,Nbl-n+1)*(1.d0-(dble(DNL)-dble(De_depo/Ed)))*Ed)
+			      else
+			        qdi = qdi + (1.d0 - lambda)*sed_lin(l)%fd(m,Nbl-n+1)*Ed
+			      endif
+			    enddo
+			  endif
+			  sed_lin(l)%fsur(m) = (Emb_lin(l)*c_ave*sed_lin(l)%fm(m) + Et_lin(l)*sed_lin(l)%ft(m)*(1.d0-lambda)+ qdi)/(sed_lin(l)%samp_dep*(1.d0-lambda))
+		    endif
+		    fsur_all = fsur_all + sed_lin(l)%fsur(m)
+	      end do
+
+		  if(fsur_all == 0.d0)then
+		    do m = 1, Np
+			  sed_lin(l)%fsur(m)=sed_lin(l)%fm(m)
+		    enddo
+		  else
+		    do m = 1, Np
+			  sed_lin(l)%fsur(m)=sed_lin(l)%fsur(m)/fsur_all
+		    enddo
+		  endif
+
+		  nn= 0
+		  f90= 0.d0
+		  do m = 1,Np
+			nn=nn+1
+		    f90= f90 + sed_lin(l)%fsur(m)
+			if(nn>1) then
+			  if(f90>0.6 .and. (f90 - sed_lin(l)%fsur(m)) .le. 0.6) &
+                sed_lin(l)%Bed_D60= sed_lin(l)%dsed(m-1)+ (0.6d0-f90+sed_lin(l)%fsur(m)) &
+                *(sed_lin(l)%dsed(m)-sed_lin(l)%dsed(m-1))/sed_lin(l)%fsur(m)
+			else
+			  if(f90 > 0.6) sed_lin(l)%Bed_D60 = sed_lin(l)%dsed(m)
+			endif
+			if(f90>0.9d0) then
+			  if(nn.le.1)then
+			    sed_lin(l)%Bed_D90= sed_lin(l)%dsed(m)
+			  else
+			    sed_lin(l)%Bed_D90= sed_lin(l)%dsed(m-1)+ (0.9d0-f90+sed_lin(l)%fsur(m)) &
+                  *(sed_lin(l)%dsed(m)-sed_lin(l)%dsed(m-1))/sed_lin(l)%fsur(m)
+			  endif
+			  exit
+			endif
+		  enddo
+
+          Et_idx(k) = Et_lin(l)
+          Nb_idx(k) = Nb_lin(l)
+
+          if(abs(dzb).gt.0.1E+3) then
+            write(*,'(a,i4,e12.3,i4,f)') 'k/dzb/Nb_idx(k)/Et_idx(k)=', k, dzb, Nb_lin(l), Et_lin(l)
+            write(*,'(a)') '    m        dzbr        dsed          fm          ft         fd1         fd2         fd3'
+            do m = 1, Np
+              write(*,'(i5,e12.3,6f12.5)') m, sed_lin(l)%dzbpr(m), sed_lin(l)%dsed(m), sed_lin(l)%fm(m), sed_lin(l)%ft(m), sed_lin(l)%fd(m,Nbl), sed_lin(l)%fd(m,Nbl-1), sed_lin(l)%fd(m,Nbl-2)
+            enddo
+          endif
+	    enddo
+!$omp end parallel do
+
+      end subroutine mean_diameter_lin
 !------------------------------------------------------------------------------------------------------------------
 ! output sediment variation for specified stations
       subroutine sed_output (sed,sed_idx ,t_char)

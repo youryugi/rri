@@ -9,35 +9,51 @@ subroutine funcg(hg_idx, fg_idx, qg_idx)
     real(8) hg_idx(slo_count), fg_idx(slo_count)
     real(8) qg_idx(i4, slo_count)
 
-    integer k, l, kk, itemp, jtemp
+    integer k, n, ku, lu
 
     fg_idx(:) = 0.d0
     qg_idx(:, :) = 0.d0
 
-    call qg_calc(hg_idx, qg_idx)
+! Keep one OpenMP team across the groundwater flux calculation and the local
+! right-hand-side update.  The conservation update gathers upstream fluxes,
+! so each thread writes only its own fg_idx(k).
+!$omp parallel private(k)
+    call qg_calc_do(hg_idx, qg_idx)
 
 ! qg_idx > 0 --> discharge flowing out from a cell
 
-!$omp parallel do
+!$omp do private(n, ku, lu)
     do k = 1, slo_count
         if (gammag_idx(k) .gt. 0.d0) fg_idx(k) = (qg_idx(1, k) + qg_idx(2, k) + qg_idx(3, k) + qg_idx(4, k))/gammag_idx(k)
-    end do
-!$omp end parallel do
-
-    do k = 1, slo_count
-        do l = 1, lmax
-            if (dif_slo_idx(k) .eq. 0 .and. l .eq. 2) exit ! kinematic -> 1-direction
-            kk = down_slo_idx(l, k)
-            if (dif_slo_idx(k) .eq. 0) kk = down_slo_1d_idx(k)
-            if (kk .eq. -1) cycle
-            if (gammag_idx(k) .gt. 0.d0) fg_idx(kk) = fg_idx(kk) - qg_idx(l, k)/gammag_idx(k)
+        do n = 1, up_slo_gather_count(k)
+            ku = up_slo_gather_src(n, k)
+            lu = up_slo_gather_dir(n, k)
+            if (gammag_idx(ku) .gt. 0.d0) fg_idx(k) = fg_idx(k) - qg_idx(lu, ku)/gammag_idx(ku)
         end do
     end do
+!$omp end do
+!$omp end parallel
 
 end subroutine funcg
 
 ! lateral gw discharge (slope)
 subroutine qg_calc(hg_idx, qg_idx)
+    use globals
+    implicit none
+
+    real(8) hg_idx(slo_count)
+    real(8) qg_idx(i4, slo_count)
+
+    qg_idx = 0.d0
+
+!$omp parallel
+    call qg_calc_do(hg_idx, qg_idx)
+!$omp end parallel
+
+end subroutine qg_calc
+
+! lateral gw discharge workshare (slope)
+subroutine qg_calc_do(hg_idx, qg_idx)
     use globals
     implicit none
 
@@ -51,9 +67,8 @@ subroutine qg_calc(hg_idx, qg_idx)
     real(8) len, hw
     integer dif_p, dif_n
 
-    qg_idx = 0.d0
-
-!$omp parallel do private(kk,zb_p,hg_p,gammag_p,kg0_p,ksg_p,fpg_p,l,distance,len,zb_n,hg_n,gammag_n,kg0_n,ksg_n,fpg_n,dh)
+!$omp do private(kk,zb_p,hg_p,gammag_p,kg0_p,ksg_p,fpg_p,dif_p,l,distance,len, &
+!$omp            zb_n,hg_n,gammag_n,kg0_n,ksg_n,fpg_n,dif_n,dh,qg)
     do k = 1, slo_count
 
         zb_p = zb_slo_idx(k)
@@ -106,9 +121,9 @@ subroutine qg_calc(hg_idx, qg_idx)
 
         end do
     end do
-!$omp end parallel do
+!$omp end do
 
-end subroutine qg_calc
+end subroutine qg_calc_do
 
 ! water depth and gw discharge relationship
 subroutine hg_calc(gammag_p, kg0_p, ksg_p, fpg_p, hg_p, dh, len, qg)

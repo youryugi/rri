@@ -9,14 +9,19 @@ subroutine funcs(hs_idx, qp_t_idx, fs_idx, qs_idx)
     real(8) hs_idx(slo_count), qp_t_idx(slo_count), fs_idx(slo_count)
     real(8) qs_idx(i4, slo_count)
 
-    integer k, l, kk, itemp, jtemp
+    integer k, n, ku, lu, itemp, jtemp
 
     fs_idx(:) = 0.d0
     qs_idx(:, :) = 0.d0
 
-    call qs_calc(hs_idx, qs_idx)
+! Keep one OpenMP team across the slope flux calculation and the local
+! right-hand-side update.  The conservation update gathers upstream fluxes,
+! so each thread writes only its own fs_idx(k).
+!$omp parallel private(k, itemp, jtemp)
+    call qs_calc_do(hs_idx, qs_idx)
 
 ! boundary condition for slope (discharge boundary)
+!$omp single
     if (bound_slo_disc_switch .ge. 1) then
         !itemp = time / dt_bound_slo + 1
         itemp = -1
@@ -52,29 +57,42 @@ subroutine funcs(hs_idx, qp_t_idx, fs_idx, qs_idx)
             end if
         end do
     end if
+!$omp end single
 
 ! qs_idx > 0 --> discharge flowing out from a cell
 
-!$omp parallel do
+!$omp do private(n, ku, lu)
     do k = 1, slo_count
         fs_idx(k) = qp_t_idx(k) - (qs_idx(1, k) + qs_idx(2, k) + qs_idx(3, k) + qs_idx(4, k))
-    end do
-!$omp end parallel do
-
-    do k = 1, slo_count
-        do l = 1, lmax
-            if (dif_slo_idx(k) .eq. 0 .and. l .eq. 2) exit ! kinematic -> 1-direction
-            kk = down_slo_idx(l, k)
-            if (dif_slo_idx(k) .eq. 0) kk = down_slo_1d_idx(k)
-            if (kk .eq. -1) cycle
-            fs_idx(kk) = fs_idx(kk) + qs_idx(l, k)
+        do n = 1, up_slo_gather_count(k)
+            ku = up_slo_gather_src(n, k)
+            lu = up_slo_gather_dir(n, k)
+            fs_idx(k) = fs_idx(k) + qs_idx(lu, ku)
         end do
     end do
+!$omp end do
+!$omp end parallel
 
 end subroutine funcs
 
 ! lateral discharge (slope)
       subroutine qs_calc(hs_idx, qs_idx) !20231226modified 
+         use globals
+         implicit none
+
+         real(8) hs_idx(slo_count)
+         real(8) qs_idx(i4, slo_count)
+
+         qs_idx = 0.d0
+
+!$omp parallel
+         call qs_calc_do(hs_idx, qs_idx)
+!$omp end parallel
+
+      end subroutine qs_calc
+
+! lateral discharge workshare (slope)
+      subroutine qs_calc_do(hs_idx, qs_idx)
          use globals
          implicit none
 
@@ -90,9 +108,7 @@ end subroutine funcs
          integer dif_p, dif_n
          !real(8) emb
 
-         qs_idx = 0.d0
-
-!$omp parallel do private(kk,zb_p,hs_p,ns_p,ka_p,da_p,dm_p,b_p,dif_p,l,distance,len, &
+!$omp do private(kk,zb_p,hs_p,ns_p,ka_p,da_p,dm_p,b_p,dif_p,l,distance,len, &
 !$omp                     zb_n,hs_n,ns_n,ka_n,da_n,dm_n,b_n,dif_n,lev_p,lev_n,dh,hw,dhdx,dhdy,q) !modified 20231226
 !added q into private 20231026
          do k = 1, slo_count
@@ -224,9 +240,10 @@ end subroutine funcs
 
              enddo
          enddo
+!$omp end do
 
 
-      end subroutine qs_calc
+      end subroutine qs_calc_do
 
 ! water depth and discharge relationship
 subroutine hq(ns_p, ka_p, da_p, dm_p, b_p, h, dh, len, q,k) !modified 20250314

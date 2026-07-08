@@ -75,8 +75,12 @@ call cg_iric_read_integer(cgns_f, "utm", utm, ier)
 call cg_iric_read_integer(cgns_f, "eight_dir", eight_dir, ier)
    ! eight_dir = 1
 !    eight_dir = 0 !using 4 direction 20240808
+    omp_num_threads = 0
+    call cg_iric_read_integer(cgns_f, "omp_num_threads", omp_num_threads, ier)
+    if (ier /= 0) omp_num_threads = 0
     write (*, '("utm : ", i5)') utm
     write (*, '("eight_dir : ", i5)') eight_dir
+    write (*, '("omp_num_threads : ", i5)') omp_num_threads
     write (*, *)
 
 !--------------------------------------------------

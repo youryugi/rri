@@ -126,7 +126,7 @@
          character*256 outfile_qss18
 
 		 
-	     integer sed_switch                  !***** added by Chilli 2015/06/18
+         integer sed_switch                  !***** added by Chilli 2015/06/18
          character*256 sediment_file	     !***** added by Chilli	2015/06/18
 
 	     integer sed_type_switch
@@ -194,7 +194,7 @@
        real(8),allocatable,save:: dam_sedi_qsi(:,:)
        !real(8),allocatable,save:: dam_sedi_total2(:),dam_sedi_total_s2(:),dam_sedi_total_w2(:),dam_sedi_totalV2(:)  !---check       
        real(8), allocatable, save :: zb_roc_lin(:), Emb_lin(:), Et_lin(:)!, zb_air_lin(:)
-	     !integer, allocatable, save :: Nb_lin(:)
+	     integer, allocatable, save :: Nb_lin(:)
        real(8), allocatable, save:: ss_lin(:)
        integer cut_overdepo_switch !added for preventing the over-deposition in channels 20240304
 
@@ -212,8 +212,7 @@
            real(8) samp_dep_min!added minimum sampling depth 20240419 
            
 !-------------------added by harada for sediment from slope
-         real(8),allocatable,save:: slo_grad(:),slograd(:,:) ,slo_ang_sin(:),slo_ang_cos(:)    !slopeの最急勾配
-         integer,save:: slo_inflow_num     
+         real(8),allocatable,save:: slo_grad(:),slograd(:,:) ,slo_ang_sin(:),slo_ang_cos(:)    !slopeの最急勾酁E         integer,save:: slo_inflow_num     
 !--------------------added for slope erosion
          real(8),allocatable,save:: slo_sur_zb(:),slo_sur_zb_before(:)
          real(8),allocatable,save:: fmslo(:,:),fgully(:,:)!, dsi_slo(:,:),Dmslo(:) 20231226

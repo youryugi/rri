@@ -81,6 +81,7 @@ module globals
 
     integer utm
     integer eight_dir
+    integer omp_num_threads
     integer run_type
 
     real(8), save :: ns_river
@@ -150,10 +151,12 @@ module globals
     real(8), allocatable, save :: bound_slo_disc_idx(:, :), bound_riv_disc_idx(:, :)
     integer, allocatable, save :: dif_riv_idx(:)
 
+    integer, parameter :: up_slo_gather_max = 9
     integer, save :: lmax, slo_count
     integer, allocatable, save :: slo_idx2i(:), slo_idx2j(:), slo_ij2idx(:, :)
     integer, allocatable, save :: down_slo_idx(:, :), domain_slo_idx(:), land_idx(:)
     integer, allocatable, save :: down_slo_1d_idx(:)
+    integer, allocatable, save :: up_slo_gather_count(:), up_slo_gather_src(:, :), up_slo_gather_dir(:, :)
     real(8), allocatable, save :: ns_slo_idx(:), soildepth_idx(:), gammaa_idx(:)
     real(8), allocatable, save :: ksv_idx(:), faif_idx(:), infilt_limit_idx(:)
     real(8), allocatable, save :: ka_idx(:), gammam_idx(:), beta_idx(:), da_idx(:), dm_idx(:), min_wc4latflow_idx(:)! added the threshold of water content of soil to form the lateral subsurface flow; 20250314

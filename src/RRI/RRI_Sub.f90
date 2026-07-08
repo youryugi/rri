@@ -195,7 +195,7 @@ subroutine slo_idx_setting
     use globals
     use sediment_mod !this line is added for RSR 20240724
     implicit none
-    integer i, j, ii, jj, k, l, n_count !this line is modified for RSR 20240724
+    integer i, j, ii, jj, k, kk, l, n_count !this line is modified for RSR 20240724
     real(8) distance, len, l1, l2, l3
     real(8) l1_kin, l2_kin, l3_kin
 
@@ -210,6 +210,8 @@ subroutine slo_idx_setting
     allocate (down_slo_idx(i4, slo_count), domain_slo_idx(slo_count))
     allocate (zb_slo_idx(slo_count), dis_slo_idx(i4, slo_count), len_slo_idx(i4, slo_count), acc_slo_idx(slo_count))
     allocate (down_slo_1d_idx(slo_count), dis_slo_1d_idx(slo_count), len_slo_1d_idx(slo_count))
+    allocate (up_slo_gather_count(slo_count), up_slo_gather_src(up_slo_gather_max, slo_count), &
+              up_slo_gather_dir(up_slo_gather_max, slo_count))
     allocate (land_idx(slo_count))
 
     allocate (dif_slo_idx(slo_count))
@@ -421,6 +423,34 @@ subroutine slo_idx_setting
             len_slo_1d_idx(slo_count) = len
 
         end do
+    end do
+
+! Build an upstream list for gather-style slope conservation updates.
+! Kinematic cells use down_slo_1d_idx and store their flux in direction 1.
+    up_slo_gather_count(:) = 0
+    up_slo_gather_src(:, :) = 0
+    up_slo_gather_dir(:, :) = 0
+
+    do k = 1, slo_count
+        if (dif_slo_idx(k) .eq. 0) then
+            kk = down_slo_1d_idx(k)
+            if (kk .eq. -1) cycle
+            n_count = up_slo_gather_count(kk) + 1
+            if (n_count .gt. up_slo_gather_max) stop "error: up_slo_gather_max is too small."
+            up_slo_gather_count(kk) = n_count
+            up_slo_gather_src(n_count, kk) = k
+            up_slo_gather_dir(n_count, kk) = 1
+        else
+            do l = 1, lmax
+                kk = down_slo_idx(l, k)
+                if (kk .eq. -1) cycle
+                n_count = up_slo_gather_count(kk) + 1
+                if (n_count .gt. up_slo_gather_max) stop "error: up_slo_gather_max is too small."
+                up_slo_gather_count(kk) = n_count
+                up_slo_gather_src(n_count, kk) = k
+                up_slo_gather_dir(n_count, kk) = l
+            end do
+        end if
     end do
 
 !---------modified for RSR model : from here to the end of this subroutine
