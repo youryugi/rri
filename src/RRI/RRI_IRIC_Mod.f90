@@ -303,6 +303,154 @@ contains
         deallocate (v)
     end subroutine
 
+    subroutine iric_river_cell_center(k, x, y)
+        use globals
+        implicit none
+
+        integer, intent(in):: k
+        double precision, intent(out):: x, y
+        integer:: ii, jj
+
+        ii = riv_idx2i(k)
+        jj = riv_idx2j(k)
+        x = xllcorner + (dble(jj) - 0.5d0)*cellsize
+        y = yllcorner + (dble(ny - ii) + 0.5d0)*cellsize
+    end subroutine
+
+    subroutine iric_write_river_polydata_values(id, k, qr_ave, hr, qsb, qss, sumdzb)
+        use globals
+        implicit none
+
+        integer, intent(in):: id, k
+        double precision, dimension(:, :), allocatable, intent(in):: qr_ave, hr
+        double precision, dimension(:, :), allocatable, intent(in):: qsb, qss, sumdzb
+
+        double precision:: v_qsb, v_qss, v_sumdzb
+        integer:: ierr, ii, jj
+
+        ii = riv_idx2i(k)
+        jj = riv_idx2j(k)
+        v_qsb = 0.d0
+        v_qss = 0.d0
+        v_sumdzb = 0.d0
+        if (allocated(qsb)) v_qsb = qsb(ii, jj)
+        if (allocated(qss)) v_qss = qss(ii, jj)
+        if (allocated(sumdzb)) v_sumdzb = sumdzb(ii, jj)
+        call cg_iric_write_sol_polydata_real(cgns_f, '01 River water level line[m]', hr(ii, jj), ierr)
+        call cg_iric_write_sol_polydata_real(cgns_f, '02 River discharge line[m3_s]', qr_ave(ii, jj), ierr)
+        call cg_iric_write_sol_polydata_real(cgns_f, '03 River bed change line[m]', v_sumdzb, ierr)
+        call cg_iric_write_sol_polydata_real(cgns_f, '04 Bedload transport line[m3_s]', v_qsb, ierr)
+        call cg_iric_write_sol_polydata_real(cgns_f, '05 Suspended sediment line[m3_s]', v_qss, ierr)
+    end subroutine
+
+
+    subroutine iric_simplify_polyline(x, y, npts)
+        implicit none
+
+        double precision, dimension(:), intent(inout):: x, y
+        integer, intent(inout):: npts
+
+        double precision:: dx1, dy1, dx2, dy2
+        integer:: p, nout
+
+        if (npts .le. 2) return
+
+        nout = 1
+        do p = 2, npts - 1
+            dx1 = x(p) - x(p - 1)
+            dy1 = y(p) - y(p - 1)
+            dx2 = x(p + 1) - x(p)
+            dy2 = y(p + 1) - y(p)
+            if (abs(dx1 - dx2) .gt. 1.d-12 .or. abs(dy1 - dy2) .gt. 1.d-12) then
+                nout = nout + 1
+                x(nout) = x(p)
+                y(nout) = y(p)
+            end if
+        end do
+
+        nout = nout + 1
+        x(nout) = x(npts)
+        y(nout) = y(npts)
+        npts = nout
+    end subroutine
+    subroutine iric_write_river_polydata(qr_ave, hr, qsb, qss, sumdzb)
+        use globals
+        use sediment_mod
+        implicit none
+
+        double precision, dimension(:, :), allocatable, intent(in):: qr_ave, hr
+        double precision, dimension(:, :), allocatable, intent(in):: qsb, qss, sumdzb
+
+        double precision, dimension(:), allocatable:: x, y
+        integer:: ierr, l, k, kk, npts, nmax
+        logical:: has_link
+
+        if (riv_count .le. 0) return
+        has_link = allocated(link_idx_k) .and. allocated(link_ups_k) .and. allocated(link_to_riv)
+
+        call cg_iric_write_sol_polydata_groupbegin(cgns_f, 'River channel lines', ierr)
+
+        if (has_link .and. link_count .gt. 0) then
+            do l = 1, link_count
+                if (link_idx_k(l) .le. 0) cycle
+                nmax = 2
+                if (allocated(link_cell_num)) nmax = max(2, link_cell_num(l) + 1)
+                allocate (x(nmax), y(nmax))
+
+                npts = 0
+                k = link_ups_k(l)
+                if (k .le. 0) k = link_idx_k(l)
+                do
+                    if (k .le. 0) exit
+                    if (npts .ge. nmax) exit
+                    npts = npts + 1
+                    call iric_river_cell_center(k, x(npts), y(npts))
+                    if (k .eq. link_idx_k(l)) exit
+                    kk = down_riv_idx(k)
+                    if (kk .le. 0) exit
+                    if (link_to_riv(kk) .ne. l) exit
+                    k = kk
+                end do
+
+                if (npts .eq. 1) then
+                    kk = down_riv_idx(link_idx_k(l))
+                    if (kk .gt. 0) then
+                        npts = 2
+                        call iric_river_cell_center(kk, x(npts), y(npts))
+                    else
+                        npts = 2
+                        x(npts) = x(1) + 0.25d0*abs(cellsize)
+                        y(npts) = y(1)
+                    end if
+                end if
+
+                if (npts .ge. 2) then
+                    call iric_simplify_polyline(x, y, npts)
+                    call cg_iric_write_sol_polydata_polyline(cgns_f, npts, x, y, ierr)
+                    call iric_write_river_polydata_values(l, link_idx_k(l), qr_ave, hr, qsb, qss, sumdzb)
+                end if
+
+                deallocate (x, y)
+            end do
+        else
+            allocate (x(2), y(2))
+            do k = 1, riv_count
+                call iric_river_cell_center(k, x(1), y(1))
+                kk = down_riv_idx(k)
+                if (kk .gt. 0) then
+                    call iric_river_cell_center(kk, x(2), y(2))
+                else
+                    x(2) = x(1) + 0.25d0*abs(cellsize)
+                    y(2) = y(1)
+                end if
+                call cg_iric_write_sol_polydata_polyline(cgns_f, 2, x, y, ierr)
+                call iric_write_river_polydata_values(k, k, qr_ave, hr, qsb, qss, sumdzb)
+            end do
+            deallocate (x, y)
+        end if
+
+        call cg_iric_write_sol_polydata_groupend(cgns_f, ierr)
+    end subroutine
     subroutine iric_cgns_output_result( &
         sum_qp_t, qp_t, hs, hr, hg, qr_ave, qs_ave, qg_ave, &
         qsb, qss, sumdzb, sumqsb, sumqss) !added unitchannel display 20250328
@@ -359,6 +507,7 @@ contains
         call iric_write_gu(qg_ave)
         call iric_write_gv(qg_ave)
         call iric_write_result_real('gampt_ff', gampt_ff)
+        call iric_write_river_polydata(qr_ave, hr, qsb, qss, sumdzb)
 
 !-----For RSR model 20240724
 
