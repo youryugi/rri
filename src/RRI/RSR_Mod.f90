@@ -40,6 +40,8 @@
          real(8) a_const, Ar_const
          real(8) lambda, dlambda
          real(8) t_beddeform_start   !added 20240724
+         real(8) t_bed_freeze        ! bed-elevation freeze (warm-up) duration [s], from GUI hours. During time<t_bed_freeze the sediment transport & the surface grain-size distribution fm are updated as usual, but the bed elevation zb, deposit layers (Et/Nb/fd) and sumdzb are held fixed (spin-up/armoring, no bed deformation). 0 => off. Link model (sed_switch==2) only.
+         real(8) debris_rate_fac     ! multiplier (GUI, default 1.0) on the per-step debris/landslide deposition rate into the channel bed (base caps Emb*0.01 large-link / Emb*0.0005 small-link). <1 meters the debris into the channel more slowly (spreads a big landslide over more steps -> avoids the abrupt local bed/shear spike that destabilises stiff cells). Does NOT change the total debris volume delivered, only how fast per step.
 		 
 	     integer no_of_sedfiles, no_of_layers , Np, Nl
 	     integer, parameter :: Npmax = 20
@@ -62,6 +64,12 @@
         integer outswitch_qrs, outswitch_overflowsed !added 202309024
         integer outswitch_slope !for slope erosion
         integer outswitch_h_surf
+        integer debug_inundation_switch
+        integer debug_inundation_i, debug_inundation_j
+        integer debug_inundation_radius
+        integer debug_inundation_header_written
+        integer debug_sed_budget_header_written
+        integer debug_spread_header_written
       
 
          character*256 outfile_qsb
@@ -85,6 +93,9 @@
          character*256 outfile_overflow_sed_vol
          character*256 outfile_h_surf !added 20250405
          character*256 outfile_sdout  !added 20260208
+         character*256 outfile_debug_inundation
+         character*256 outfile_debug_sed_budget
+         character*256 outfile_debug_spread
       
 
          character*256 outfile_qsb1
@@ -179,6 +190,8 @@
 		 
 !--------------------local information added by yorozuya 2016/07/14
 	     real(8) perosion
+	     real(8) put_rate_fac   ! release-rate factor for Direct Sediment supply (j_sedput). 1.0 = original (drains fast); <1 meters the injected sediment out more slowly so the supply is sustained toward the flood peak. Default 1.0 (reproduces original).
+	     real(8) d_wash         ! wash-load / suspended-load size threshold [m]. Grains with dsi<=d_wash are handled by the washload routine; dsi>d_wash go to the density-stratified SUSPENDED routine. Default 1.d-4 (0.1mm, original). Lower it (e.g. 5.d-5=0.05mm) to make a fine class like 0.075mm behave as suspended (bed-material, depositable) instead of wash load.
 	     real(8) th_em, zm_re, zm_ss
 	     integer(8) ibedpro1,ibedpro2,ibedpro3,ibedpro4,ibedpro5,ibedpro6,ibedpro7,ibedpro8
 	     real(8) raint, mzbt
@@ -197,6 +210,14 @@
 	     integer, allocatable, save :: Nb_lin(:)
        real(8), allocatable, save:: ss_lin(:)
        integer cut_overdepo_switch !added for preventing the over-deposition in channels 20240304
+       integer pass_bedload_switch !1: pass bedload downstream when channel capacity is reduced; 0: allow local deposition
+       real(8) pass_bedload_depth_thresh !remaining channel depth threshold [m] for passing bedload downstream
+       integer channel_blockage_switch !1: reduce hydraulic conveyance according to remaining channel depth ratio
+       real(8) channel_blockage_leakage !residual conveyance ratio [-] at complete blockage
+       real(8) channel_blockage_exponent !exponent for conveyance reduction, default 5/3 for Manning-type scaling
+       integer channel_capacity_qr_switch !1: limit river discharge by remaining channel capacity
+       integer river_overtop_neighbor_switch !1: distribute river-to-slope overflow water to adjacent non-river cells
+       integer river_slope_preexchange_switch !1: also exchange river-slope water before slope routing
 
          type sed_struct2                                     
            real(8), dimension(Npmax) :: dsed, fm, ft, dzbpr, dzbtem, ffd, fm2, fm1, fms
@@ -236,6 +257,8 @@
          real(8),allocatable,save:: c_dash(:), hsc(:), pw(:), sf(:)
          real(8),allocatable,save:: vol(:), vcc(:), vcf(:)
          real(8),allocatable,save:: dzslo_mspnt_idx(:), dzslo_mspnt(:,:), soildepth_idx_deb(:)  !added 20240219
+         ! cumulative debris-flow elevation change (sum of per-pass dz_mp over the whole run; unlike dzslo_mspnt which is overwritten per event)
+         real(8),allocatable,save:: dzslo_mspnt_cum_idx(:), dzslo_mspnt_cum(:,:)
          real(8),allocatable,save:: vo_total(:), vo_total_river(:), vo_total_l(:)
          real(8),allocatable,save:: debri_sup_sum(:), debri_sup_sum_di(:,:), debri_sup_sum_ij(:,:) !added 20240424
          real(8) cohe, phi, pwc, pc, pf, b_mp, d_mp_ini
@@ -247,6 +270,9 @@
          integer, allocatable, save :: n_link_depth(:)    !0 or 1   added 20240229
          real(8) max_width    !added 20240229
          real(8),allocatable,save:: depth_idx_ini(:),width_idx_ini(:) !added 20240229
+         real(8),allocatable,save:: qr_raw_idx(:), qr_capacity_limited_idx(:)
+         real(8),allocatable,save:: qr_effective_depth_idx(:), qr_capacity_depth_idx(:)
+         real(8),allocatable,save:: qr_blockage_factor_idx(:) !diagnostic raw/blocked river discharge
 !---added for past Landslide event 20240717
          integer past_LS_switch
          character*256 past_ls_file, past_debris_file

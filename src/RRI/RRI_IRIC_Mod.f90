@@ -530,6 +530,7 @@ contains
             if(debris_switch==1) call iric_write_result_real('Land slide occurence', LS)
             if(debris_switch==1) call iric_write_result_real('Debris flow path', hki_g_2d)  ! hki_g_2d must be real type
             if(debris_switch==1) call iric_write_result_real('Elevation change (debris flow) [m]', dzslo_mspnt)   !abs remove this later 20260322
+            if(debris_switch==1) call iric_write_result_real('Cumulative elevation change (debris flow) [m]', dzslo_mspnt_cum)
             if(debris_switch==1) call iric_write_result_real('Total sediment supply from debris flow [m3]', debri_sup_sum_ij)            
             if(j_drf==1) call iric_write_result_real('Wood_deposition [m3_m2]', vw2d)
             if(j_drf==1) call iric_write_result_real('Wood_total', qwsum_2d)

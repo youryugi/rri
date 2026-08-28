@@ -82,7 +82,7 @@
 	  endif
 
 	if(Frn.ge.100.0) then
-!	 if(Frn.ge.1.0) then !Fr?E½E½?E½E½?E½E½?E½E½Èï¿½Ìê‡
+!	 if(Frn.ge.1.0) then !Fr?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Èï¿½Ìê‡
 
 !	 pause'Frn>1.0'
 
@@ -93,7 +93,7 @@
             sed_idx(k)%qdsum(m) = sed_idx(k)%qdsum(m) + sed_idx(kk)%qbi(m) !m3/s
 	  enddo
 
-	 else !Frn?E½E½?E½E½?E½E½?E½E½È‰ï¿½?E½E½Ìê‡
+	 else !Frn?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½È‰ï¿½?ï¿½Eï¿½ï¿½Eï¿½Ìê‡
 
 !	 pause'Frn<1.0'
  	 if (riv_0th_idx(k)== 1)then ! set the sediment supply condition from the 0th order channel;modified by Qin 2021/6/23		
@@ -121,16 +121,16 @@
     enddo !do k = 1, riv_count
 
 !pause'after sediment equation'
-!----?E½E½|?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½ÌŒv?E½E½Z
+!----?ï¿½Eï¿½ï¿½Eï¿½|?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½ÌŒv?ï¿½Eï¿½ï¿½Eï¿½Z
     do k = 1, riv_count
 	  do m = 1, Np
-!	   sed_idx(k)%ffd(m) = sed_idx(k)%qdsum(m)/width_idx(k)/dis_riv_idx(k) !?E½E½P?E½E½Ê‚ï¿½[m/s]
-	   sed_idx(k)%ffd(m) = sed_idx(k)%qdsum(m)/area_idx(k) !?E½E½P?E½E½Ê‚ï¿½[m/s]
+!	   sed_idx(k)%ffd(m) = sed_idx(k)%qdsum(m)/width_idx(k)/dis_riv_idx(k) !?ï¿½Eï¿½ï¿½Eï¿½P?ï¿½Eï¿½ï¿½Eï¿½Ê‚ï¿½[m/s]
+	   sed_idx(k)%ffd(m) = sed_idx(k)%qdsum(m)/area_idx(k) !?ï¿½Eï¿½ï¿½Eï¿½P?ï¿½Eï¿½ï¿½Eï¿½Ê‚ï¿½[m/s]
 	  enddo
 	enddo
 
     do k = 1, riv_count
-!----?E½E½?E½E½?E½E½V?E½E½?E½E½?E½E½Ì‘ï¿½?E½E½?E½E½?E½E½Z
+!----?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½V?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Ì‘ï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Z
 		kk = down_riv_idx(k)
 !	if(domain_riv_idx(k)==2.and.domain_riv_idx(kk).ne.0)then ! modified by Qin 2021/6/18
 	if (riv_0th_idx(k)==1)then ! no bed deformation at 0th order channel +modified by Qin 2021/6/23	
@@ -140,12 +140,12 @@
 		enddo
 	else
 		do m = 1, Np
-			sed_idx(k)%ffd(m) = sed_idx(k)%ffd(m) + (sed_idx(k)%Esi(m) - sed_idx(k)%Dsi(m)) !?E½E½P?E½E½Ê‚ï¿½[m/s]
+			sed_idx(k)%ffd(m) = sed_idx(k)%ffd(m) + (sed_idx(k)%Esi(m) - sed_idx(k)%Dsi(m)) !?ï¿½Eï¿½ï¿½Eï¿½P?ï¿½Eï¿½ï¿½Eï¿½Ê‚ï¿½[m/s]
 		enddo	
 	endif	
 
 	  do m = 1, Np
-	   sed_idx(k)%dzbpr(m) = - ddt * sed_idx(k)%ffd(m) * dlambda !?E½E½P?E½E½Ê‚ï¿½[m]
+	   sed_idx(k)%dzbpr(m) = - ddt * sed_idx(k)%ffd(m) * dlambda !?ï¿½Eï¿½ï¿½Eï¿½P?ï¿½Eï¿½ï¿½Eï¿½Ê‚ï¿½[m]
 	   dzb_temp(k) = dzb_temp(k) + sed_idx(k)%dzbpr(m) ![m]
 	  enddo
 
@@ -158,7 +158,7 @@
 !dzb_temp(k) = dzb_cap * 0.01
 !endif
 
-!?E½E½Íï¿½?E½E½Ï“ï¿½?E½E½?E½E½?E½E½å‚«?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½E½??E½E½C?E½E½?E½E½?E½E½?E½E½?E½E½}?E½E½?E½E½?E½E½?E½E½D(?E½E½?E½E½?E½E½ê‚¼?E½E½?E½E½Ì—ï¿½?E½E½a?E½E½É‚ï¿½?E½E½?E½E½?E½E½?E½E½Íï¿½?E½E½Ï“ï¿½?E½E½?E½E½?E½E½?E½E½?E½E½l?E½E½É‰ï¿½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½K?E½E½v?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½D)
+!?ï¿½Eï¿½ï¿½Eï¿½Íï¿½?ï¿½Eï¿½ï¿½Eï¿½Ï“ï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½å‚«?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½ï¿½Eï¿½??ï¿½Eï¿½ï¿½Eï¿½C?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½}?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½D(?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½ê‚¼?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Ì—ï¿½?ï¿½Eï¿½ï¿½Eï¿½a?ï¿½Eï¿½ï¿½Eï¿½É‚ï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Íï¿½?ï¿½Eï¿½ï¿½Eï¿½Ï“ï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½l?ï¿½Eï¿½ï¿½Eï¿½É‰ï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½K?ï¿½Eï¿½ï¿½Eï¿½v?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½D)
 
 !	if(dzb_temp(k).gt.mzbt) then
 !	  dzb_temp(k) = mzbt
@@ -309,7 +309,7 @@
 		   Frn = u_flax/sqrt(9.81*hr_idxa(k))
 
 		 if(Frn.ge.100.0) then 
-!		 if(Frn.lt.1.0) then !!Fr?E½E½?E½E½?E½E½?E½E½Èï¿½Ìê‡
+!		 if(Frn.lt.1.0) then !!Fr?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Èï¿½Ìê‡
 
 		 do m = 1, Np
 		   sed_idx(k)%qswisum(m) = sed_idx(k)%qswisum(m) - sed_idx(k)%qswi(m)
@@ -427,7 +427,7 @@ end subroutine washload
 !         	if(ust_idx(k).gt.0.0) then
 		     do m = 1, Np
                 dzb = sed_idx(k)%dzbpr(m)
-		      if (dsi(m).le.0.0001) then ! di=< 0.1mm??wash load?????????
+		      if (dsi(m).le.d_wash) then ! dsi<=d_wash (default 0.1mm) => wash load; larger => density-stratified suspended
 
 			    fp = sed_idx(k)%fm(m)
 			    ss = sed_idx(k)%swi(m)
@@ -720,15 +720,15 @@ enddo !end of do k = 1, riv_count
 		else !-----revised by Harada 2021/5/21	
 			sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) + (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k)
 			if(sed_idx(k)%ssi(m).le.0.0) then
-			sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) - (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?E½E½?E½E½?E½E½É–ß‚ï¿½?E½E½?E½E½
-			sed_idx(k)%Dsi(m) = -1.* sed_idx(k)%qsisum(m)/area_idx(k) + sed_idx(k)%Esi(m)      !D?E½E½?E½E½?E½E½C?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½
-			if(sed_idx(k)%Dsi(m) < 0.) sed_idx(k)%Dsi(m) = 0.d0 !?E½E½Ü‚ï¿½D?E½E½?E½E½?E½E½?E½E½?E½E½Ìï¿½?E½E½Íã‰º?E½E½?E½E½?E½E½ÌƒA?E½E½?E½E½?E½E½o?E½E½?E½E½?E½E½?E½E½?E½E½X?E½E½É‚ï¿½?E½E½Ì‚ï¿½D?E½E½?E½E½0?E½E½Æ‚È‚ï¿½
-			sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) + (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?E½E½V?E½E½?E½E½?E½E½?E½E½D?E½E½?E½E½?E½E½g?E½E½?E½E½?E½E½Ä‚ï¿½?E½E½?E½E½?E½E½?E½E½xssi?E½E½?E½E½?E½E½v?E½E½Z
+			sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) - (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½É–ß‚ï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½
+			sed_idx(k)%Dsi(m) = -1.* sed_idx(k)%qsisum(m)/area_idx(k) + sed_idx(k)%Esi(m)      !D?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½C?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½
+			if(sed_idx(k)%Dsi(m) < 0.) sed_idx(k)%Dsi(m) = 0.d0 !?ï¿½Eï¿½ï¿½Eï¿½Ü‚ï¿½D?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Ìï¿½?ï¿½Eï¿½ï¿½Eï¿½Íã‰º?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½ÌƒA?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½o?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½X?ï¿½Eï¿½ï¿½Eï¿½É‚ï¿½?ï¿½Eï¿½ï¿½Eï¿½Ì‚ï¿½D?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½0?ï¿½Eï¿½ï¿½Eï¿½Æ‚È‚ï¿½
+			sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) + (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?ï¿½Eï¿½ï¿½Eï¿½V?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½D?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½g?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Ä‚ï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½xssi?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½v?ï¿½Eï¿½ï¿½Eï¿½Z
 		 !----modified by Qin 2021/5/30
 			 if(sed_idx(k)%ssi(m).lt.0.d0) then
-				sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) - (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½É–ß‚ï¿½?E½E½?E½E½
-				sed_idx(k)%Esi(m) = sed_idx(k)%qsisum(m)/area_idx(k)!E?E½E½?E½E½?E½E½C?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½
-!				sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) + (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?E½E½V?E½E½?E½E½?E½E½?E½E½E?E½E½?E½E½?E½E½g?E½E½?E½E½?E½E½Ä‚ï¿½?E½E½?E½E½?E½E½?E½E½xssi?E½E½?E½E½?E½E½v?E½E½Z	 
+				sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) - (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½É–ß‚ï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½
+				sed_idx(k)%Esi(m) = sed_idx(k)%qsisum(m)/area_idx(k)!E?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½C?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½
+!				sed_idx(k)%ssi(m) = sed_idx(k)%ssi(m) + (-1.* sed_idx(k)%qsisum(m) + sed_idx(k)%Esi(m)*area_idx(k) - sed_idx(k)%Dsi(m)*area_idx(k)) * ddt/water_v_idx(k) !?ï¿½Eï¿½ï¿½Eï¿½V?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½E?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½g?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Ä‚ï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½xssi?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½v?ï¿½Eï¿½ï¿½Eï¿½Z	 
 				sed_idx(k)%ssi(m) = 0.d0
 			endif	
 			  if (sed_idx(k)%ssi(m)<0.d0) then
@@ -812,7 +812,7 @@ end subroutine susload
 
 	     real(8) :: uscm, usci, u_se, qbi
 	     real(8) :: tscm,  dsm
-	     real(8) :: t_star, t_starE, qbe, den
+	     real(8) :: t_star, t_starE, qbe, den, t_star_m   ! t_star_m = mean-grain (dsm) Shields for the Egashira bedload (Option A: equal mobility, removes the ~1/dsi fine-grain blow-up)
 	     real(8) :: R_tcts
 	     real(8) :: zb55, Frn
 
@@ -839,7 +839,7 @@ end subroutine susload
 !enddo
 !pause'in bedload'
 
-!-----------?E½E½?E½E½?E½E½Ê‚ÌÄŒv?E½E½Z?E½E½n?E½E½?E½E½----------------
+!-----------?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Ê‚ÌÄŒv?ï¿½Eï¿½ï¿½Eï¿½Z?ï¿½Eï¿½ï¿½Eï¿½n?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½----------------
 
 !write(*,*) 'tan(45.)=', tan(45.*3.14159/180.)
 
@@ -882,7 +882,7 @@ enddo
 
 
 !pause'in bedload'
-!-----------?E½E½?E½E½?E½E½Ê‚ÌÄŒv?E½E½Z?E½E½I?E½E½?E½E½----------------
+!-----------?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Ê‚ÌÄŒv?ï¿½Eï¿½ï¿½Eï¿½Z?ï¿½Eï¿½ï¿½Eï¿½I?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½----------------
 !pause'1'
 
 do k = 1, riv_count
@@ -912,7 +912,7 @@ do k = 1, riv_count
       !           else
 				 u_flax = qr_ave_idx(k)/width_idx(k)/hr_idxa(k)
       !           endif    
-	!?E½E½}?E½E½j?E½E½?E½E½?E½E½O?E½E½Ì‘e?E½E½x?E½E½W?E½E½?E½E½?E½E½?E½E½p?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½C?E½E½?E½E½?E½E½x?E½E½ÌZ?E½E½?E½E½
+	!?ï¿½Eï¿½ï¿½Eï¿½}?ï¿½Eï¿½ï¿½Eï¿½j?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½O?ï¿½Eï¿½ï¿½Eï¿½Ì‘e?ï¿½Eï¿½ï¿½Eï¿½x?ï¿½Eï¿½ï¿½Eï¿½W?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½p?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½C?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½x?ï¿½Eï¿½ï¿½Eï¿½ÌZ?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½
 	!			if(hr_idxa(k).lt.0.001) then
 	!		         ust_idx1 = 0.0
 	!			else
@@ -928,7 +928,7 @@ do k = 1, riv_count
                     Frn = u_flax/sqrt(9.81*hr_idxa(k))
                     endif
 	
-	!?E½E½?E½E½?E½E½ÊŒï¿½?E½E½z?E½E½?E½E½p?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½C?E½E½?E½E½?E½E½x?E½E½ÌZ?E½E½?E½E½
+	!?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½ÊŒï¿½?ï¿½Eï¿½ï¿½Eï¿½z?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½p?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½C?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½x?ï¿½Eï¿½ï¿½Eï¿½ÌZ?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½
 	
 	!if(Frn.ge.100.0) then !Fr >= 1.0
 	!if(Frn.ge.1.0) then !Fr < 1.0
@@ -1004,9 +1004,9 @@ endif
 
 !                if (hr_idxa(k).lt.1.0) then
 !                if (hr_idxa(k).lt.100.0) then
-!                  ust_idx33 = ust_idx22 !?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½l?E½E½?E½E½?E½E½Ì—p?E½E½?E½E½?E½E½?E½E½E½?
+!                  ust_idx33 = ust_idx22 !?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½l?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Ì—p?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½ï¿½Eï¿½?
 !			     else
-!                 ust_idx33 = ust_idx1 !?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½?E½E½l?E½E½?E½E½?E½E½Ì—p?E½E½?E½E½?E½E½?E½E½E½?
+!                 ust_idx33 = ust_idx1 !?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½l?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½Ì—p?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½ï¿½Eï¿½?
 !			     endif
 
 !                if (hr_idxa(k).gt.0.1) then
@@ -1049,7 +1049,7 @@ endif
 
 
 			do m = 1, Np
-!	if(dsi.ge.0.0001) then ! di=> 0.1mm?E½E½?E½E½bedload ?E½E½?E½E½?E½E½v?E½E½Z
+!	if(dsi.ge.0.0001) then ! di=> 0.1mm?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½bedload ?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½v?ï¿½Eï¿½ï¿½Eï¿½Z
 			  fp = sed_idx(k)%fm(m)
 			  if (dsi(m)/dsm .le. 0.4) then
 !			     R_tcts = 0.85
@@ -1088,7 +1088,7 @@ endif
 		!MPM equation
 		           if (ust_idx(k).gt.usci) then
 		             qbe = 8.0 * (t_star - t_Crit)**1.5
-		             sed_idx(k)%qbi(m) = qbe*sqrt((s-1)*grav*dsi(m)**3.)*width_idx(k)*fp*alfa !?E½E½P?E½E½Ê‚ï¿½m3/s
+		             sed_idx(k)%qbi(m) = qbe*sqrt((s-1)*grav*dsi(m)**3.)*width_idx(k)*fp*alfa !?ï¿½Eï¿½ï¿½Eï¿½P?ï¿½Eï¿½ï¿½Eï¿½Ê‚ï¿½m3/s
                    else
 		             sed_idx(k)%qbi(m) = 0.0
 	               end if 
@@ -1117,8 +1117,9 @@ endif
 					C_fd = C_kd*(1.-C_e**2.)*(1.+(s-1.))*(Csta/2.)**(1./3.)
 					C_ff = C_kf*(1.-Csta/2.)**(5./3.)*(Csta/2.)**(-2./3.)
 
-					sed_idx(k)%qbi(m) = 4./15.*C_K1**2.*C_K2/sqrt(C_fd+C_ff)*t_star**2.5       &
-										*sqrt((s-1.)*grav*dsi(m)**3.)*width_idx(k)*fp*alfa										
+					t_star_m = ust_idx(k)**2./((s-1.)*grav*dsm)   ! Option A: drive Egashira with mean-grain (dsm) Shields, NOT the fraction-own t_star (~1/dsi blow-up for fine grains)
+					sed_idx(k)%qbi(m) = 4./15.*C_K1**2.*C_K2/sqrt(C_fd+C_ff)*t_star_m**2.5       &
+						*sqrt((s-1.)*grav*dsm**3.)*width_idx(k)*fp*alfa										
 
 					if(sed_idx(k)%qbi(m) <= 0.) sed_idx(k)%qbi(m) = 0.d0
 					if(sed_idx(k)%qbi(m).ge.0.01)then
@@ -1282,19 +1283,20 @@ endif
 
 !  In case of channel capasity loss due to deposition, pass the bedload to the downstream link  !Machino 20240119
 !if(debris_switch == 1)then !20241123
+	if(pass_bedload_switch > 0) then
 	do l = 1, link_count    !check remaining channel capacity for all river cells k
 		n_link_depth(l) = 0
 		k = link_idx_k(l)
 		do
 			if(node_ups(k).ge.1.or.up_riv_idx(k,1).eq.0) then
-				if(hr_idx(k)> depth_idx_ini(k)*0.9.and.depth_idx(k)<depth_idx_ini(k))then
+				if(depth_idx_ini(k)>0.d0 .and. depth_idx(k)<=pass_bedload_depth_thresh)then
 					n_link_depth(l) = 1
 					!write(*,*) k, l, hr_idx(k), depth_idx_ini(k), depth_idx(k)
 					!stop
 				end if
 				exit
 			end if
-			if(hr_idx(k)> depth_idx_ini(k)*0.9.and.depth_idx(k)<depth_idx_ini(k))then
+			if(depth_idx_ini(k)>0.d0 .and. depth_idx(k)<=pass_bedload_depth_thresh)then
 				n_link_depth(l) = 1
 				!write(*,*) k, l, hr_idx(k), depth_idx_ini(k), depth_idx(k)
 				!stop
@@ -1327,6 +1329,11 @@ endif
 			end if
 		endif	
 	end do
+	else
+		do l = 1, link_count
+			n_link_depth(l) = 0
+		end do
+	endif
 !end if
 !!$omp parallel do private(m,n,lll,thet,k)
 	do l =1, link_count
@@ -1355,7 +1362,7 @@ endif
 		!				if(up_riv_lin(l,n)==0) cycle !revised by Qin 2021/5/27
 						if(up_riv_lin(l,n) == 0) exit 	
 						lll = up_riv_lin(l, n)
-						sed_lin(l)%qdsum(m) = sed_lin(l)%qdsum(m) - sed_lin(lll)%qbi(m)*divloss !m3/s   !?????????!!!  ffd ??-???????E½E½?E½E½A+?????N?H modified for diversion 20250329
+						sed_lin(l)%qdsum(m) = sed_lin(l)%qdsum(m) - sed_lin(lll)%qbi(m)*divloss !m3/s   !?????????!!!  ffd ??-???????ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½A+?????N?H modified for diversion 20250329
 					end do
 					sed_lin(l)%qdsum(m) = sed_lin(l)%qdsum(m) + sed_lin(l)%qbi(m)
 				end do
@@ -1383,11 +1390,11 @@ if(debris_switch == 1)then !20230924
   	 k = link_idx_k(l)
 	!add sediment from debris flow
 	if(area_lin(l) > 100. .and. Emb_lin(l)>0.01) then
-	 if( vo_total_l(l)/area_lin(l)*dlambda > Emb_lin(l)*0.01 ) then  !avoid huge deposition in small link
-		vo_total_l(l) = vo_total_l(l) - Emb_lin(l)*0.01*area_lin(l)/dlambda
-		vo_total_river(l) = Emb_lin(l)*0.01*area_lin(l)/dlambda
+	 if( vo_total_l(l)/area_lin(l)*dlambda > Emb_lin(l)*0.01*debris_rate_fac ) then  !avoid huge deposition in small link
+		vo_total_l(l) = vo_total_l(l) - Emb_lin(l)*0.01*debris_rate_fac*area_lin(l)/dlambda
+		vo_total_river(l) = Emb_lin(l)*0.01*debris_rate_fac*area_lin(l)/dlambda
 		if ( vo_total_l(l) < 0.d0 ) then
-			vo_total_l(l) = vo_total_l(l) + Emb_lin(l)*0.01*area_lin(l)/dlambda
+			vo_total_l(l) = vo_total_l(l) + Emb_lin(l)*0.01*debris_rate_fac*area_lin(l)/dlambda
 			vo_total_river(l) = vo_total_l(l)
 			vo_total_l(l) = 0.d0
 		end if
@@ -1396,11 +1403,11 @@ if(debris_switch == 1)then !20230924
 		vo_total_l(l) = 0.d0
 	 end if
 	else
-	 if( vo_total_l(l)/area_lin(l)*dlambda > Emb_lin(l)*0.0005 ) then  !avoid huge deposition in small link
-		vo_total_l(l) = vo_total_l(l) - Emb_lin(l)*0.0005*area_lin(l)/dlambda
-		vo_total_river(l) = Emb_lin(l)*0.0005*area_lin(l)/dlambda
+	 if( vo_total_l(l)/area_lin(l)*dlambda > Emb_lin(l)*0.0005*debris_rate_fac ) then  !avoid huge deposition in small link
+		vo_total_l(l) = vo_total_l(l) - Emb_lin(l)*0.0005*debris_rate_fac*area_lin(l)/dlambda
+		vo_total_river(l) = Emb_lin(l)*0.0005*debris_rate_fac*area_lin(l)/dlambda
 		if ( vo_total_l(l) < 0.d0 ) then
-			vo_total_l(l) = vo_total_l(l) + Emb_lin(l)*0.0005*area_lin(l)/dlambda
+			vo_total_l(l) = vo_total_l(l) + Emb_lin(l)*0.0005*debris_rate_fac*area_lin(l)/dlambda
 			vo_total_river(l) = vo_total_l(l)
 			vo_total_l(l) = 0.d0
 		end if
@@ -1435,9 +1442,9 @@ if(j_sedput == 1)then
    k = link_idx_k(l)
    put_depth(l) = 0.d0
 	if(area_lin(l) > 100. .and. Emb_lin(l)>0.01) then
-	 if( put_depth_remain(l) > Emb_lin(l)*0.01 ) then  !avoid huge deposition in small link
+	 if( put_depth_remain(l) > Emb_lin(l)*0.01*put_rate_fac ) then  !avoid huge deposition in small link
 	    if(sumdzb_lin(l) < 40.)then !check this condition
-	 		put_depth(l) = Emb_lin(l)*0.01
+	 		put_depth(l) = Emb_lin(l)*0.01*put_rate_fac   !put_rate_fac<1 meters the supply out slower (sustain toward peak)
 			put_depth_remain(l) = put_depth_remain(l) - put_depth(l)
 		end if
 	 else
@@ -1445,8 +1452,8 @@ if(j_sedput == 1)then
 		put_depth_remain(l) = 0.d0
 	end if
 	else   !for very small link
-	 if( put_depth_remain(l) > Emb_lin(l)*0.0005 ) then
-	 	put_depth(l) = Emb_lin(l)*0.0005
+	 if( put_depth_remain(l) > Emb_lin(l)*0.0005*put_rate_fac ) then
+	 	put_depth(l) = Emb_lin(l)*0.0005*put_rate_fac
 		put_depth_remain(l) = put_depth_remain(l) - put_depth(l)
 	 else
 		put_depth(l) = put_depth_remain(l)
@@ -1748,7 +1755,7 @@ end if
 !			else	
 !			do m = 1, Np
 !			sed_lin(l)%ffd(m) = sed_lin(l)%ffd(m) + (sed_lin(l)%Ewi(m) - sed_lin(l)%Dwi(m)) !?P???[m/s]
-!			if(link_0th_order(l) == 0) sed_lin(l)%ffd(m) = 0.         !0?????????E½E½p??????????B???V???Awashload????????s????????????????u??ffd??0??
+!			if(link_0th_order(l) == 0) sed_lin(l)%ffd(m) = 0.         !0?????????ï¿½Eï¿½ï¿½Eï¿½p??????????B???V???Awashload????????s????????????????u??ffd??0??
 !			sed_lin(l)%dzbpr(m) = - ddt * sed_lin(l)%ffd(m) * dlambda !?P???[m]
 !			dzb_temp_lin(l) = dzb_temp_lin(l) + sed_lin(l)%dzbpr(m) ![m]
 !			enddo	
@@ -1756,7 +1763,7 @@ end if
 !		else	
 !		do m = 1, Np
 !			sed_lin(l)%ffd(m) = sed_lin(l)%ffd(m) + (sed_lin(l)%Ewi(m) - sed_lin(l)%Dwi(m)) !?P???[m/s]
-!			if(link_0th_order(l) == 0) sed_lin(l)%ffd(m) = 0.         !0?????????E½E½p??????????B???V???Awashload????????s????????????????u??ffd??0??
+!			if(link_0th_order(l) == 0) sed_lin(l)%ffd(m) = 0.         !0?????????ï¿½Eï¿½ï¿½Eï¿½p??????????B???V???Awashload????????s????????????????u??ffd??0??
 !			sed_lin(l)%dzbpr(m) = - ddt * sed_lin(l)%ffd(m) * dlambda !?P???[m]
 !			dzb_temp_lin(l) = dzb_temp_lin(l) + sed_lin(l)%dzbpr(m) ![m]
 !		enddo
@@ -1856,7 +1863,7 @@ end if
 	if(link_0th_order(l) == 0)then
 		do m = 1, Np
 			!sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m) + sed_lin(l)%qsi(m)    !?????????
-			sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m)    !????????E½E½??
+			sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m)    !????????ï¿½Eï¿½ï¿½Eï¿½??
 		end do
 	else
 			
@@ -1865,7 +1872,7 @@ end if
 !				if(up_riv_lin(l,n) == 0) cycle !revised by Qin 2021/5/27
 			if(up_riv_lin(l,n) == 0) exit 
 				lll = up_riv_lin(l, n)
-				sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m) - sed_lin(lll)%qswi(m) !m3/s   !?????????!!!  ffd ??-???????E½E½?E½E½A+?????N?H
+				sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m) - sed_lin(lll)%qswi(m) !m3/s   !?????????!!!  ffd ??-???????ï¿½Eï¿½ï¿½Eï¿½?ï¿½Eï¿½ï¿½Eï¿½A+?????N?H
 			end do
 			sed_lin(l)%qswisum(m) = sed_lin(l)%qswisum(m) + sed_lin(l)%qswi(m)
 		end do
@@ -1938,7 +1945,7 @@ end subroutine washload2
 			k = link_idx_k(l) 
 			do m = 1, Np
 			   dzb = sed_lin(l)%dzbpr(m)
-			 if (dsi(m).le.0.0001) then ! di=< 0.1mm??wash load?????????
+			 if (dsi(m).le.d_wash) then ! dsi<=d_wash (default 0.1mm) => wash load; larger => density-stratified suspended
 
 			   fp = sed_lin(l)%fm(m)
 			   ss = sed_lin(l)%swi(m)
@@ -2243,7 +2250,7 @@ divloss =1.d0
 	!				if(up_riv_lin(l,n) == 0) cycle !revised by Qin 2021/5/27
 					if(up_riv_lin(l,n) == 0) exit 
 					lll = up_riv_lin(l, n)
-					sed_lin(l)%qsisum(m) = sed_lin(l)%qsisum(m) - sed_lin(lll)%qsi(m)*divloss !m3/s   !ç¬¦å·ã«æ³¨E½?!!!  ffd E½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µE½? modified for diversion 20250329
+					sed_lin(l)%qsisum(m) = sed_lin(l)%qsisum(m) - sed_lin(lll)%qsi(m)*divloss !m3/s   !ç¬¦å·ã«æ³¨ï¿½Eï¿½?!!!  ffd ï¿½Eï¿½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µï¿½Eï¿½? modified for diversion 20250329
 				end do
 					sed_lin(l)%qsisum(m) = sed_lin(l)%qsisum(m) + sed_lin(l)%qsi(m)
 		end do
@@ -2257,7 +2264,7 @@ divloss =1.d0
 !					if(up_riv_lin(l,n) == 0) cycle !revised by Qin 2021/5/27
 					if(up_riv_lin(l,n) == 0) exit 
 					lll = up_riv_lin(l, n)
-					qwsum(l) = qwsum(l) - qw(lll)*divloss !m3/s   !ç¬¦å·ã«æ³¨E½?!!!  ffd E½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µE½? modified for diversion 20250329
+					qwsum(l) = qwsum(l) - qw(lll)*divloss !m3/s   !ç¬¦å·ã«æ³¨ï¿½Eï¿½?!!!  ffd ï¿½Eï¿½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µï¿½Eï¿½? modified for diversion 20250329
 				end do
 				qwsum(l) = qwsum(l) + qw(l)
 			end if
@@ -2303,7 +2310,7 @@ divloss =1.d0
 					if(sed_lin(l)%ssi(m).lt.0.d0) then
 						sed_lin(l)%ssi(m) = sed_lin(l)%ssi(m) - (-1.* sed_lin(l)%qsisum(m) + sed_lin(l)%Esi(m)*area_lin(l) - sed_lin(l)%Dsi(m)*area_lin(l)) * ddt/water_v_lin(l) !ä¸€å›ï¿½??ã«æˆ»ã—ã¦
 						sed_lin(l)%Dsi(m) = -1.* sed_lin(l)%qsisum(m)/area_lin(l) + sed_lin(l)%Esi(m)      !Dã‚’ä¿®æ­£ã—ã¦
-						if(sed_lin(l)%Dsi(m) < 0.) sed_lin(l)%Dsi(m) = 0.d0 !ã¾E½?DãŒï¿½?ã®æ™‚ï¿½?E½ä¸Šä¸‹æµE¿½?E½ã‚¢ãƒ³ãƒãƒ©ãƒ³ã‚¹ã«ã‚ˆã‚‹ã®ã§Dã¯0ã¨ãªE½?
+						if(sed_lin(l)%Dsi(m) < 0.) sed_lin(l)%Dsi(m) = 0.d0 !ã¾ï¿½Eï¿½?DãŒï¿½?ã®æ™‚ï¿½?ï¿½Eï¿½ä¸Šä¸‹æµEï¿½ï¿½?ï¿½Eï¿½ã‚¢ãƒ³ãƒãƒ©ãƒ³ã‚¹ã«ã‚ˆã‚‹ã®ã§Dã¯0ã¨ãªï¿½Eï¿½?
 						sed_lin(l)%ssi(m) = sed_lin(l)%ssi(m) + (-1.* sed_lin(l)%qsisum(m) + sed_lin(l)%Esi(m)*area_lin(l) - sed_lin(l)%Dsi(m)*area_lin(l)) * ddt/water_v_lin(l) !æ–°ã—ã„Dã‚’ä½¿ã£ã¦ã‚‚ã†ä¸€åº¦ssiã‚’è¨ˆï¿½?
 						if(sed_lin(l)%ssi(m).lt.0.d0) sed_lin(l)%ssi(m) = 0.d0 !modified 20240101	
 						if (isnan(sed_lin(l)%ssi(m))) then
@@ -2356,7 +2363,7 @@ end subroutine susload2
 		integer :: k, m, l
 		real(8) :: uscm, usci, u_se, qbi
 		real(8) :: tscm, dsm
-		real(8) :: t_star, t_starE, qbe, den
+		real(8) :: t_star, t_starE, qbe, den, t_star_m   ! t_star_m = mean-grain (dsm) Shields for the Egashira bedload (Option A: equal mobility, removes the ~1/dsi fine-grain blow-up)
 		real(8) :: R_tcts
 		real(8) :: zb55, Frn
 
@@ -2505,8 +2512,9 @@ end subroutine susload2
 						C_K2 = 1./Csta*2.*(1.-hs_l/hr_lin(l))**0.5
 						C_fd = C_kd*(1.-C_e**2.)*(1.+(s-1.))*(Csta/2.)**(1./3.)
 						C_ff = C_kf*(1.-Csta/2.)**(5./3.)*(Csta/2.)**(-2./3.)
-						sed_lin(l)%qbi(m) = 4./15.*C_K1**2.*C_K2/sqrt(C_fd+C_ff)*t_star**2.5       &
-													*sqrt((s-1.)*grav*dsi(m)**3.)*width_lin(l)*fp*alfa										
+						t_star_m = ust_lin(l)**2./((s-1.)*grav*dsm)   ! Option A: drive Egashira with mean-grain (dsm) Shields, NOT the fraction-own t_star (~1/dsi blow-up for fine grains)
+						sed_lin(l)%qbi(m) = 4./15.*C_K1**2.*C_K2/sqrt(C_fd+C_ff)*t_star_m**2.5       &
+						*sqrt((s-1.)*grav*dsm**3.)*width_lin(l)*fp*alfa										
 
 						if(sed_lin(l)%qbi(m) <= 0.) sed_lin(l)%qbi(m) = 0.d0
 					endif
@@ -2946,7 +2954,7 @@ do
 				if(up_slo_idx(k,n) == 0) exit 
 					kkk = up_slo_idx(k, n)
 					if(domain_riv_idx(kkk)==0)then !20250513
-					slo_qsisum(k,m) = slo_qsisum(k,m) - slo_qsi(kkk,m)  !m3/s   !ç¬¦å·ã«æ³¨E½?!!!  ffd E½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µE½? !modified 20230924
+					slo_qsisum(k,m) = slo_qsisum(k,m) - slo_qsi(kkk,m)  !m3/s   !ç¬¦å·ã«æ³¨ï¿½Eï¿½?!!!  ffd ï¿½Eï¿½?-ã®ã¨ãï¿½??ç©ï¿½?+ã®ã¨ãä¾µï¿½Eï¿½? !modified 20230924
 					endif
 				end do		
 				!if(riv(i,j)==1.and. qrs(i,j).ge.0.d0)then !modified 20250503
@@ -3071,7 +3079,7 @@ do
 					if(slo_ssi(k,m).lt.0.d0) then
 						slo_ssi(k,m) = slo_ssi(k,m) - (-1.* slo_qsisum(k,m) + (slo_Esi(k,m)- slo_Dsi(k,m))*area)*ddt_slo/water_v_cell(k)!modified for inundation 20230711
 						slo_Dsi(k,m)  = -1.* slo_qsisum(k,m)/area + slo_Esi(k,m)      !Dã‚’ä¿®æ­£ã—ã¦  !modified for inundation 20230711
-						if(slo_Dsi(k,m)  < 0.) slo_Dsi(k,m)  = 0.d0 !ã¾E½?DãŒï¿½?ã®æ™‚ï¿½?E½ä¸Šä¸‹æµE¿½?E½ã‚¢ãƒ³ãƒãƒ©ãƒ³ã‚¹ã«ã‚ˆã‚‹ã®ã§Dã¯0ã¨ãªE½?
+						if(slo_Dsi(k,m)  < 0.) slo_Dsi(k,m)  = 0.d0 !ã¾ï¿½Eï¿½?DãŒï¿½?ã®æ™‚ï¿½?ï¿½Eï¿½ä¸Šä¸‹æµEï¿½ï¿½?ï¿½Eï¿½ã‚¢ãƒ³ãƒãƒ©ãƒ³ã‚¹ã«ã‚ˆã‚‹ã®ã§Dã¯0ã¨ãªï¿½Eï¿½?
 						!if(slo_Dsi(k,m).le.1e-7) slo_Dsi(k,m) = 0.d0 !added 20240101						
 						slo_ssi(k,m) = slo_ssi(k,m) + (-1.* slo_qsisum(k,m) + (slo_Esi(k,m)- slo_Dsi(k,m))*area)*ddt_slo/water_v_cell(k) !modified for inundation 20230711
 						if(slo_ssi(k,m).lt.0.d0) slo_ssi(k,m) = 0.d0 !modified 20240101	
@@ -3389,8 +3397,6 @@ enddo
 		write(*,*) 'initial rainfall (mm) to eliminate unstable mesh = ', L_rain_ini
 		write(*,*) 'Number_of_initial_unstable_mesh=', LS_num
 		!pause
-	else
-	    write(*,*) 'Number_of_unstable_mesh=', LS_num
 	end if
 	end subroutine cal_Landslide
 
@@ -3465,7 +3471,7 @@ enddo
 				if( d_mp == 0.d0 )exit
 				if( riv(i,j) == 1 )then
 !					write(*,*) 'kk,ao,vo',kk,ao,vo
-					vo_total(slo_riv_idx(kk)) = vo    !ã“ï¿½?E½kã¯æ–œé¢ã®kã§ã‚ã£ã¦rivã®kã§ã¯ãªE½?
+					vo_total(slo_riv_idx(kk)) = vo    !ã“ï¿½?ï¿½Eï¿½kã¯æ–œé¢ã®kã§ã‚ã£ã¦rivã®kã§ã¯ãªï¿½Eï¿½?
 					debris_total = debris_total + vo
 					hki_area(slo_riv_idx(kk)) = hkiarea
 					hki_total = hki_total + hkiarea
@@ -3576,6 +3582,7 @@ enddo
 				!write(*,*)'a, cc, cf' , a, cc, cf
 				dz_mp=-ldelt/cost
 				dzslo_mspnt_idx(kk) = dz_mp
+				dzslo_mspnt_cum_idx(kk) = dzslo_mspnt_cum_idx(kk) + dz_mp   ! cumulative debris-flow elevation change (accumulate, not overwrite)
 				if (isnan(dzslo_mspnt_idx(kk))) then
 					write(*,*) kk, dz_mp, ldelt, cost
 				stop "dzslo_mspnt_idx(kk) is Nan"

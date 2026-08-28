@@ -4,6 +4,7 @@
 
       subroutine funcr( vr_idx, fr_idx, qr_idx )
          use globals
+         use sediment_mod
          use dam_mod
          implicit none
 
@@ -116,22 +117,33 @@
 !---------------------------------------------------------------------------------------------
       subroutine qr_calc(hr_idx, qr_idx)
          use globals
+         use sediment_mod
          use dam_mod!, only: damflg
          implicit none
 
          real(8) hr_idx(riv_count), qr_idx(riv_count), qr_div_idx(riv_count)
 
          integer k, kk
-         real(8) zb_p, hr_p
-         real(8) zb_n, hr_n
+         real(8) zb_p, hr_p, hr_p_eff
+         real(8) zb_n, hr_n, hr_n_eff
          real(8) dh, distance
          real(8) qr_temp, hw
+         real(8) qr_raw, qr_capacity, hw_eff, hcap_k, hcap_kk, hcap_link
+         real(8) block_fac, block_fac_k, block_fac_kk
+         real(8) depth_ratio_k, depth_ratio_kk
          integer dif_p, dif_n
 
          qr_idx(:) = 0.d0
          qr_div_idx(:) = 0.d0
+         if(allocated(qr_raw_idx)) qr_raw_idx(:) = 0.d0
+         if(allocated(qr_capacity_limited_idx)) qr_capacity_limited_idx(:) = 0.d0
+         if(allocated(qr_effective_depth_idx)) qr_effective_depth_idx(:) = 0.d0
+         if(allocated(qr_capacity_depth_idx)) qr_capacity_depth_idx(:) = 0.d0
+         if(allocated(qr_blockage_factor_idx)) qr_blockage_factor_idx(:) = 1.d0
 
-!$omp parallel do private(kk,zb_p,hr_p,distance,zb_n,hr_n,dh,hw,qr_temp, dif_p,dif_n)
+!$omp parallel do private(kk,zb_p,hr_p,hr_p_eff,distance,zb_n,hr_n,hr_n_eff,dh,hw,qr_temp,qr_raw, &
+!$omp& qr_capacity,hw_eff,hcap_k,hcap_kk,hcap_link,block_fac,block_fac_k,block_fac_kk, &
+!$omp& depth_ratio_k,depth_ratio_kk,dif_p,dif_n)
 ! aaded dif_p,dif_n to private 20231026
          do k = 1, riv_count
 
@@ -149,8 +161,18 @@
              hr_n = hr_idx(kk)
              dif_n = dif_riv_idx(kk)
 
+             hcap_k = max(depth_idx(k) + height_idx(k), 0.d0)
+             hcap_kk = max(depth_idx(kk) + height_idx(kk), 0.d0)
+             hcap_link = min(hcap_k, hcap_kk)
+             hr_p_eff = hr_p
+             hr_n_eff = hr_n
+             if(channel_capacity_qr_switch > 0)then
+                 hr_p_eff = min(max(hr_p, 0.d0), hcap_k)
+                 hr_n_eff = min(max(hr_n, 0.d0), hcap_kk)
+             endif
+
 ! diffusion wave
-             dh = ((zb_p + hr_p) - (zb_n + hr_n)) / distance ! diffussion
+             dh = ((zb_p + hr_p_eff) - (zb_n + hr_n_eff)) / distance ! diffussion
 
 ! kinematic wave
              if( dif_p .eq. 0 ) dh = max( (zb_p - zb_n) / distance, 0.001 )
@@ -161,7 +183,7 @@
 
              if( domain_riv_idx(kk) .eq. 2 )then
                 if(DBC_switch==0) then
-                dh = (zb_p + hr_p - zb_n) / distance ! kinematic wave (+hr_p)
+                dh = (zb_p + hr_p_eff - zb_n) / distance ! kinematic wave (+hr_p)
                 elseif(DBC_switch==1)then
                 dh = (zb_p - zb_n) / distance ! free flow, modified 20250312
                 endif 
@@ -176,7 +198,7 @@
                 ! ver 1.4.2 mod by T.Sayama on June 24, 2015
                 !if( bound_riv_wlev_idx(1, kk) .le. -100.0 ) cycle ! not boundary
                 !dh = ((zb_p + hr_p) - (zb_n + hr_n)) / distance ! diffussion
-                if( bound_riv_wlev_idx(1, kk) .gt. -100.0 ) dh = ((zb_p + hr_p) - (zb_n + hr_n)) / distance ! diffussion 
+                if( bound_riv_wlev_idx(1, kk) .gt. -100.0 ) dh = ((zb_p + hr_p_eff) - (zb_n + hr_n_eff)) / distance ! diffussion 
                endif
 
  ! the cell or the destination cell is dam (damflg(k) or damflg(kk) > 0)
@@ -199,7 +221,9 @@
                  if( zb_p .lt. zb_n ) hw = max(0.d0, zb_p + hr_p - zb_n)
   !call hq_riv(hw, dh, width_idx(k), qr_temp)
                  call hq_riv(hw, dh, k, width_idx(k), qr_temp)
-                 qr_idx(k) = qr_temp
+                 qr_raw = qr_temp
+                 qr_capacity = qr_raw
+                 hw_eff = hw
              else
   ! reverse flow
                  hw = hr_n
@@ -207,8 +231,50 @@
                  dh = abs(dh)
   !call hq_riv(hw, dh, width_idx(k), qr_temp)
                  call hq_riv(hw, dh, kk, width_idx(k), qr_temp)
-                 qr_idx(k) = -qr_temp
+                 qr_raw = -qr_temp
+                 qr_capacity = qr_raw
+                 hw_eff = hw
              endif
+
+             if(channel_capacity_qr_switch > 0)then
+                 if(qr_raw .ge. 0.d0)then
+                     hw_eff = hr_p_eff
+                     if( zb_p .lt. zb_n ) hw_eff = max(0.d0, zb_p + hr_p_eff - zb_n)
+                     hw_eff = min(hw_eff, hcap_link)
+                     call hq_riv(hw_eff, dh, k, width_idx(k), qr_temp)
+                     qr_capacity = qr_temp
+                 else
+                     hw_eff = hr_n_eff
+                     if( zb_n .lt. zb_p ) hw_eff = max(0.d0, zb_n + hr_n_eff - zb_p)
+                     hw_eff = min(hw_eff, hcap_link)
+                     call hq_riv(hw_eff, dh, kk, width_idx(k), qr_temp)
+                     qr_capacity = -qr_temp
+                 endif
+             endif
+
+             block_fac = 1.d0
+             if(channel_blockage_switch > 0)then
+                 block_fac_k = 1.d0
+                 if(depth_idx_ini(k) > 0.d0)then
+                     depth_ratio_k = max(0.d0, min(1.d0, depth_idx(k)/depth_idx_ini(k)))
+                     block_fac_k = channel_blockage_leakage + &
+                         (1.d0 - channel_blockage_leakage) * depth_ratio_k**channel_blockage_exponent
+                 endif
+                 block_fac_kk = 1.d0
+                 if(depth_idx_ini(kk) > 0.d0)then
+                     depth_ratio_kk = max(0.d0, min(1.d0, depth_idx(kk)/depth_idx_ini(kk)))
+                     block_fac_kk = channel_blockage_leakage + &
+                         (1.d0 - channel_blockage_leakage) * depth_ratio_kk**channel_blockage_exponent
+                 endif
+                 block_fac = min(block_fac_k, block_fac_kk)
+             endif
+
+             qr_idx(k) = qr_capacity * block_fac
+             if(allocated(qr_raw_idx)) qr_raw_idx(k) = qr_raw
+             if(allocated(qr_capacity_limited_idx)) qr_capacity_limited_idx(k) = qr_capacity
+             if(allocated(qr_effective_depth_idx)) qr_effective_depth_idx(k) = hw_eff
+             if(allocated(qr_capacity_depth_idx)) qr_capacity_depth_idx(k) = hcap_link
+             if(allocated(qr_blockage_factor_idx)) qr_blockage_factor_idx(k) = block_fac
 
          enddo           
 

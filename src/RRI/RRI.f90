@@ -38,11 +38,23 @@ program RRI
 
     real(8), allocatable :: fs(:), hs_idx(:), fr(:), hr_idx(:), fg(:), hg_idx(:)
     real(8), allocatable :: qr_idx(:), qr_ave_idx(:), qr_ave_temp_idx(:)
+    real(8), allocatable :: qr_raw_ave_idx(:), qr_raw_ave_temp_idx(:)
+    real(8), allocatable :: qr_capacity_ave_idx(:), qr_capacity_ave_temp_idx(:)
+    real(8), allocatable :: qr_eff_depth_ave_idx(:), qr_eff_depth_ave_temp_idx(:)
+    real(8), allocatable :: qr_capacity_depth_ave_idx(:), qr_capacity_depth_ave_temp_idx(:)
     real(8), allocatable :: vr_idx(:)
     real(8), allocatable :: qs_idx(:, :), qs_ave_idx(:, :), qs_ave_temp_idx(:, :)
     real(8), allocatable :: qg_idx(:, :), qg_ave_idx(:, :), qg_ave_temp_idx(:, :)
     real(8), allocatable :: gampt_ff_idx(:), gampt_f_idx(:)
     real(8), allocatable :: min_hs_idx(:) !added 20250312
+    real(8), allocatable :: dbg_qs_now_idx(:, :)
+    real(8), allocatable :: dbg_sumdzb_prev_idx(:)
+    real(8), allocatable :: dbg_sed_qsb_out_acc(:), dbg_sed_qsb_in_acc(:)
+    real(8), allocatable :: dbg_sed_qss_out_acc(:), dbg_sed_qss_in_acc(:)
+    real(8), allocatable :: dbg_slo_to_lin_prev(:), dbg_lin_to_slo_prev(:)
+    real(8), allocatable :: dbg_sumdzb_lin_prev(:)
+    real(8), allocatable :: dbg_hs_prev_idx(:), dbg_hsurf_prev_idx(:)
+    real(8), allocatable :: qrs_pre(:, :)
  
 !real(8), allocatable :: rdummy_dim(:)
 
@@ -62,6 +74,10 @@ program RRI
     type(sed_struct), allocatable, save :: sed_idx(:)
     type(sed_struct) :: sed_temp2                          !***** added by harada
     type(sed_struct), allocatable, save :: sed_lin(:)
+    ! ----- bed-freeze (warm-up) snapshot buffers: freeze the bed state while letting fm evolve (t_bed_freeze) -----
+    type(sed_struct), allocatable, save :: sed_lin_bkp(:)
+    real(8), allocatable, save :: Et_lin_bkp(:)
+    integer, allocatable, save :: Nb_lin_bkp(:)
     real(8), allocatable :: ust_lin(:), qsb_lin(:), qss_lin(:), qsw_lin(:), qss_b(:) !---modified by Qin 2021/5/27
     real(8), allocatable ::  water_v_lin(:)
     real(8), allocatable :: dzb_temp_lin(:), sumdzb_lin(:)
@@ -90,6 +106,52 @@ program RRI
     integer k1
     integer ku1, ku2
     integer kcc, ku, kd
+    integer dbg_ci, dbg_cj, dbg_i, dbg_j, dbg_di, dbg_dj
+    integer dbg_k, dbg_l, dbg_sk, dbg_nld, dbg_m
+    integer dbg_qd
+    integer dbg_down_k, dbg_down_l, dbg_down_i, dbg_down_j
+    integer dbg_up_count, dbg_up_pos_count, dbg_up_k, dbg_up_l, dbg_up_i, dbg_up_j, dbg_ku
+    integer dbg_lin_up_count, dbg_lin_down_l, dbg_lin_down_k, dbg_lin_down_i, dbg_lin_down_j
+    integer dbg_un, dbg_ul, dbg_tmp_k, dbg_link_cell_count
+    real(8) dbg_depth, dbg_depth_ini, dbg_height, dbg_hr, dbg_margin
+    real(8) dbg_hs, dbg_hsurf, dbg_qrs_m_s, dbg_qrs_m3_s
+    real(8) dbg_dzb, dbg_sumdzb, dbg_sumdzb_step, dbg_qsb, dbg_qss
+    real(8) dbg_overdepo, dbg_slo_to_lin, dbg_lin_to_slo
+    real(8) dbg_lin_up_qsb_sum, dbg_lin_up_qss_sum, dbg_lin_qsb_net, dbg_lin_qss_net
+    real(8) dbg_lin_qdsum, dbg_lin_qsisum, dbg_lin_esi_sum, dbg_lin_dsi_sum
+    real(8) dbg_lin_dzb_bedload, dbg_lin_dzb_suspended, dbg_lin_dzb_balance
+    real(8) dbg_lin_dzbpr_sum, dbg_lin_dzbpr_pos, dbg_lin_dzbpr_neg
+    real(8) dbg_lin_overdepo, dbg_lin_debris_depth, dbg_lin_put_depth
+    real(8) dbg_lin_ss, dbg_lin_water_v, dbg_lin_hr, dbg_lin_ust, dbg_lin_emb, dbg_lin_et
+    real(8) dbg_lin_area, dbg_lin_len, dbg_lin_width
+    real(8) dbg_lin_depth_min, dbg_lin_depth_mean, dbg_lin_depth_max, dbg_lin_depth_sum
+    real(8) dbg_lin_down_qsb, dbg_lin_down_qss, dbg_lin_down_sumdzb
+    real(8) dbg_lin_down_dzb, dbg_lin_down_depth
+    real(8) dbg_qr_out, dbg_qr_down_out, dbg_qr_up_sum, dbg_qr_up_pos_sum, dbg_qr_up_abs_max
+    real(8) dbg_down_depth, dbg_down_height, dbg_down_hr, dbg_down_margin
+    real(8) dbg_up_depth, dbg_up_height, dbg_up_hr, dbg_up_margin
+    real(8) dbg_depth_ratio, dbg_block_fac, dbg_qr_raw, dbg_qr_blocked
+    real(8) dbg_qr_capacity, dbg_qr_eff_depth, dbg_qr_capacity_depth
+    real(8) dbg_qr_raw_ave, dbg_qr_capacity_ave
+    real(8) dbg_qr_eff_depth_ave, dbg_qr_capacity_depth_ave
+    real(8) dbg_qs_ave_m3_s(4), dbg_qs_now_m3_s(4)
+    real(8) dbg_sed_qsb_out_interval, dbg_sed_qsb_in_interval
+    real(8) dbg_sed_qss_out_interval, dbg_sed_qss_in_interval
+    real(8) dbg_slo_to_lin_step, dbg_lin_to_slo_step, dbg_sumdzb_lin, dbg_sumdzb_lin_step
+    real(8) dbg_sed_tmp_qsb_in, dbg_sed_tmp_qss_in
+    real(8) dbg_hs_prev, dbg_hs_step, dbg_hsurf_prev, dbg_hsurf_step
+    real(8) dbg_hs_storage, dbg_hs_storage_step, dbg_hsurf_storage, dbg_hsurf_storage_step
+    real(8) dbg_da, dbg_qrs_interval
+    real(8) dbg_qs_ave_abs_sum, dbg_qs_now_abs_sum
+    integer dbg_sed_ul
+    integer dbg_riv_shrink_header_written
+    integer dbg_progress_header_written
+    integer dbg_heartbeat_header_written
+    integer dbg_riv_err_k, dbg_riv_vr_k, dbg_riv_log_k, dbg_riv_log_kk
+    integer dbg_riv_log_l, dbg_riv_log_kk_l
+    real(8) dbg_riv_ddt_old, dbg_riv_hr_temp, dbg_riv_hr_down_temp
+    real(8) dbg_riv_depth_ratio_k, dbg_riv_depth_ratio_kk
+    real(8) rivslo_dt
     real(8) Fmall, dzb_cap
     real(8) slo_sedi_cal_duration !added 20231204
 !------------------------------------------------------------
@@ -97,15 +159,18 @@ program RRI
 ! other variable
     integer ni, nj
     integer i, j, t, k, ios, itemp, jtemp, tt, ii, jj,riv_k
+    integer dbg_progress_iter
     integer out_next
+    integer console_out_step
     real(8) out_dt
+    logical console_step
     real(8) rtemp
     real(8) ss, sr, si, sg, sinit, sout
     integer idummy
     real(8) rdummy
     real(8) rain_sum
     real(8) distance
-    real(8) ddt_chk_riv, ddt_chk_slo
+    real(8) ddt_chk_riv, ddt_chk_slo, ddt_chk_slo_flow
     character*256 ctemp
     character*6 t_char
     integer div_org_i, div_org_j, div_dest_i, div_dest_j
@@ -399,7 +464,7 @@ end do
 
 ! initial condition
     allocate (hs(ny, nx), hr(ny, nx), hg(ny, nx), gampt_ff(ny, nx))
-    allocate (gampt_f(ny, nx), qrs(ny, nx))
+    allocate (gampt_f(ny, nx), qrs(ny, nx), qrs_pre(ny, nx))
     allocate (min_hs_idx(slo_count)) ! added 20250312
 
     hr = -0.1d0
@@ -408,6 +473,7 @@ end do
     gampt_ff = 0.d0
     gampt_f = 0.d0
     qrs = 0.d0
+    qrs_pre = 0.d0
 
 !-------added for RSR model 20240724 modified 20250312
         where(riv.eq.1) hr = hr0
@@ -537,11 +603,17 @@ end do
     allocate (qs_ave(i4, ny, nx), qr_ave(ny, nx), qg_ave(i4, ny, nx))
 
     allocate (qr_idx(riv_count), qr_ave_idx(riv_count), qr_ave_temp_idx(riv_count), hr_idx(riv_count))
+    allocate (qr_raw_ave_idx(riv_count), qr_raw_ave_temp_idx(riv_count))
+    allocate (qr_capacity_ave_idx(riv_count), qr_capacity_ave_temp_idx(riv_count))
+    allocate (qr_eff_depth_ave_idx(riv_count), qr_eff_depth_ave_temp_idx(riv_count))
+    allocate (qr_capacity_depth_ave_idx(riv_count), qr_capacity_depth_ave_temp_idx(riv_count))
     allocate (fr(riv_count), vr_temp(riv_count), hr_err(riv_count), vr_err(riv_count))
     allocate (vr_idx(riv_count))
     allocate (kr2(riv_count), kr3(riv_count), kr4(riv_count), kr5(riv_count), kr6(riv_count))
 
     allocate (qs_idx(i4, slo_count), qs_ave_idx(i4, slo_count), qs_ave_temp_idx(i4, slo_count), hs_idx(slo_count))
+    allocate (dbg_qs_now_idx(i4, slo_count))
+    allocate (dbg_hs_prev_idx(slo_count), dbg_hsurf_prev_idx(slo_count))
     allocate (qp_t_idx(slo_count))
     allocate (fs(slo_count), hs_temp(slo_count), hs_err(slo_count))
     allocate (ks2(slo_count), ks3(slo_count), ks4(slo_count), ks5(slo_count), ks6(slo_count))
@@ -571,6 +643,7 @@ end do
          allocate (sed_idx(riv_count))
          allocate (dzb_temp(riv_count), sumdzb_temp(riv_count))
          allocate (sumqsb_idx(riv_count), sumqss_idx(riv_count),sumdzb_idx(riv_count)) !----added by Qin check 2021/5/20
+         allocate (dbg_sumdzb_prev_idx(riv_count))
          allocate ( area_idx(riv_count), water_v_idx(riv_count))!----modified by Qin 2021/6/11
          allocate (slo_s_dsum(riv_count,Np),slo_s_sum(riv_count))
 ! dynamic allocation for link model (Added by harada 2020_11_19)
@@ -580,7 +653,12 @@ end do
          allocate (zb_riv_slope_lin(link_count)) !moved zb_riv_slope0_lin to subroutine riv_set4sedi;20240601
 	     allocate (zb_riv0_lin(link_count))
          allocate (sed_lin(link_count))
-         allocate (dzb_temp_lin(link_count), sumdzb_lin(link_count)) 
+         allocate (sed_lin_bkp(link_count), Et_lin_bkp(link_count), Nb_lin_bkp(link_count))   ! bed-freeze snapshot
+         allocate (dzb_temp_lin(link_count), sumdzb_lin(link_count))
+         allocate (dbg_sed_qsb_out_acc(link_count), dbg_sed_qsb_in_acc(link_count))
+         allocate (dbg_sed_qss_out_acc(link_count), dbg_sed_qss_in_acc(link_count))
+         allocate (dbg_slo_to_lin_prev(link_count), dbg_lin_to_slo_prev(link_count))
+         allocate (dbg_sumdzb_lin_prev(link_count))
          allocate (ss_lin(link_count))
          allocate (hr_lin(link_count))
          allocate ( water_v_lin(link_count))
@@ -604,12 +682,16 @@ end do
          allocate (c_dash(slo_count), hsc(slo_count), pw(slo_count), sf(slo_count))
          allocate (vol(slo_count), vcc(slo_count), vcf(slo_count),LS_idx(slo_count),LS(ny, nx), Qg(slo_count),hki_g(slo_count), hki_g_2d(ny,nx), water_v_cell(slo_count))
          allocate (dzslo_mspnt_idx(slo_count), dzslo_mspnt(ny, nx), soildepth_idx_deb(slo_count))
+         allocate (dzslo_mspnt_cum_idx(slo_count), dzslo_mspnt_cum(ny, nx))
          allocate (vo_total(riv_count), vo_total_river(link_count), hki_area(riv_count), vo_total_l(link_count))
          allocate (debri_sup_sum(link_count), debri_sup_sum_di(link_count, Np),debri_sup_sum_ij(ny,nx)) !added 20240424
          allocate (cw(link_count), qw(link_count), vw(link_count), qwsum(link_count), qwsum_total(link_count))
          allocate (vw_idx(riv_count), qwsum_total_idx(riv_count), vw2d(ny,nx), dmean_out(ny,nx),cw_idx(riv_count), cw2d(ny,nx), qwsum_2d(ny,nx))  !20240315  !20240724 added !20241125 cw_idx,cw2d added !20251002 qwsum_2d added
          allocate (n_link_depth(link_count))
          allocate (depth_idx_ini(riv_count),width_idx_ini(riv_count))
+         allocate (qr_raw_idx(riv_count), qr_capacity_limited_idx(riv_count))
+         allocate (qr_effective_depth_idx(riv_count), qr_capacity_depth_idx(riv_count))
+         allocate (qr_blockage_factor_idx(riv_count))
 ! allocation for sedput
          allocate (fm_sedput(link_count,Np),put_depth(link_count),put_depth_remain(link_count),l_put(link_count))
 !added for river width adjustment; 20240419
@@ -620,6 +702,14 @@ end do
     qr_idx(:) = 0.d0
     qr_ave_idx(:) = 0.d0
     qr_ave_temp_idx(:) = 0.d0
+    qr_raw_ave_idx(:) = 0.d0
+    qr_raw_ave_temp_idx(:) = 0.d0
+    qr_capacity_ave_idx(:) = 0.d0
+    qr_capacity_ave_temp_idx(:) = 0.d0
+    qr_eff_depth_ave_idx(:) = 0.d0
+    qr_eff_depth_ave_temp_idx(:) = 0.d0
+    qr_capacity_depth_ave_idx(:) = 0.d0
+    qr_capacity_depth_ave_temp_idx(:) = 0.d0
 
     hr_idx(:) = 0.d0
     vr_idx(:) = 0.d0
@@ -627,6 +717,10 @@ end do
     hr_err(:) = 0.d0
     vr_temp(:) = 0.d0
     vr_err(:) = 0.d0
+    dbg_riv_shrink_header_written = 0
+    dbg_progress_header_written = 0
+    dbg_heartbeat_header_written = 0
+    dbg_progress_iter = 0
     kr2(:) = 0.d0
     kr3(:) = 0.d0
     kr4(:) = 0.d0
@@ -637,6 +731,9 @@ end do
     qs_idx(:, :) = 0.d0
     qs_ave_idx(:, :) = 0.d0
     qs_ave_temp_idx(:, :) = 0.d0
+    dbg_qs_now_idx(:, :) = 0.d0
+    dbg_hs_prev_idx(:) = 0.d0
+    dbg_hsurf_prev_idx(:) = 0.d0
     hs_idx(:) = 0.d0
     qp_t_idx(:) = 0.d0
     fs(:) = 0.d0
@@ -779,6 +876,8 @@ end do
          vcf(:) = 0.d0
          dzslo_mspnt_idx(:) = 0.d0
          dzslo_mspnt(:,:) = 0.d0
+         dzslo_mspnt_cum_idx(:) = 0.d0
+         dzslo_mspnt_cum(:,:) = 0.d0
          soildepth_idx_deb(:) = 0.d0
          vo_total(:) = 0.d0
          vo_total_river(:) = 0.d0
@@ -817,6 +916,28 @@ end do
          put_depth_remain(:) = 0.d0
          l_put(:) = 0
          depth_idx_ini(:) = 0.d0
+         dbg_sumdzb_prev_idx(:) = 0.d0
+         dbg_sed_qsb_out_acc(:) = 0.d0
+         dbg_sed_qsb_in_acc(:) = 0.d0
+         dbg_sed_qss_out_acc(:) = 0.d0
+         dbg_sed_qss_in_acc(:) = 0.d0
+         dbg_slo_to_lin_prev(:) = 0.d0
+         dbg_lin_to_slo_prev(:) = 0.d0
+         dbg_sumdzb_lin_prev(:) = 0.d0
+         qr_raw_idx(:) = 0.d0
+         qr_capacity_limited_idx(:) = 0.d0
+         qr_effective_depth_idx(:) = 0.d0
+         qr_capacity_depth_idx(:) = 0.d0
+         qr_blockage_factor_idx(:) = 1.d0
+!---added: diagnostic layer-composition log for target unit channels (l=2,8,10)
+         if(sed_switch/=0)then
+            open(9002, file='linklog_link2.csv')
+            write(9002,'(a)')'time_s,time_hr,zb,zb_roc,erod_depth,sumdzb,put_remain,Emb,Et,dmean,qsb,qss,vo_debris_step,debris_sum,slo_sup_sum,fm(1..Np),ft(1..Np),fsur(1..Np),debris_di(1..Np),fqbi(1..Np),fqsi(1..Np)'
+            open(9008, file='linklog_link8.csv')
+            write(9008,'(a)')'time_s,time_hr,zb,zb_roc,erod_depth,sumdzb,put_remain,Emb,Et,dmean,qsb,qss,vo_debris_step,debris_sum,slo_sup_sum,fm(1..Np),ft(1..Np),fsur(1..Np),debris_di(1..Np),fqbi(1..Np),fqsi(1..Np)'
+            open(9010, file='linklog_link10.csv')
+            write(9010,'(a)')'time_s,time_hr,zb,zb_roc,erod_depth,sumdzb,put_remain,Emb,Et,dmean,qsb,qss,vo_debris_step,debris_sum,slo_sup_sum,fm(1..Np),ft(1..Np),fsur(1..Np),debris_di(1..Np),fqbi(1..Np),fqsi(1..Np)'
+         endif
 
 	do k = 1, riv_count
       zb_riv0_idx(k) = zb_riv_idx(k)
@@ -1093,7 +1214,13 @@ if (sed_switch.ne.0) then
             do k = 1, riv_count
                 l = link_to_riv(k)
                 if(l_put(l)==1)then
-                    zb_roc_idx(k) = zb_roc_idx(k) - put_depth_remain(l)
+                    ! ----- FIX (plan a, 2026-07): do NOT lower the erodible floor by the injected volume. -----
+                    ! The injected sediment already raises the bed (via put_depth -> dzbpr) and is erodible
+                    ! above the ORIGINAL zb_roc (= zb - perosion). Lowering zb_roc by put_depth_remain here
+                    ! defeated the erodible-depth limit (e.g. 1 m -> ~35 m), letting the peak flow scour tens
+                    ! of metres and expose the coarse original bed, which then coarsened the downstream boundary.
+                    ! zb_roc_idx(k) = zb_roc_idx(k) - put_depth_remain(l)   ! disabled
+                    continue
                 end if
             end do
         end if
@@ -1130,6 +1257,7 @@ end if
     out_dt = dble(maxt)/dble(outnum)
     out_dt = max(1.d0, out_dt)
     out_next = nint(out_dt)
+    console_out_step = max(1, nint(out_dt))
     tt = 0
 
 ! rainfall for initial value
@@ -1145,7 +1273,9 @@ end if
 
     do t = 1, maxt
 
-        if (mod(t, 1) .eq. 0) write (*, *) t, "/", maxt
+        console_step = (t == 1 .or. t == maxt .or. t == out_next .or. mod(t, console_out_step) == 0)
+        if (console_step) write (*, *) t, "/", maxt
+        call debug_progress_log('step_start', 0)
 
         !******* Comunication with iRIC GUI  ******************************
 
@@ -1155,8 +1285,10 @@ end if
             call iric_cgns_close()
             stop
         end if
+        call debug_progress_log('after_cancel_check_1', 0)
 
         !******* RIVER CALCULATION ******************************
+        call debug_progress_log('river_section_start', 0)
         if (riv_thresh .lt. 0) go to 2
 
         ! from time = (t - 1) * dt to t * dt
@@ -1167,12 +1299,17 @@ end if
 
         qr_ave = 0.d0
         qr_ave_idx = 0.d0
+        qr_raw_ave_idx = 0.d0
+        qr_capacity_ave_idx = 0.d0
+        qr_eff_depth_ave_idx = 0.d0
+        qr_capacity_depth_ave_idx = 0.d0
         if (dam_switch .eq. 1) dam_vol_temp(:) = 0.d0
 
         ! hr -> hr_idx
         ! Memo: riv_ij2idx must be here.
         ! hr_idx cannot be replaced within the following do loop.
         call sub_riv_ij2idx(hr, hr_idx)
+        call debug_progress_log('river_after_hr_to_idx', 0)
 
 !-------added for RSR model 20240724
         do k = 1, riv_count
@@ -1188,6 +1325,7 @@ end if
         do k = 1, riv_count
             call hr2vr(hr_idx(k), k, vr_idx(k))
         end do
+        call debug_progress_log('river_before_rk_loop', 0)
 
         do
 
@@ -1209,6 +1347,10 @@ end if
 
 1           continue
             qr_ave_temp_idx(:) = 0.d0
+            qr_raw_ave_temp_idx(:) = 0.d0
+            qr_capacity_ave_temp_idx(:) = 0.d0
+            qr_eff_depth_ave_temp_idx(:) = 0.d0
+            qr_capacity_depth_ave_temp_idx(:) = 0.d0
 
             ! Adaptive Runge-Kutta
             ! (1)
@@ -1216,36 +1358,84 @@ end if
             vr_temp = vr_idx + b21*ddt*fr
             where (vr_temp .lt. 0) vr_temp = 0.d0
             qr_ave_temp_idx = qr_ave_temp_idx + qr_idx*ddt
+            if(allocated(qr_raw_idx)) &
+                qr_raw_ave_temp_idx = qr_raw_ave_temp_idx + qr_raw_idx*ddt
+            if(allocated(qr_capacity_limited_idx)) &
+                qr_capacity_ave_temp_idx = qr_capacity_ave_temp_idx + qr_capacity_limited_idx*ddt
+            if(allocated(qr_effective_depth_idx)) &
+                qr_eff_depth_ave_temp_idx = qr_eff_depth_ave_temp_idx + qr_effective_depth_idx*ddt
+            if(allocated(qr_capacity_depth_idx)) &
+                qr_capacity_depth_ave_temp_idx = qr_capacity_depth_ave_temp_idx + qr_capacity_depth_idx*ddt
 
             ! (2)
             call funcr(vr_temp, kr2, qr_idx)
             vr_temp = vr_idx + ddt*(b31*fr + b32*kr2)
             where (vr_temp .lt. 0) vr_temp = 0.d0
             qr_ave_temp_idx = qr_ave_temp_idx + qr_idx*ddt
+            if(allocated(qr_raw_idx)) &
+                qr_raw_ave_temp_idx = qr_raw_ave_temp_idx + qr_raw_idx*ddt
+            if(allocated(qr_capacity_limited_idx)) &
+                qr_capacity_ave_temp_idx = qr_capacity_ave_temp_idx + qr_capacity_limited_idx*ddt
+            if(allocated(qr_effective_depth_idx)) &
+                qr_eff_depth_ave_temp_idx = qr_eff_depth_ave_temp_idx + qr_effective_depth_idx*ddt
+            if(allocated(qr_capacity_depth_idx)) &
+                qr_capacity_depth_ave_temp_idx = qr_capacity_depth_ave_temp_idx + qr_capacity_depth_idx*ddt
 
             ! (3)
             call funcr(vr_temp, kr3, qr_idx)
             vr_temp = vr_idx + ddt*(b41*fr + b42*kr2 + b43*kr3)
             where (vr_temp .lt. 0) vr_temp = 0.d0
             qr_ave_temp_idx = qr_ave_temp_idx + qr_idx*ddt
+            if(allocated(qr_raw_idx)) &
+                qr_raw_ave_temp_idx = qr_raw_ave_temp_idx + qr_raw_idx*ddt
+            if(allocated(qr_capacity_limited_idx)) &
+                qr_capacity_ave_temp_idx = qr_capacity_ave_temp_idx + qr_capacity_limited_idx*ddt
+            if(allocated(qr_effective_depth_idx)) &
+                qr_eff_depth_ave_temp_idx = qr_eff_depth_ave_temp_idx + qr_effective_depth_idx*ddt
+            if(allocated(qr_capacity_depth_idx)) &
+                qr_capacity_depth_ave_temp_idx = qr_capacity_depth_ave_temp_idx + qr_capacity_depth_idx*ddt
 
             ! (4)
             call funcr(vr_temp, kr4, qr_idx)
             vr_temp = vr_idx + ddt*(b51*fr + b52*kr2 + b53*kr3 + b54*kr4)
             where (vr_temp .lt. 0) vr_temp = 0.d0
             qr_ave_temp_idx = qr_ave_temp_idx + qr_idx*ddt
+            if(allocated(qr_raw_idx)) &
+                qr_raw_ave_temp_idx = qr_raw_ave_temp_idx + qr_raw_idx*ddt
+            if(allocated(qr_capacity_limited_idx)) &
+                qr_capacity_ave_temp_idx = qr_capacity_ave_temp_idx + qr_capacity_limited_idx*ddt
+            if(allocated(qr_effective_depth_idx)) &
+                qr_eff_depth_ave_temp_idx = qr_eff_depth_ave_temp_idx + qr_effective_depth_idx*ddt
+            if(allocated(qr_capacity_depth_idx)) &
+                qr_capacity_depth_ave_temp_idx = qr_capacity_depth_ave_temp_idx + qr_capacity_depth_idx*ddt
 
             ! (5)
             call funcr(vr_temp, kr5, qr_idx)
             vr_temp = vr_idx + ddt*(b61*fr + b62*kr2 + b63*kr3 + b64*kr4 + b65*kr5)
             where (vr_temp .lt. 0) vr_temp = 0.d0
             qr_ave_temp_idx = qr_ave_temp_idx + qr_idx*ddt
+            if(allocated(qr_raw_idx)) &
+                qr_raw_ave_temp_idx = qr_raw_ave_temp_idx + qr_raw_idx*ddt
+            if(allocated(qr_capacity_limited_idx)) &
+                qr_capacity_ave_temp_idx = qr_capacity_ave_temp_idx + qr_capacity_limited_idx*ddt
+            if(allocated(qr_effective_depth_idx)) &
+                qr_eff_depth_ave_temp_idx = qr_eff_depth_ave_temp_idx + qr_effective_depth_idx*ddt
+            if(allocated(qr_capacity_depth_idx)) &
+                qr_capacity_depth_ave_temp_idx = qr_capacity_depth_ave_temp_idx + qr_capacity_depth_idx*ddt
 
             ! (6)
             call funcr(vr_temp, kr6, qr_idx)
             vr_temp = vr_idx + ddt*(c1*fr + c3*kr3 + c4*kr4 + c6*kr6)
             where (vr_temp .lt. 0) vr_temp = 0.d0
             qr_ave_temp_idx = qr_ave_temp_idx + qr_idx*ddt
+            if(allocated(qr_raw_idx)) &
+                qr_raw_ave_temp_idx = qr_raw_ave_temp_idx + qr_raw_idx*ddt
+            if(allocated(qr_capacity_limited_idx)) &
+                qr_capacity_ave_temp_idx = qr_capacity_ave_temp_idx + qr_capacity_limited_idx*ddt
+            if(allocated(qr_effective_depth_idx)) &
+                qr_eff_depth_ave_temp_idx = qr_eff_depth_ave_temp_idx + qr_effective_depth_idx*ddt
+            if(allocated(qr_capacity_depth_idx)) &
+                qr_capacity_depth_ave_temp_idx = qr_capacity_depth_ave_temp_idx + qr_capacity_depth_idx*ddt
 
             ! (e)
             vr_err = ddt*(dc1*fr + dc3*kr3 + dc4*kr4 + dc5*kr5 + dc6*kr6)
@@ -1258,9 +1448,77 @@ end if
             !if(ddt.le. 4.*ddt_min_riv .and. errmax*eps.le.0.02 ) errmax= 1.d0 !modified 20231208   !tentative disable RSR 20240724
             if (errmax .gt. 1.d0 .and. ddt .ge. ddt_min_riv) then
                 ! try smaller ddt
+                dbg_riv_ddt_old = ddt
                 ddt = max(safety*ddt*(errmax**pshrnk), 0.5d0*ddt)
                 ddt_chk_riv = ddt
-                write (*, *) "shrink (riv): ", ddt, errmax, maxloc(vr_err)                
+                dbg_riv_err_k = maxloc(hr_err, dim=1)
+                dbg_riv_vr_k = maxloc(vr_err, dim=1)
+                if(debug_inundation_switch == 1)then
+                    if(dbg_riv_shrink_header_written == 0)then
+                        open(1178, file='debug_riv_shrink.csv', status='replace', action='write')
+                        write(1178,'(a)') 'step,time_s,time_h,substep_time_s,ddt_before_s,ddt_after_s,errmax,'// &
+                            'hr_err_max_m,vr_err_at_hr_err,vr_err_max,hr_err_k,vr_err_k,'// &
+                            'gui_i,gui_j,int_i,int_j,link,down_k,down_gui_i,down_gui_j,down_link,'// &
+                            'hr_m,hr_trial_m,depth_m,depth_ini_m,height_m,remaining_capacity_m,depth_ratio,'// &
+                            'down_hr_m,down_hr_trial_m,down_depth_m,down_depth_ini_m,down_height_m,down_remaining_capacity_m,down_depth_ratio,'// &
+                            'zb_m,down_zb_m,area_ratio,width_m,flow_distance_m,'// &
+                            'qr_stage_m3_s,qr_raw_stage_m3_s,qr_capacity_stage_m3_s,qr_effective_depth_m,qr_capacity_depth_m,blockage_factor,'// &
+                            'fr,kr2,kr3,kr4,kr5,kr6,sumdzb_m,dzb_temp_m,qsb_m3_s,qss_m3_s'
+                        dbg_riv_shrink_header_written = 1
+                    else
+                        open(1178, file='debug_riv_shrink.csv', status='old', action='write', position='append')
+                    end if
+                    dbg_riv_log_k = dbg_riv_err_k
+                    dbg_riv_log_kk = down_riv_idx(dbg_riv_log_k)
+                    dbg_riv_log_l = 0
+                    dbg_riv_log_kk_l = 0
+                    if(allocated(link_to_riv))then
+                        if(dbg_riv_log_k>0 .and. dbg_riv_log_k<=riv_count) dbg_riv_log_l = link_to_riv(dbg_riv_log_k)
+                        if(dbg_riv_log_kk>0 .and. dbg_riv_log_kk<=riv_count) dbg_riv_log_kk_l = link_to_riv(dbg_riv_log_kk)
+                    end if
+                    dbg_riv_hr_temp = -9999.d0
+                    dbg_riv_hr_down_temp = -9999.d0
+                    if(dbg_riv_log_k>0 .and. dbg_riv_log_k<=riv_count) call vr2hr(vr_temp(dbg_riv_log_k), dbg_riv_log_k, dbg_riv_hr_temp)
+                    if(dbg_riv_log_kk>0 .and. dbg_riv_log_kk<=riv_count) call vr2hr(vr_temp(dbg_riv_log_kk), dbg_riv_log_kk, dbg_riv_hr_down_temp)
+                    dbg_riv_depth_ratio_k = -9999.d0
+                    dbg_riv_depth_ratio_kk = -9999.d0
+                    if(depth_idx_ini(dbg_riv_log_k)>0.d0) &
+                        dbg_riv_depth_ratio_k = max(0.d0, min(1.d0, depth_idx(dbg_riv_log_k)/depth_idx_ini(dbg_riv_log_k)))
+                    if(dbg_riv_log_kk>0 .and. dbg_riv_log_kk<=riv_count)then
+                        if(depth_idx_ini(dbg_riv_log_kk)>0.d0) &
+                            dbg_riv_depth_ratio_kk = max(0.d0, min(1.d0, depth_idx(dbg_riv_log_kk)/depth_idx_ini(dbg_riv_log_kk)))
+                        write(1178,'(*(g0,:,","))') t, t*dt, t*dt/3600.d0, time, dbg_riv_ddt_old, ddt, errmax, &
+                            hr_err(dbg_riv_log_k), vr_err(dbg_riv_log_k), vr_err(dbg_riv_vr_k), dbg_riv_log_k, dbg_riv_vr_k, &
+                            riv_idx2j(dbg_riv_log_k), ny+1-riv_idx2i(dbg_riv_log_k), riv_idx2i(dbg_riv_log_k), riv_idx2j(dbg_riv_log_k), &
+                            dbg_riv_log_l, dbg_riv_log_kk, riv_idx2j(dbg_riv_log_kk), ny+1-riv_idx2i(dbg_riv_log_kk), dbg_riv_log_kk_l, &
+                            hr_idx(dbg_riv_log_k), dbg_riv_hr_temp, depth_idx(dbg_riv_log_k), depth_idx_ini(dbg_riv_log_k), &
+                            height_idx(dbg_riv_log_k), depth_idx(dbg_riv_log_k)+height_idx(dbg_riv_log_k), dbg_riv_depth_ratio_k, &
+                            hr_idx(dbg_riv_log_kk), dbg_riv_hr_down_temp, depth_idx(dbg_riv_log_kk), depth_idx_ini(dbg_riv_log_kk), &
+                            height_idx(dbg_riv_log_kk), depth_idx(dbg_riv_log_kk)+height_idx(dbg_riv_log_kk), dbg_riv_depth_ratio_kk, &
+                            zb_riv_idx(dbg_riv_log_k), zb_riv_idx(dbg_riv_log_kk), area_ratio_idx(dbg_riv_log_k), &
+                            width_idx(dbg_riv_log_k), dis_riv_idx(dbg_riv_log_k), qr_idx(dbg_riv_log_k), &
+                            qr_raw_idx(dbg_riv_log_k), qr_capacity_limited_idx(dbg_riv_log_k), qr_effective_depth_idx(dbg_riv_log_k), &
+                            qr_capacity_depth_idx(dbg_riv_log_k), qr_blockage_factor_idx(dbg_riv_log_k), fr(dbg_riv_log_k), &
+                            kr2(dbg_riv_log_k), kr3(dbg_riv_log_k), kr4(dbg_riv_log_k), kr5(dbg_riv_log_k), kr6(dbg_riv_log_k), &
+                            sumdzb_idx(dbg_riv_log_k), dzb_temp(dbg_riv_log_k), qsb_idx(dbg_riv_log_k), qss_idx(dbg_riv_log_k)
+                    else
+                        write(1178,'(*(g0,:,","))') t, t*dt, t*dt/3600.d0, time, dbg_riv_ddt_old, ddt, errmax, &
+                            hr_err(dbg_riv_log_k), vr_err(dbg_riv_log_k), vr_err(dbg_riv_vr_k), dbg_riv_log_k, dbg_riv_vr_k, &
+                            riv_idx2j(dbg_riv_log_k), ny+1-riv_idx2i(dbg_riv_log_k), riv_idx2i(dbg_riv_log_k), riv_idx2j(dbg_riv_log_k), &
+                            dbg_riv_log_l, dbg_riv_log_kk, -9999, -9999, dbg_riv_log_kk_l, &
+                            hr_idx(dbg_riv_log_k), dbg_riv_hr_temp, depth_idx(dbg_riv_log_k), depth_idx_ini(dbg_riv_log_k), &
+                            height_idx(dbg_riv_log_k), depth_idx(dbg_riv_log_k)+height_idx(dbg_riv_log_k), dbg_riv_depth_ratio_k, &
+                            -9999.d0, dbg_riv_hr_down_temp, -9999.d0, -9999.d0, -9999.d0, -9999.d0, dbg_riv_depth_ratio_kk, &
+                            zb_riv_idx(dbg_riv_log_k), -9999.d0, area_ratio_idx(dbg_riv_log_k), &
+                            width_idx(dbg_riv_log_k), dis_riv_idx(dbg_riv_log_k), qr_idx(dbg_riv_log_k), &
+                            qr_raw_idx(dbg_riv_log_k), qr_capacity_limited_idx(dbg_riv_log_k), qr_effective_depth_idx(dbg_riv_log_k), &
+                            qr_capacity_depth_idx(dbg_riv_log_k), qr_blockage_factor_idx(dbg_riv_log_k), fr(dbg_riv_log_k), &
+                            kr2(dbg_riv_log_k), kr3(dbg_riv_log_k), kr4(dbg_riv_log_k), kr5(dbg_riv_log_k), kr6(dbg_riv_log_k), &
+                            sumdzb_idx(dbg_riv_log_k), dzb_temp(dbg_riv_log_k), qsb_idx(dbg_riv_log_k), qss_idx(dbg_riv_log_k)
+                    end if
+                    close(1178)
+                end if
+                if (console_step) write (*, *) "shrink (riv): ", ddt, errmax, maxloc(vr_err)
                 if (ddt .eq. 0) stop 'stepsize underflow'
                 if (dam_switch .eq. 1) dam_vol_temp(:) = 0.d0
                 go to 1
@@ -1270,10 +1528,19 @@ end if
                 time = time + ddt
                 vr_idx = vr_temp
                 qr_ave_idx = qr_ave_idx + qr_ave_temp_idx
+                qr_raw_ave_idx = qr_raw_ave_idx + qr_raw_ave_temp_idx
+                qr_capacity_ave_idx = qr_capacity_ave_idx + qr_capacity_ave_temp_idx
+                qr_eff_depth_ave_idx = qr_eff_depth_ave_idx + qr_eff_depth_ave_temp_idx
+                qr_capacity_depth_ave_idx = qr_capacity_depth_ave_idx + qr_capacity_depth_ave_temp_idx
             end if
             if (time .ge. t*dt) exit ! finish for this timestep
         end do
+        call debug_progress_log('river_after_rk_loop', 0)
         qr_ave_idx = qr_ave_idx/dble(dt)/6.d0
+        qr_raw_ave_idx = qr_raw_ave_idx/dble(dt)/6.d0
+        qr_capacity_ave_idx = qr_capacity_ave_idx/dble(dt)/6.d0
+        qr_eff_depth_ave_idx = qr_eff_depth_ave_idx/dble(dt)/6.d0
+        qr_capacity_depth_ave_idx = qr_capacity_depth_ave_idx/dble(dt)/6.d0
 
         do k = 1, riv_count
             call vr2hr(vr_idx(k), k, hr_idx(k))
@@ -1312,12 +1579,15 @@ end if
         ! hr_idx -> hr, qr_ave_idx -> qr_ave
         call sub_riv_idx2ij(hr_idx, hr)
         call sub_riv_idx2ij(qr_ave_idx, qr_ave)
+        call debug_progress_log('river_section_done', 0)
 
         if (dam_switch .eq. 1) call dam_checkstate(qr_ave)
 
 !******* SEDIMENT CALCULATION RSR model main program ****** 20240724 moved 
+call debug_progress_log('sediment_section_check', 0)
 if(t*dt.ge.t_beddeform_start-0.00001.and.sed_switch .ne. 0)then
 !*************************************************************************
+call debug_progress_log('sediment_section_start', 0)
  
 if(sed_switch == 1) then         
 
@@ -1325,10 +1595,13 @@ if(sed_switch == 1) then
 
           time = (t - 1) * dt ! (current time)
           ddt = dt/real(iidt)
+          dbg_progress_iter = 0
 
 	call det_rivebedslope
+    call debug_progress_log('sed1_after_det_slope', 0)
 
 do 
+       dbg_progress_iter = dbg_progress_iter + 1
        do k = 1, riv_count
          dzb_temp(k) = 0.d0
         do m = 1, Np
@@ -1340,7 +1613,11 @@ do
          if(time + ddt .gt. t * dt ) ddt = t * dt - time
 
 	! Determine change in bed elevation 'zb_riv_idx'
+        if(debug_inundation_switch == 1 .and. (dbg_progress_iter == 1 .or. mod(dbg_progress_iter, 100) == 0 .or. time + ddt .ge. t * dt - 1.d-9)) &
+            call debug_progress_log('sed1_before_funcd', dbg_progress_iter)
         call funcd( sed_idx, hr_idx, hr_idx2,hr_idxa,  qr_ave_idx, ust_idx, qsb_idx, qss_idx, qsw_idx, t,area_idx,water_v_idx )
+        if(debug_inundation_switch == 1 .and. (dbg_progress_iter == 1 .or. mod(dbg_progress_iter, 100) == 0 .or. time + ddt .ge. t * dt - 1.d-9)) &
+            call debug_progress_log('sed1_after_funcd', dbg_progress_iter)
 	
   do k = 1, riv_count
     if(hr_idx(k).le.0.07) then
@@ -1359,6 +1636,8 @@ do
   enddo		
 		
 	 call mean_diameter(dzb_temp, sed_idx, qsb_idx,qss_idx )
+     if(debug_inundation_switch == 1 .and. (dbg_progress_iter == 1 .or. mod(dbg_progress_iter, 100) == 0 .or. time + ddt .ge. t * dt - 1.d-9)) &
+         call debug_progress_log('sed1_after_mean_diameter', dbg_progress_iter)
     !$omp parallel do 
       do k = 1, riv_count
        zb_riv_idx(k) = zb_riv_idx(k) + dzb_temp(k)
@@ -1366,6 +1645,8 @@ do
       !modified 20240419 for setting depth_idx2 as the channel depth of previous time step 
        depth_idx(k) = depth_idx(k) - dzb_temp(k) !---addedby Qin 20230924
       enddo
+      if(debug_inundation_switch == 1 .and. (dbg_progress_iter == 1 .or. mod(dbg_progress_iter, 100) == 0 .or. time + ddt .ge. t * dt - 1.d-9)) &
+          call debug_progress_log('sed1_after_bed_update', dbg_progress_iter)
       
          ! "time + ddt" should be less than "t * dt"
             if(time + ddt .gt. t * dt ) ddt = t * dt - time
@@ -1407,11 +1688,14 @@ elseif(sed_switch == 2) then
 
     time = (t - 1) * dt ! (current time)
     ddt = dt/real(iidt)
+    dbg_progress_iter = 0
+    call debug_progress_log('sed2_start', 0)
 
 !    write(*,*) 'sediment computation   t=', time
 
 !added by Qin 2021/08/02
     do 
+        dbg_progress_iter = dbg_progress_iter + 1
         do l = 1, link_count
             dzb_temp_lin(l) = 0.d0  
          do m = 1, Np
@@ -1420,10 +1704,35 @@ elseif(sed_switch == 2) then
         end do
 
         call det_rivebedslope2(hr_idx, hr_lin,water_v_lin, hr_idxa, qr_ave_idx)
+        if(debug_inundation_switch == 1 .and. (dbg_progress_iter == 1 .or. mod(dbg_progress_iter, 100) == 0 .or. time + ddt .ge. t * dt - 1.d-9)) &
+            call debug_progress_log('sed2_after_det_slope2', dbg_progress_iter)
 
         if(time + ddt .gt. t * dt ) ddt = t * dt - time
 
+        if(debug_inundation_switch == 1 .and. (dbg_progress_iter == 1 .or. mod(dbg_progress_iter, 100) == 0 .or. time + ddt .ge. t * dt - 1.d-9)) &
+            call debug_progress_log('sed2_before_funcd2', dbg_progress_iter)
         call funcd2( sed_lin, hr_idx, hr_idx2,hr_idxa, hr_lin, qr_ave_idx, ust_idx, ust_lin, qsb_lin, qss_lin, qsw_idx, qsw_lin, t,water_v_lin, dzb_temp_lin,qss_b,sumdzb_lin)
+        if(debug_inundation_switch == 1 .and. (dbg_progress_iter == 1 .or. mod(dbg_progress_iter, 100) == 0 .or. time + ddt .ge. t * dt - 1.d-9)) &
+            call debug_progress_log('sed2_after_funcd2', dbg_progress_iter)
+
+        if(debug_inundation_switch == 1 .and. allocated(dbg_sed_qsb_out_acc))then
+            do l = 1, link_count
+                dbg_sed_tmp_qsb_in = 0.d0
+                dbg_sed_tmp_qss_in = 0.d0
+                if(allocated(up_riv_lin))then
+                    do n = 1, 8
+                        dbg_sed_ul = up_riv_lin(l, n)
+                        if(dbg_sed_ul == 0) exit
+                        dbg_sed_tmp_qsb_in = dbg_sed_tmp_qsb_in + qsb_lin(dbg_sed_ul)
+                        dbg_sed_tmp_qss_in = dbg_sed_tmp_qss_in + qss_lin(dbg_sed_ul)
+                    end do
+                end if
+                dbg_sed_qsb_out_acc(l) = dbg_sed_qsb_out_acc(l) + qsb_lin(l)*ddt
+                dbg_sed_qsb_in_acc(l) = dbg_sed_qsb_in_acc(l) + dbg_sed_tmp_qsb_in*ddt
+                dbg_sed_qss_out_acc(l) = dbg_sed_qss_out_acc(l) + qss_lin(l)*ddt
+                dbg_sed_qss_in_acc(l) = dbg_sed_qss_in_acc(l) + dbg_sed_tmp_qss_in*ddt
+            end do
+        end if
 
         call sub_riv_linidx(dzb_temp_lin, dzb_temp)
         call sub_riv_linidx(Emb_lin, Emb_idx)
@@ -1434,14 +1743,46 @@ elseif(sed_switch == 2) then
         call sub_riv_linidx(ss_lin, ssc_idx) !added 20250405
 
         !---Mean diameter computation on link variables
+        ! ----- bed-freeze warm-up (t_bed_freeze): snapshot the bed state so that after mean_diameter_lin ONLY the -----
+        ! ----- surface grain-size fm (and dmean) change; the deposit layers (Et/Nb/fd) are restored (frozen). -----
+        if( time < t_bed_freeze ) then
+           sed_lin_bkp = sed_lin
+           Et_lin_bkp  = Et_lin
+           Nb_lin_bkp  = Nb_lin
+        end if
         call mean_diameter_lin(dzb_temp_lin, sed_lin, qsb_lin, qss_lin)
+        if(debug_inundation_switch == 1 .and. (dbg_progress_iter == 1 .or. mod(dbg_progress_iter, 100) == 0 .or. time + ddt .ge. t * dt - 1.d-9)) &
+            call debug_progress_log('sed2_after_mean_diameter_lin', dbg_progress_iter)
+        if( time < t_bed_freeze ) then
+           do l = 1, link_count
+              sed_lin_bkp(l)%fm    = sed_lin(l)%fm      ! keep the NEW (armoured) surface composition
+              sed_lin_bkp(l)%dmean = sed_lin(l)%dmean   ! keep the NEW mean diameter
+           end do
+           sed_lin = sed_lin_bkp                        ! restore everything else (bed layer THICKNESS/count frozen)
+           Et_lin  = Et_lin_bkp
+           Nb_lin  = Nb_lin_bkp
+           ! ----- Option 1 (replace): align the WHOLE bed column to the armoured surface fm, so later erosion -----
+           ! ----- exposes the SAME (channel-adapted) grain-size distribution instead of the original fine-rich -----
+           ! ----- sub-layers. Deposit layers fd(:, all n) and the base substrate fm1 are set to the surface fm. -----
+           do l = 1, link_count
+              do m = 1, Np
+                 sed_lin(l)%fm1(m)  = sed_lin(l)%fm(m)
+                 sed_lin(l)%fd(m,:) = sed_lin(l)%fm(m)
+              end do
+           end do
+        end if
 !added 20240422
         call sub_riv_linidx(width_lin, width_idx)   
 
         !---change riverbed elevation for all river cells
-!!$omp parallel do      
+        ! ----- bed-freeze warm-up: hold zb / depth / sumdzb fixed (fm already updated above; transport already routed) -----
+        if( time < t_bed_freeze ) then
+           dzb_temp(:)     = 0.d0
+           dzb_temp_lin(:) = 0.d0
+        end if
+!!$omp parallel do
         do k = 1, riv_count
-            if(damflg(k).gt.0) dzb_temp(k) = 0.d0 !---- There is no bed elevation change of dam cell; added by Qin         
+            if(damflg(k).gt.0) dzb_temp(k) = 0.d0 !---- There is no bed elevation change of dam cell; added by Qin
             if(domain_riv_idx(k).eq.2 .and. dzb_temp(k).gt.0.d0) dzb_temp(k) = 0.d0
             zb_riv_idx(k) = zb_riv_idx(k) + dzb_temp(k)
             !modified 20240419 for setting depth_idx2 as the channel depth of previous time step 
@@ -1454,6 +1795,8 @@ elseif(sed_switch == 2) then
 			stop "sumdzb_idx(k) is nan"
 		endif
         enddo
+        if(debug_inundation_switch == 1 .and. (dbg_progress_iter == 1 .or. mod(dbg_progress_iter, 100) == 0 .or. time + ddt .ge. t * dt - 1.d-9)) &
+            call debug_progress_log('sed2_after_bed_update', dbg_progress_iter)
 
 !!$omp parallel do private(k,i,j)    
         do l = 1, link_count!---- There is no bed elevation change of dam cell; added by Qin
@@ -1511,26 +1854,42 @@ elseif(sed_switch == 2) then
 endif
 
     if(sed_switch == 2) then
-       if(detail_console==1)then
+       if(detail_console==1 .and. console_step)then
         write(*,'(a)') '    l       k   n_link_depth    put_depth_remain(l)   depth(k)  hr(k)   hr(l)  qsb   qss    Emb     sumqb   sumqs     Ust      zb     sumdzb  link_0th  slo(deg)  ini_slo  width   depth   link_len  Slo_sed_sup(m3)   Inun_sed(m3)  Deb_sup(m3) Deb_remai(m3)'
         do l = 1, link_count
             k = link_idx_k(l)
             write(*,'(i5, i9, i5, 2f10.4,5f7.4, 2e10.2, 3f8.3, i5, 2f8.3,f10.2,f10.3,f10.2,2f12.5, 2e15.2)') l, k,n_link_depth(l),put_depth_remain(l),depth_idx(k),hr_idx(k),hr_lin(l), qsb_lin(l), qss_lin(l), Emb_lin(l), sumqsb_idx(k), sumqss_idx(k) , ust_lin(l), zb_riv_idx(k), sumdzb_lin(l), link_0th_order(l),zb_riv_slope_lin(l), zb_riv_slope0_lin(l), width_lin(l),depth_idx(k)+height_idx(k),Link_len(l), slo_to_lin_sed_sum(l), lin_to_slo_sed_sum(l), debri_sup_sum(l), vo_total_l(l)
         end do
        end if
-        write(*,'(a,f10.2)') 'Discharge_downstream= ', qr_ave_idx(downstream_k)
-        write(*,'(a,f10.2)') 'qb_downstream= ', qsb_total
-        write(*,'(a,f10.2)') 'qs_downstream= ', qss_total
-        if(j_drf==1)write(*,'(a,f10.2)') 'qwood_downstream= ', qwood_total
-        !convert to i,j in IRIC GUI 20250505
-        tmp_idx=maxloc(sumqsb)
-        write(*,'(a,f10.2,a,2i7)') 'max_sumqsb= ', maxval(sumqsb), " loc : ", tmp_idx(2) , ny+1-tmp_idx(1) 
-        tmp_idx=maxloc(sumqss)
-        write(*,'(a,f10.2,a,2i7)') 'max_sumqss= ', maxval(sumqss), " loc : ", tmp_idx(2) , ny+1-tmp_idx(1)  
-        !write(*,'(a,f10.2,a,2i7)') 'max_sumqsb= ', maxval(sumqsb), " loc : ", maxloc(sumqsb)
-        !write(*,'(a,f10.2,a,2i7)') 'max_sumqss= ', maxval(sumqss), " loc : ", maxloc(sumqss)
-        tmp_idx(:)=0
-        if (dam_switch .eq. 1)then
+!---added: diagnostic layer-composition log write for target unit channels (l=2,8,10)
+        do l = 2, 10
+           if((l==2 .or. l==8 .or. l==10) .and. l<=link_count)then
+              k = link_idx_k(l)
+              write(9000+l,'(f14.2,",",f10.5,90000(",",es15.7))') &
+                 t*dt, t*dt/3600.d0, zb_riv_idx(k), zb_roc_idx(k), zb_riv_idx(k)-zb_roc_idx(k), &
+                 sumdzb_lin(l), put_depth_remain(l), Emb_idx(k), Et_idx(k), sed_idx(k)%dmean, &
+                 qsb_lin(l), qss_lin(l), &
+                 vo_total_river(l), debri_sup_sum(l), slo_to_lin_sed_sum(l), &
+                 (sed_idx(k)%fm(m),m=1,Np),(sed_idx(k)%ft(m),m=1,Np),(sed_idx(k)%fsur(m),m=1,Np), &
+                 (debri_sup_sum_di(l,m),m=1,Np), &
+                 (sed_idx(k)%fqbi(m),m=1,Np),(sed_idx(k)%fqsi(m),m=1,Np)
+           endif
+        end do
+        if(console_step)then
+            write(*,'(a,f10.2)') 'Discharge_downstream= ', qr_ave_idx(downstream_k)
+            write(*,'(a,f10.2)') 'qb_downstream= ', qsb_total
+            write(*,'(a,f10.2)') 'qs_downstream= ', qss_total
+            if(j_drf==1)write(*,'(a,f10.2)') 'qwood_downstream= ', qwood_total
+            !convert to i,j in IRIC GUI 20250505
+            tmp_idx=maxloc(sumqsb)
+            write(*,'(a,f10.2,a,2i7)') 'max_sumqsb= ', maxval(sumqsb), " loc : ", tmp_idx(2) , ny+1-tmp_idx(1) 
+            tmp_idx=maxloc(sumqss)
+            write(*,'(a,f10.2,a,2i7)') 'max_sumqss= ', maxval(sumqss), " loc : ", tmp_idx(2) , ny+1-tmp_idx(1)  
+            !write(*,'(a,f10.2,a,2i7)') 'max_sumqsb= ', maxval(sumqsb), " loc : ", maxloc(sumqsb)
+            !write(*,'(a,f10.2,a,2i7)') 'max_sumqss= ', maxval(sumqss), " loc : ", maxloc(sumqss)
+            tmp_idx(:)=0
+        end if
+        if (dam_switch .eq. 1 .and. console_step)then
             do f = 1, dam_num
                 k=dam_loc(f)
             write(*,'(a,2f10.2)') 'sediment volume in the dam =', dam_sedi_totalV(f)
@@ -1540,7 +1899,7 @@ endif
             enddo
         endif    
     else
-        if (dam_switch .eq. 1)then
+        if (dam_switch .eq. 1 .and. console_step)then
             do f = 1, dam_num
                 k=dam_loc(f)
             write(*,'(a,2f10.2)') 'sediment volume in the dam =', dam_sedi_totalV(f)
@@ -1553,17 +1912,31 @@ endif
     endif  
 !----------------------------------------------------------------------------
 endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
+call debug_progress_log('sediment_section_done', 0)
 
 !******* Until here RSR model 20240724  ******
 
+        qrs_pre(:, :) = 0.d0
+        if (riv_thresh .ge. 0 .and. river_slope_preexchange_switch .gt. 0) then
+            call debug_progress_log('pre_rivslo_exchange_start', 0)
+            rivslo_dt = max(ddt_min_slo, min(dble(dt), dble(dt_riv), ddt_chk_riv))
+            call funcrs_dt(hr, hs, rivslo_dt)
+            qrs_pre(:, :) = qrs(:, :) * rivslo_dt / dble(dt)
+            call sub_riv_ij2idx(hr, hr_idx)
+            call sub_slo_ij2idx(hs, hs_idx)
+            call debug_progress_log('pre_rivslo_exchange_done', 0)
+        end if
+
         !******* SLOPE CALCULATION ******************************
 2       continue
+        call debug_progress_log('slope_section_start', 0)
 
         ! from time = (t - 1) * dt to t * dt
         time = (t - 1)*dt  ! (current time)
         ! time step is initially set to be "dt"
         ddt = dt
         ddt_chk_slo = dt
+        ddt_chk_slo_flow = dt
 
         qs_ave = 0.d0
         qs_ave_idx = 0.d0
@@ -1656,7 +2029,7 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                 ! try smaller ddt
                 ddt = max(safety*ddt*(errmax**pshrnk), 0.5d0*ddt)
                 ddt_chk_slo = ddt
-                write (*, *) "shrink (slo): ", ddt, errmax, maxloc(hs_err)                 
+                if (console_step) write (*, *) "shrink (slo): ", ddt, errmax, maxloc(hs_err)                 
                 if (ddt .eq. 0) stop 'stepsize underflow'
                 go to 3
             else
@@ -1676,8 +2049,11 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
             if (time .ge. t*dt) exit ! finish for this timestep
         end do
         qs_ave_idx = qs_ave_idx/dble(dt)/6.d0 ! modified on ver 1.4.1
+        ddt_chk_slo_flow = ddt_chk_slo
+        call debug_progress_log('slope_flow_done', 0)
 !modified for slope erosion
                             if ((t-1)*dt.ge.t_beddeform_start-0.00001.and.sed_switch==2 .and.slo_sedi_cal_switch>0)then 
+                                call debug_progress_log('slope_sediment_start', 0)
                                 qsur_ave = 0.d0
                                 qsur_ave_temp_idx = 0.d0
                                slo_sedi_cal_duration =dt
@@ -1701,7 +2077,9 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                                             dm_idx(k) =  (slo_sur_zb(k)-zb_slo_idx(k)) * gammam_idx(k)
                                         endif
                                         !modified 20250618 this surface water depth is for hillslope erosion calculation; it will be recaluated as the surface water depth of RRI later
-			                            if(infil_w_depth(k)>da_idx(k))then
+                                        if(riv(i,j)==1)then
+                                            h_surf(i,j) = hs_idx(k)
+                                        elseif(infil_w_depth(k)>da_idx(k))then
                                             h_surf(i,j) = hs_idx(k)-da_idx(k)
                                         else
                                             h_surf(i,j) = hs_idx(k)-infil_w_depth(k) !added 20250618
@@ -1756,6 +2134,7 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                                        endif
                                     enddo   	
                                         call slo_sedi_cal ( sed_lin, hs_idx,qs_ave_idx,qsur_ave_temp_idx,slo_sedi_cal_duration) !modified 20231226  
+                                        call debug_progress_log('slope_sediment_after_slo_sedi_cal', 0)
                                     else
                 !$omp parallel do private(i,j,riv_k,m,slo_Depo_sum,sum_fmslo,nn,d80)	 
                                         do k = 1, slo_count
@@ -1852,10 +2231,12 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                                         enddo !endo slope k  
                                     endif !end if dhs.ge.surflowdepth
                                ! 7 continue            
-                                endif                                 
+                                endif
+                                call debug_progress_log('slope_sediment_done', 0)
                             !endif                                                     
 
         !******* GW CALCULATION ******************************
+        call debug_progress_log('gw_section_start', 0)
         if (gw_switch .eq. 0) go to 6
 
         ! from time = (t - 1) * dt to t * dt
@@ -1928,7 +2309,7 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                 ! try smaller ddt
                 ddt = max(safety*ddt*(errmax**pshrnk), 0.5d0*ddt)
                 ddt_chk_slo = ddt
-                write (*, *) "shrink (gw): ", ddt, errmax, maxloc(hg_err)
+                if (console_step) write (*, *) "shrink (gw): ", ddt, errmax, maxloc(hg_err)
                 if (ddt .eq. 0) stop 'stepsize underflow'
                 go to 5
             else
@@ -1947,11 +2328,15 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
 
         !******* GW Exfiltration ********************************
         call gw_exfilt(hs_idx, gampt_ff_idx, hg_idx)
+        call debug_progress_log('gw_section_done', 0)
 
 6       continue
+        if (gw_switch .eq. 0) call debug_progress_log('gw_section_skipped', 0)
 
         !******* Evapotranspiration *****************************
+        call debug_progress_log('evp_section_start', 0)
         if (evp_switch .ne. 0) call evp(hs_idx, gampt_ff_idx)
+        call debug_progress_log('evp_section_done', 0)
 
         ! hs_idx -> hs
         call sub_slo_idx2ij(hs_idx, hs)
@@ -1965,22 +2350,529 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
         !call levee_break(t, hr, hs, xllcorner, yllcorner, cellsize)
 
         !******* RIVER-SLOPE INTERACTIONS ***********************
-        if (riv_thresh .ge. 0) call funcrs(hr, hs)
+        call debug_progress_log('rivslo_exchange_start', 0)
+        if (riv_thresh .ge. 0) then
+            if (river_slope_preexchange_switch .gt. 0) then
+                rivslo_dt = max(ddt_min_slo, min(dble(dt), ddt_chk_slo_flow, ddt_chk_slo))
+                call funcrs_dt(hr, hs, rivslo_dt)
+                qrs(:, :) = qrs(:, :) * rivslo_dt / dble(dt) + qrs_pre(:, :)
+            else
+                call funcrs(hr, hs)
+            end if
+        end if
         call sub_riv_ij2idx(hr, hr_idx)
         call sub_slo_ij2idx(hs, hs_idx)
+        call debug_progress_log('rivslo_exchange_done', 0)
+        call debug_heartbeat_log('rivslo_exchange_done')
+        call debug_progress_log('post_rivslo_postprocess_start', 0)
+
+        if(debug_inundation_switch == 1 .and. t == out_next)then
+            call debug_heartbeat_log('debug_inundation_output_start')
+            call debug_progress_log('debug_inundation_output_start', 0)
+            call qs_calc(hs_idx, dbg_qs_now_idx)
+            dbg_ci = ny - debug_inundation_j + 1
+            dbg_cj = debug_inundation_i
+            if(debug_inundation_header_written == 0)then
+                open(1177, file=trim(outfile_debug_inundation), status='replace', action='write')
+                write(1177,'(a)') 'time_s,time_h,offset_i,offset_j,gui_i,gui_j,int_i,int_j,domain,riv,'// &
+                    'slo_k,riv_k,link,n_link_depth,depth_idx,depth_ini,height_idx,hr_idx,'// &
+                    'hr_minus_capacity,qrs_m_s,qrs_m3_s,hs,h_surf_calc,dzb_temp,sumdzb,sumdzb_step_m,'// &
+                    'qsb_lin,qss_lin,overdepo_sed,slo_to_lin_sed_sum,lin_to_slo_sed_sum,'// &
+                    'lin_up_count,lin_up_qsb_sum_m3_s,lin_up_qss_sum_m3_s,'// &
+                    'lin_qsb_net_out_minus_in_m3_s,lin_qss_net_out_minus_in_m3_s,'// &
+                    'lin_qdsum_m3_s,lin_qsisum_m3_s,lin_Esi_sum_m_s,lin_Dsi_sum_m_s,'// &
+                    'lin_dzb_bedload_m,lin_dzb_suspended_m,lin_dzb_balance_m,'// &
+                    'lin_dzbpr_sum_m,lin_dzbpr_pos_m,lin_dzbpr_neg_m,lin_overdepo_depth,'// &
+                    'lin_debris_depth_m,lin_put_depth_m,lin_ss,lin_water_v_m3,'// &
+                    'lin_hr_m,lin_ust_m_s,lin_Emb_m,lin_Et_m,lin_area_m2,lin_len_m,lin_width_m,'// &
+                    'lin_depth_min_m,lin_depth_mean_m,lin_depth_max_m,'// &
+                    'lin_down_link,lin_down_qsb_m3_s,lin_down_qss_m3_s,'// &
+                    'lin_down_sumdzb_m,lin_down_dzb_temp_m,lin_down_depth_m,'// &
+                    'qr_out_m3_s,down_riv_k,down_link,down_gui_i,down_gui_j,down_depth_idx,'// &
+                    'down_height_idx,down_hr_idx,down_hr_minus_capacity,qr_down_out_m3_s,'// &
+                    'up_count,up_pos_count,qr_up_sum_m3_s,qr_up_pos_sum_m3_s,'// &
+                    'up_absmax_riv_k,up_absmax_link,up_absmax_gui_i,up_absmax_gui_j,'// &
+                    'up_absmax_depth_idx,up_absmax_height_idx,up_absmax_hr_idx,'// &
+                    'up_absmax_hr_minus_capacity,qr_up_absmax_m3_s,'// &
+                    'depth_ratio,channel_blockage_factor,qr_out_raw_m3_s,qr_out_blocked_m3_s,'// &
+                    'qr_out_capacity_limited_m3_s,qr_effective_depth_m,qr_capacity_depth_m,'// &
+                    'qr_out_raw_rkave_m3_s,qr_out_capacity_limited_rkave_m3_s,'// &
+                    'qr_effective_depth_rkave_m,qr_capacity_depth_rkave_m,'// &
+                    'qs_ave_right_m3_s,qs_ave_down_m3_s,qs_ave_rightdown_m3_s,qs_ave_leftdown_m3_s,'// &
+                    'qs_now_right_m3_s,qs_now_down_m3_s,qs_now_rightdown_m3_s,qs_now_leftdown_m3_s'
+                debug_inundation_header_written = 1
+            else
+                open(1177, file=trim(outfile_debug_inundation), status='old', action='write', position='append')
+            end if
+            if(debug_sed_budget_header_written == 0)then
+                open(1178, file=trim(outfile_debug_sed_budget), status='replace', action='write')
+                write(1178,'(a)') 'time_s,time_h,offset_i,offset_j,gui_i,gui_j,int_i,int_j,'// &
+                    'riv_k,link,depth_idx,depth_ratio,channel_blockage_factor,hr_idx,'// &
+                    'hr_minus_capacity,hs,h_surf_calc,sumdzb_idx_m,sumdzb_idx_step_m,'// &
+                    'sumdzb_lin_m,sumdzb_lin_step_m,dzb_temp_m,qsb_out_inst_m3_s,'// &
+                    'qsb_in_inst_m3_s,qsb_net_out_minus_in_inst_m3_s,qsb_out_interval_m3,'// &
+                    'qsb_in_interval_m3,qsb_net_out_minus_in_interval_m3,qss_out_inst_m3_s,'// &
+                    'qss_in_inst_m3_s,qss_net_out_minus_in_inst_m3_s,qss_out_interval_m3,'// &
+                    'qss_in_interval_m3,qss_net_out_minus_in_interval_m3,slo_to_lin_sed_cum_m3,'// &
+                    'slo_to_lin_sed_step_m3,lin_to_slo_sed_cum_m3,lin_to_slo_sed_step_m3,'// &
+                    'lin_dzb_bedload_m,lin_dzb_suspended_m,lin_dzb_balance_m,lin_dzbpr_sum_m,'// &
+                    'lin_dzbpr_pos_m,lin_dzbpr_neg_m,lin_overdepo_depth,lin_debris_depth_m,'// &
+                    'lin_put_depth_m,lin_water_v_m3,lin_hr_m,lin_ust_m_s,lin_area_m2,'// &
+                    'qr_capacity_limited_rkave_m3_s,qr_out_blocked_m3_s'
+                debug_sed_budget_header_written = 1
+            else
+                open(1178, file=trim(outfile_debug_sed_budget), status='old', action='write', position='append')
+            end if
+            if(debug_spread_header_written == 0)then
+                open(1179, file=trim(outfile_debug_spread), status='replace', action='write')
+                write(1179,'(a)') 'time_s,time_h,offset_i,offset_j,gui_i,gui_j,int_i,int_j,'// &
+                    'domain,riv,slo_k,riv_k,link,hs_m,hs_prev_m,hs_step_m,hs_storage_m3,'// &
+                    'hs_storage_step_m3,h_surf_calc_m,h_surf_prev_m,h_surf_step_m,'// &
+                    'h_surf_storage_m3,h_surf_storage_step_m3,da_m,hr_idx,depth_idx,'// &
+                    'height_idx,hr_minus_capacity,qrs_m3_s,qrs_interval_m3,'// &
+                    'qs_ave_right_m3_s,qs_ave_down_m3_s,qs_ave_rightdown_m3_s,'// &
+                    'qs_ave_leftdown_m3_s,qs_ave_abs_sum_m3_s,qs_ave_abs_interval_m3,'// &
+                    'qs_now_right_m3_s,qs_now_down_m3_s,qs_now_rightdown_m3_s,'// &
+                    'qs_now_leftdown_m3_s,qs_now_abs_sum_m3_s,qs_now_abs_dt_equiv_m3'
+                debug_spread_header_written = 1
+            else
+                open(1179, file=trim(outfile_debug_spread), status='old', action='write', position='append')
+            end if
+            do dbg_di = -debug_inundation_radius, debug_inundation_radius
+                do dbg_dj = -debug_inundation_radius, debug_inundation_radius
+                    dbg_i = dbg_ci + dbg_di
+                    dbg_j = dbg_cj + dbg_dj
+                    if(dbg_i<1 .or. dbg_i>ny .or. dbg_j<1 .or. dbg_j>nx) cycle
+                    dbg_k = 0
+                    dbg_l = 0
+                    dbg_sk = 0
+                    dbg_nld = 0
+                    dbg_depth = -9999.d0
+                    dbg_depth_ini = -9999.d0
+                    dbg_height = -9999.d0
+                    dbg_hr = -9999.d0
+                    dbg_margin = -9999.d0
+                    dbg_dzb = -9999.d0
+                    dbg_sumdzb = -9999.d0
+                    dbg_sumdzb_step = -9999.d0
+                    dbg_qsb = -9999.d0
+                    dbg_qss = -9999.d0
+                    dbg_overdepo = -9999.d0
+                    dbg_slo_to_lin = -9999.d0
+                    dbg_lin_to_slo = -9999.d0
+                    dbg_lin_up_count = 0
+                    dbg_lin_up_qsb_sum = -9999.d0
+                    dbg_lin_up_qss_sum = -9999.d0
+                    dbg_lin_qsb_net = -9999.d0
+                    dbg_lin_qss_net = -9999.d0
+                    dbg_lin_qdsum = -9999.d0
+                    dbg_lin_qsisum = -9999.d0
+                    dbg_lin_esi_sum = -9999.d0
+                    dbg_lin_dsi_sum = -9999.d0
+                    dbg_lin_dzb_bedload = -9999.d0
+                    dbg_lin_dzb_suspended = -9999.d0
+                    dbg_lin_dzb_balance = -9999.d0
+                    dbg_lin_dzbpr_sum = -9999.d0
+                    dbg_lin_dzbpr_pos = -9999.d0
+                    dbg_lin_dzbpr_neg = -9999.d0
+                    dbg_lin_overdepo = -9999.d0
+                    dbg_lin_debris_depth = -9999.d0
+                    dbg_lin_put_depth = -9999.d0
+                    dbg_lin_ss = -9999.d0
+                    dbg_lin_water_v = -9999.d0
+                    dbg_lin_hr = -9999.d0
+                    dbg_lin_ust = -9999.d0
+                    dbg_lin_emb = -9999.d0
+                    dbg_lin_et = -9999.d0
+                    dbg_lin_area = -9999.d0
+                    dbg_lin_len = -9999.d0
+                    dbg_lin_width = -9999.d0
+                    dbg_lin_depth_min = -9999.d0
+                    dbg_lin_depth_mean = -9999.d0
+                    dbg_lin_depth_max = -9999.d0
+                    dbg_lin_down_l = 0
+                    dbg_lin_down_qsb = -9999.d0
+                    dbg_lin_down_qss = -9999.d0
+                    dbg_lin_down_sumdzb = -9999.d0
+                    dbg_lin_down_dzb = -9999.d0
+                    dbg_lin_down_depth = -9999.d0
+                    dbg_qr_out = -9999.d0
+                    dbg_down_k = 0
+                    dbg_down_l = 0
+                    dbg_down_i = ny + 1
+                    dbg_down_j = 0
+                    dbg_down_depth = -9999.d0
+                    dbg_down_height = -9999.d0
+                    dbg_down_hr = -9999.d0
+                    dbg_down_margin = -9999.d0
+                    dbg_qr_down_out = -9999.d0
+                    dbg_up_count = 0
+                    dbg_up_pos_count = 0
+                    dbg_qr_up_sum = 0.d0
+                    dbg_qr_up_pos_sum = 0.d0
+                    dbg_qr_up_abs_max = 0.d0
+                    dbg_up_k = 0
+                    dbg_up_l = 0
+                    dbg_up_i = ny + 1
+                    dbg_up_j = 0
+                    dbg_up_depth = -9999.d0
+                    dbg_up_height = -9999.d0
+                    dbg_up_hr = -9999.d0
+                    dbg_up_margin = -9999.d0
+                    dbg_depth_ratio = -9999.d0
+                    dbg_block_fac = -9999.d0
+                    dbg_qr_raw = -9999.d0
+                    dbg_qr_blocked = -9999.d0
+                    dbg_qr_capacity = -9999.d0
+                    dbg_qr_eff_depth = -9999.d0
+                    dbg_qr_capacity_depth = -9999.d0
+                    dbg_qr_raw_ave = -9999.d0
+                    dbg_qr_capacity_ave = -9999.d0
+                    dbg_qr_eff_depth_ave = -9999.d0
+                    dbg_qr_capacity_depth_ave = -9999.d0
+                    dbg_qs_ave_m3_s(:) = -9999.d0
+                    dbg_qs_now_m3_s(:) = -9999.d0
+                    dbg_sed_qsb_out_interval = -9999.d0
+                    dbg_sed_qsb_in_interval = -9999.d0
+                    dbg_sed_qss_out_interval = -9999.d0
+                    dbg_sed_qss_in_interval = -9999.d0
+                    dbg_slo_to_lin_step = -9999.d0
+                    dbg_lin_to_slo_step = -9999.d0
+                    dbg_sumdzb_lin = -9999.d0
+                    dbg_sumdzb_lin_step = -9999.d0
+                    dbg_hs_prev = -9999.d0
+                    dbg_hs_step = -9999.d0
+                    dbg_hsurf_prev = -9999.d0
+                    dbg_hsurf_step = -9999.d0
+                    dbg_hs_storage = -9999.d0
+                    dbg_hs_storage_step = -9999.d0
+                    dbg_hsurf_storage = -9999.d0
+                    dbg_hsurf_storage_step = -9999.d0
+                    dbg_da = -9999.d0
+                    dbg_qrs_interval = -9999.d0
+                    dbg_qs_ave_abs_sum = -9999.d0
+                    dbg_qs_now_abs_sum = -9999.d0
+                    dbg_hs = hs(dbg_i, dbg_j)
+                    dbg_hsurf = -9999.d0
+                    dbg_qrs_m_s = qrs(dbg_i, dbg_j)
+                    dbg_qrs_m3_s = qrs(dbg_i, dbg_j)*area
+                    if(domain(dbg_i, dbg_j)>0)then
+                        dbg_sk = slo_ij2idx(dbg_i, dbg_j)
+                        if(dbg_sk>0)then
+                            do dbg_qd = 1, 4
+                                dbg_qs_ave_m3_s(dbg_qd) = qs_ave_idx(dbg_qd, dbg_sk)*area
+                                dbg_qs_now_m3_s(dbg_qd) = dbg_qs_now_idx(dbg_qd, dbg_sk)*area
+                            end do
+                            if(riv(dbg_i, dbg_j)==1)then
+                                dbg_hsurf = max(hs(dbg_i, dbg_j), &
+                                    hr(dbg_i, dbg_j)-depth(dbg_i, dbg_j)-height(dbg_i, dbg_j), 0.d0)
+                            else
+                                dbg_hsurf = max(hs(dbg_i, dbg_j)-da_idx(dbg_sk), 0.d0)
+                            end if
+                            dbg_da = da_idx(dbg_sk)
+                            dbg_hs_prev = dbg_hs_prev_idx(dbg_sk)
+                            dbg_hs_step = dbg_hs - dbg_hs_prev
+                            dbg_hsurf_prev = dbg_hsurf_prev_idx(dbg_sk)
+                            dbg_hsurf_step = dbg_hsurf - dbg_hsurf_prev
+                            dbg_hs_storage = dbg_hs*area
+                            dbg_hs_storage_step = dbg_hs_step*area
+                            dbg_hsurf_storage = dbg_hsurf*area
+                            dbg_hsurf_storage_step = dbg_hsurf_step*area
+                            dbg_qrs_interval = dbg_qrs_m3_s*dble(dt)
+                            dbg_qs_ave_abs_sum = 0.d0
+                            dbg_qs_now_abs_sum = 0.d0
+                            do dbg_qd = 1, 4
+                                dbg_qs_ave_abs_sum = dbg_qs_ave_abs_sum + abs(dbg_qs_ave_m3_s(dbg_qd))
+                                dbg_qs_now_abs_sum = dbg_qs_now_abs_sum + abs(dbg_qs_now_m3_s(dbg_qd))
+                            end do
+                        end if
+                    end if
+                    if(riv(dbg_i, dbg_j)==1)then
+                        dbg_k = riv_ij2idx(dbg_i, dbg_j)
+                        if(dbg_k>0)then
+                            dbg_depth = depth_idx(dbg_k)
+                            dbg_depth_ini = depth_idx_ini(dbg_k)
+                            dbg_height = height_idx(dbg_k)
+                            dbg_hr = hr_idx(dbg_k)
+                            dbg_margin = hr_idx(dbg_k) - (depth_idx(dbg_k) + height_idx(dbg_k))
+                            dbg_dzb = dzb_temp(dbg_k)
+                            dbg_sumdzb = sumdzb_idx(dbg_k)
+                            if(allocated(dbg_sumdzb_prev_idx)) dbg_sumdzb_step = sumdzb_idx(dbg_k) - dbg_sumdzb_prev_idx(dbg_k)
+                            dbg_qr_out = qr_ave_idx(dbg_k)
+                            dbg_qr_blocked = qr_ave_idx(dbg_k)
+                            if(dbg_depth_ini>0.d0) dbg_depth_ratio = max(0.d0, min(1.d0, dbg_depth/dbg_depth_ini))
+                            if(allocated(qr_blockage_factor_idx)) dbg_block_fac = qr_blockage_factor_idx(dbg_k)
+                            if(allocated(qr_raw_idx))then
+                                dbg_qr_raw = qr_raw_idx(dbg_k)
+                            elseif(dbg_block_fac>1.d-12)then
+                                dbg_qr_raw = dbg_qr_blocked/dbg_block_fac
+                            endif
+                            if(allocated(qr_capacity_limited_idx)) dbg_qr_capacity = qr_capacity_limited_idx(dbg_k)
+                            if(allocated(qr_effective_depth_idx)) dbg_qr_eff_depth = qr_effective_depth_idx(dbg_k)
+                            if(allocated(qr_capacity_depth_idx)) dbg_qr_capacity_depth = qr_capacity_depth_idx(dbg_k)
+                            dbg_qr_raw_ave = qr_raw_ave_idx(dbg_k)
+                            dbg_qr_capacity_ave = qr_capacity_ave_idx(dbg_k)
+                            dbg_qr_eff_depth_ave = qr_eff_depth_ave_idx(dbg_k)
+                            dbg_qr_capacity_depth_ave = qr_capacity_depth_ave_idx(dbg_k)
+                            dbg_down_k = down_riv_idx(dbg_k)
+                            if(dbg_down_k>0)then
+                                dbg_down_i = riv_idx2i(dbg_down_k)
+                                dbg_down_j = riv_idx2j(dbg_down_k)
+                                dbg_down_depth = depth_idx(dbg_down_k)
+                                dbg_down_height = height_idx(dbg_down_k)
+                                dbg_down_hr = hr_idx(dbg_down_k)
+                                dbg_down_margin = hr_idx(dbg_down_k) - (depth_idx(dbg_down_k) + height_idx(dbg_down_k))
+                                dbg_qr_down_out = qr_ave_idx(dbg_down_k)
+                                if(allocated(link_to_riv)) dbg_down_l = link_to_riv(dbg_down_k)
+                            end if
+                            do dbg_ku = 1, riv_count
+                                if(down_riv_idx(dbg_ku) == dbg_k)then
+                                    dbg_up_count = dbg_up_count + 1
+                                    dbg_qr_up_sum = dbg_qr_up_sum + qr_ave_idx(dbg_ku)
+                                    if(qr_ave_idx(dbg_ku)>0.d0)then
+                                        dbg_up_pos_count = dbg_up_pos_count + 1
+                                        dbg_qr_up_pos_sum = dbg_qr_up_pos_sum + qr_ave_idx(dbg_ku)
+                                    end if
+                                    if(dbg_up_k==0 .or. abs(qr_ave_idx(dbg_ku))>abs(dbg_qr_up_abs_max))then
+                                        dbg_up_k = dbg_ku
+                                        dbg_qr_up_abs_max = qr_ave_idx(dbg_ku)
+                                    end if
+                                end if
+                            end do
+                            if(dbg_up_k>0)then
+                                dbg_up_i = riv_idx2i(dbg_up_k)
+                                dbg_up_j = riv_idx2j(dbg_up_k)
+                                dbg_up_depth = depth_idx(dbg_up_k)
+                                dbg_up_height = height_idx(dbg_up_k)
+                                dbg_up_hr = hr_idx(dbg_up_k)
+                                dbg_up_margin = hr_idx(dbg_up_k) - (depth_idx(dbg_up_k) + height_idx(dbg_up_k))
+                                if(allocated(link_to_riv)) dbg_up_l = link_to_riv(dbg_up_k)
+                            end if
+                            if(allocated(link_to_riv)) dbg_l = link_to_riv(dbg_k)
+                            if(dbg_l>0)then
+                                if(allocated(n_link_depth)) dbg_nld = n_link_depth(dbg_l)
+                                if(allocated(qsb_lin)) dbg_qsb = qsb_lin(dbg_l)
+                                if(allocated(qss_lin)) dbg_qss = qss_lin(dbg_l)
+                                if(allocated(slo_to_lin_sed_sum)) dbg_slo_to_lin = slo_to_lin_sed_sum(dbg_l)
+                                if(allocated(lin_to_slo_sed_sum)) dbg_lin_to_slo = lin_to_slo_sed_sum(dbg_l)
+                                if(allocated(overdepo_sedi_di))then
+                                    dbg_overdepo = 0.d0
+                                    do dbg_m = 1, Np
+                                        dbg_overdepo = dbg_overdepo + overdepo_sedi_di(dbg_l, dbg_m)
+                                    end do
+                                end if
+                                dbg_lin_up_qsb_sum = 0.d0
+                                dbg_lin_up_qss_sum = 0.d0
+                                if(allocated(up_riv_lin))then
+                                    do dbg_un = 1, 8
+                                        dbg_ul = up_riv_lin(dbg_l, dbg_un)
+                                        if(dbg_ul == 0) exit
+                                        dbg_lin_up_count = dbg_lin_up_count + 1
+                                        if(allocated(qsb_lin)) dbg_lin_up_qsb_sum = dbg_lin_up_qsb_sum + qsb_lin(dbg_ul)
+                                        if(allocated(qss_lin)) dbg_lin_up_qss_sum = dbg_lin_up_qss_sum + qss_lin(dbg_ul)
+                                    end do
+                                end if
+                                dbg_lin_qsb_net = dbg_qsb - dbg_lin_up_qsb_sum
+                                dbg_lin_qss_net = dbg_qss - dbg_lin_up_qss_sum
+                                if(allocated(sed_lin))then
+                                    dbg_lin_qdsum = 0.d0
+                                    dbg_lin_qsisum = 0.d0
+                                    dbg_lin_esi_sum = 0.d0
+                                    dbg_lin_dsi_sum = 0.d0
+                                    dbg_lin_dzbpr_sum = 0.d0
+                                    dbg_lin_dzbpr_pos = 0.d0
+                                    dbg_lin_dzbpr_neg = 0.d0
+                                    do dbg_m = 1, Np
+                                        dbg_lin_qdsum = dbg_lin_qdsum + sed_lin(dbg_l)%qdsum(dbg_m)
+                                        dbg_lin_qsisum = dbg_lin_qsisum + sed_lin(dbg_l)%qsisum(dbg_m)
+                                        dbg_lin_esi_sum = dbg_lin_esi_sum + sed_lin(dbg_l)%Esi(dbg_m)
+                                        dbg_lin_dsi_sum = dbg_lin_dsi_sum + sed_lin(dbg_l)%Dsi(dbg_m)
+                                        dbg_lin_dzbpr_sum = dbg_lin_dzbpr_sum + sed_lin(dbg_l)%dzbpr(dbg_m)
+                                        if(sed_lin(dbg_l)%dzbpr(dbg_m)>0.d0)then
+                                            dbg_lin_dzbpr_pos = dbg_lin_dzbpr_pos + sed_lin(dbg_l)%dzbpr(dbg_m)
+                                        else
+                                            dbg_lin_dzbpr_neg = dbg_lin_dzbpr_neg + sed_lin(dbg_l)%dzbpr(dbg_m)
+                                        end if
+                                    end do
+                                end if
+                                if(allocated(area_lin))then
+                                    dbg_lin_area = area_lin(dbg_l)
+                                    if(dbg_lin_area>0.d0 .and. dbg_lin_qdsum>-9998.d0)then
+                                        dbg_lin_dzb_bedload = -dble(dt)*dlambda*dbg_lin_qdsum/dbg_lin_area
+                                    end if
+                                    if(dbg_lin_esi_sum>-9998.d0 .and. dbg_lin_dsi_sum>-9998.d0)then
+                                        dbg_lin_dzb_suspended = -dble(dt)*dlambda*(dbg_lin_esi_sum - dbg_lin_dsi_sum)
+                                    end if
+                                    if(dbg_lin_dzb_bedload>-9998.d0 .and. dbg_lin_dzb_suspended>-9998.d0) &
+                                        dbg_lin_dzb_balance = dbg_lin_dzb_bedload + dbg_lin_dzb_suspended
+                                    if(allocated(vo_total_river))then
+                                        dbg_lin_debris_depth = vo_total_river(dbg_l)/dbg_lin_area*dlambda
+                                        if(dbg_lin_dzb_balance>-9998.d0) &
+                                            dbg_lin_dzb_balance = dbg_lin_dzb_balance + dbg_lin_debris_depth
+                                    end if
+                                end if
+                                if(allocated(overdepo_sedi_di))then
+                                    dbg_lin_overdepo = 0.d0
+                                    do dbg_m = 1, Np
+                                        dbg_lin_overdepo = dbg_lin_overdepo + overdepo_sedi_di(dbg_l, dbg_m)
+                                    end do
+                                end if
+                                if(allocated(put_depth))then
+                                    dbg_lin_put_depth = put_depth(dbg_l)
+                                    if(dbg_lin_dzb_balance>-9998.d0) dbg_lin_dzb_balance = dbg_lin_dzb_balance + dbg_lin_put_depth
+                                end if
+                                if(allocated(ss_lin)) dbg_lin_ss = ss_lin(dbg_l)
+                                if(allocated(water_v_lin)) dbg_lin_water_v = water_v_lin(dbg_l)
+                                if(allocated(hr_lin)) dbg_lin_hr = hr_lin(dbg_l)
+                                if(allocated(ust_lin)) dbg_lin_ust = ust_lin(dbg_l)
+                                if(allocated(sumdzb_lin)) dbg_sumdzb_lin = sumdzb_lin(dbg_l)
+                                if(allocated(Emb_lin)) dbg_lin_emb = Emb_lin(dbg_l)
+                                if(allocated(Et_lin)) dbg_lin_et = Et_lin(dbg_l)
+                                if(allocated(Link_len)) dbg_lin_len = Link_len(dbg_l)
+                                if(allocated(width_lin)) dbg_lin_width = width_lin(dbg_l)
+                                if(allocated(link_idx_k) .and. allocated(link_ups_k))then
+                                    dbg_link_cell_count = 0
+                                    dbg_lin_depth_sum = 0.d0
+                                    dbg_tmp_k = link_idx_k(dbg_l)
+                                    do
+                                        if(dbg_tmp_k<=0 .or. dbg_tmp_k>riv_count) exit
+                                        dbg_link_cell_count = dbg_link_cell_count + 1
+                                        dbg_lin_depth_sum = dbg_lin_depth_sum + depth_idx(dbg_tmp_k)
+                                        if(dbg_link_cell_count == 1)then
+                                            dbg_lin_depth_min = depth_idx(dbg_tmp_k)
+                                            dbg_lin_depth_max = depth_idx(dbg_tmp_k)
+                                        else
+                                            dbg_lin_depth_min = min(dbg_lin_depth_min, depth_idx(dbg_tmp_k))
+                                            dbg_lin_depth_max = max(dbg_lin_depth_max, depth_idx(dbg_tmp_k))
+                                        end if
+                                        if(dbg_tmp_k == link_ups_k(dbg_l)) exit
+                                        if(up_riv_idx(dbg_tmp_k,1) == 0) exit
+                                        dbg_tmp_k = up_riv_idx(dbg_tmp_k,1)
+                                    end do
+                                    if(dbg_link_cell_count>0) dbg_lin_depth_mean = dbg_lin_depth_sum/dble(dbg_link_cell_count)
+                                    dbg_lin_down_k = down_riv_idx(link_idx_k(dbg_l))
+                                    if(dbg_lin_down_k>0 .and. dbg_lin_down_k<=riv_count)then
+                                        dbg_lin_down_l = link_to_riv(dbg_lin_down_k)
+                                        if(dbg_lin_down_l == dbg_l) dbg_lin_down_l = 0
+                                    end if
+                                end if
+                                if(dbg_lin_down_l>0)then
+                                    if(allocated(qsb_lin)) dbg_lin_down_qsb = qsb_lin(dbg_lin_down_l)
+                                    if(allocated(qss_lin)) dbg_lin_down_qss = qss_lin(dbg_lin_down_l)
+                                    if(allocated(sumdzb_lin)) dbg_lin_down_sumdzb = sumdzb_lin(dbg_lin_down_l)
+                                    if(allocated(dzb_temp_lin)) dbg_lin_down_dzb = dzb_temp_lin(dbg_lin_down_l)
+                                    if(allocated(link_idx_k)) dbg_lin_down_depth = depth_idx(link_idx_k(dbg_lin_down_l))
+                                end if
+                                if(allocated(dbg_sed_qsb_out_acc))then
+                                    dbg_sed_qsb_out_interval = dbg_sed_qsb_out_acc(dbg_l)
+                                    dbg_sed_qsb_in_interval = dbg_sed_qsb_in_acc(dbg_l)
+                                    dbg_sed_qss_out_interval = dbg_sed_qss_out_acc(dbg_l)
+                                    dbg_sed_qss_in_interval = dbg_sed_qss_in_acc(dbg_l)
+                                end if
+                                if(allocated(dbg_slo_to_lin_prev) .and. dbg_slo_to_lin>-9998.d0) &
+                                    dbg_slo_to_lin_step = dbg_slo_to_lin - dbg_slo_to_lin_prev(dbg_l)
+                                if(allocated(dbg_lin_to_slo_prev) .and. dbg_lin_to_slo>-9998.d0) &
+                                    dbg_lin_to_slo_step = dbg_lin_to_slo - dbg_lin_to_slo_prev(dbg_l)
+                                if(allocated(dbg_sumdzb_lin_prev) .and. allocated(sumdzb_lin)) &
+                                    dbg_sumdzb_lin_step = sumdzb_lin(dbg_l) - dbg_sumdzb_lin_prev(dbg_l)
+                            end if
+                        end if
+                    end if
+                    write(1177,'(*(g0,:,","))') t*dt, t*dt/3600.d0, dbg_dj, -dbg_di, dbg_j, ny+1-dbg_i, dbg_i, dbg_j, &
+                        domain(dbg_i, dbg_j), riv(dbg_i, dbg_j), dbg_sk, dbg_k, dbg_l, dbg_nld, dbg_depth, dbg_depth_ini, &
+                        dbg_height, dbg_hr, dbg_margin, dbg_qrs_m_s, dbg_qrs_m3_s, dbg_hs, dbg_hsurf, dbg_dzb, dbg_sumdzb, dbg_sumdzb_step, &
+                        dbg_qsb, dbg_qss, dbg_overdepo, dbg_slo_to_lin, dbg_lin_to_slo, &
+                        dbg_lin_up_count, dbg_lin_up_qsb_sum, dbg_lin_up_qss_sum, dbg_lin_qsb_net, dbg_lin_qss_net, &
+                        dbg_lin_qdsum, dbg_lin_qsisum, dbg_lin_esi_sum, dbg_lin_dsi_sum, &
+                        dbg_lin_dzb_bedload, dbg_lin_dzb_suspended, dbg_lin_dzb_balance, &
+                        dbg_lin_dzbpr_sum, dbg_lin_dzbpr_pos, dbg_lin_dzbpr_neg, dbg_lin_overdepo, &
+                        dbg_lin_debris_depth, dbg_lin_put_depth, dbg_lin_ss, dbg_lin_water_v, &
+                        dbg_lin_hr, dbg_lin_ust, dbg_lin_emb, dbg_lin_et, dbg_lin_area, dbg_lin_len, dbg_lin_width, &
+                        dbg_lin_depth_min, dbg_lin_depth_mean, dbg_lin_depth_max, dbg_lin_down_l, &
+                        dbg_lin_down_qsb, dbg_lin_down_qss, dbg_lin_down_sumdzb, dbg_lin_down_dzb, dbg_lin_down_depth, &
+                        dbg_qr_out, &
+                        dbg_down_k, dbg_down_l, dbg_down_j, ny+1-dbg_down_i, dbg_down_depth, dbg_down_height, &
+                        dbg_down_hr, dbg_down_margin, dbg_qr_down_out, dbg_up_count, dbg_up_pos_count, &
+                        dbg_qr_up_sum, dbg_qr_up_pos_sum, dbg_up_k, dbg_up_l, dbg_up_j, ny+1-dbg_up_i, &
+                        dbg_up_depth, dbg_up_height, dbg_up_hr, dbg_up_margin, dbg_qr_up_abs_max, &
+                        dbg_depth_ratio, dbg_block_fac, dbg_qr_raw, dbg_qr_blocked, &
+                        dbg_qr_capacity, dbg_qr_eff_depth, dbg_qr_capacity_depth, &
+                        dbg_qr_raw_ave, dbg_qr_capacity_ave, dbg_qr_eff_depth_ave, dbg_qr_capacity_depth_ave, &
+                        (dbg_qs_ave_m3_s(dbg_qd), dbg_qd=1,4), (dbg_qs_now_m3_s(dbg_qd), dbg_qd=1,4)
+                    if(dbg_k>0 .and. dbg_l>0)then
+                        write(1178,'(*(g0,:,","))') t*dt, t*dt/3600.d0, dbg_dj, -dbg_di, dbg_j, ny+1-dbg_i, dbg_i, dbg_j, &
+                            dbg_k, dbg_l, dbg_depth, dbg_depth_ratio, dbg_block_fac, dbg_hr, dbg_margin, dbg_hs, dbg_hsurf, &
+                            dbg_sumdzb, dbg_sumdzb_step, dbg_sumdzb_lin, dbg_sumdzb_lin_step, dbg_dzb, &
+                            dbg_qsb, dbg_lin_up_qsb_sum, dbg_lin_qsb_net, &
+                            dbg_sed_qsb_out_interval, dbg_sed_qsb_in_interval, &
+                            dbg_sed_qsb_out_interval - dbg_sed_qsb_in_interval, &
+                            dbg_qss, dbg_lin_up_qss_sum, dbg_lin_qss_net, &
+                            dbg_sed_qss_out_interval, dbg_sed_qss_in_interval, &
+                            dbg_sed_qss_out_interval - dbg_sed_qss_in_interval, &
+                            dbg_slo_to_lin, dbg_slo_to_lin_step, dbg_lin_to_slo, dbg_lin_to_slo_step, &
+                            dbg_lin_dzb_bedload, dbg_lin_dzb_suspended, dbg_lin_dzb_balance, &
+                            dbg_lin_dzbpr_sum, dbg_lin_dzbpr_pos, dbg_lin_dzbpr_neg, dbg_lin_overdepo, &
+                            dbg_lin_debris_depth, dbg_lin_put_depth, dbg_lin_water_v, dbg_lin_hr, dbg_lin_ust, dbg_lin_area, &
+                            dbg_qr_capacity_ave, dbg_qr_out
+                    end if
+                    if(dbg_sk>0)then
+                        write(1179,'(*(g0,:,","))') t*dt, t*dt/3600.d0, dbg_dj, -dbg_di, dbg_j, ny+1-dbg_i, dbg_i, dbg_j, &
+                            domain(dbg_i, dbg_j), riv(dbg_i, dbg_j), dbg_sk, dbg_k, dbg_l, &
+                            dbg_hs, dbg_hs_prev, dbg_hs_step, dbg_hs_storage, dbg_hs_storage_step, &
+                            dbg_hsurf, dbg_hsurf_prev, dbg_hsurf_step, dbg_hsurf_storage, dbg_hsurf_storage_step, &
+                            dbg_da, dbg_hr, dbg_depth, dbg_height, dbg_margin, dbg_qrs_m3_s, dbg_qrs_interval, &
+                            (dbg_qs_ave_m3_s(dbg_qd), dbg_qd=1,4), dbg_qs_ave_abs_sum, dbg_qs_ave_abs_sum*dble(dt), &
+                            (dbg_qs_now_m3_s(dbg_qd), dbg_qd=1,4), dbg_qs_now_abs_sum, dbg_qs_now_abs_sum*dble(dt)
+                        dbg_hs_prev_idx(dbg_sk) = dbg_hs
+                        dbg_hsurf_prev_idx(dbg_sk) = dbg_hsurf
+                    end if
+                end do
+            end do
+            close(1177)
+            close(1178)
+            close(1179)
+            if(allocated(dbg_sumdzb_prev_idx)) dbg_sumdzb_prev_idx(:) = sumdzb_idx(:)
+            if(allocated(dbg_sed_qsb_out_acc))then
+                dbg_sed_qsb_out_acc(:) = 0.d0
+                dbg_sed_qsb_in_acc(:) = 0.d0
+                dbg_sed_qss_out_acc(:) = 0.d0
+                dbg_sed_qss_in_acc(:) = 0.d0
+            end if
+            if(allocated(dbg_slo_to_lin_prev) .and. allocated(slo_to_lin_sed_sum)) &
+                dbg_slo_to_lin_prev(:) = slo_to_lin_sed_sum(:)
+            if(allocated(dbg_lin_to_slo_prev) .and. allocated(lin_to_slo_sed_sum)) &
+                dbg_lin_to_slo_prev(:) = lin_to_slo_sed_sum(:)
+            if(allocated(dbg_sumdzb_lin_prev) .and. allocated(sumdzb_lin)) &
+                dbg_sumdzb_lin_prev(:) = sumdzb_lin(:)
+            call debug_progress_log('debug_inundation_output_done', 0)
+            call debug_heartbeat_log('debug_inundation_output_done')
+        end if
+        call debug_progress_log('debug_inundation_output_checked', 0)
+        call debug_heartbeat_log('debug_inundation_output_checked')
 
         if(t*dt.ge.t_beddeform_start-0.00001.and.sed_switch==2 ) then
+            call debug_progress_log('sed_exchange_start', 0)
+            call debug_heartbeat_log('sed_exchange_start')
             call sed_exchange(sed_lin, hs_idx) !modified for slope erosion
+            call debug_progress_log('sed_exchange_done', 0)
+            call debug_heartbeat_log('sed_exchange_done')
         end if
+        call debug_progress_log('sed_exchange_checked', 0)
 
         !******* INFILTRATION (Green Ampt) **********************
 
+        call debug_progress_log('postprocess_infilt_start', 0)
+        call debug_heartbeat_log('postprocess_infilt_start')
         call infilt(hs_idx, gampt_ff_idx, gampt_f_idx)
         call sub_slo_idx2ij(hs_idx, hs)
         call sub_slo_idx2ij(gampt_ff_idx, gampt_ff)
         call sub_slo_idx2ij(gampt_f_idx, gampt_f)
+        call debug_progress_log('postprocess_infilt_done', 0)
+        call debug_heartbeat_log('postprocess_infilt_done')
 
         !******* SET WATER DEPTH 0 AT DOMAIN = 2 ****************
+        call debug_progress_log('domain2_drain_start', 0)
+        call debug_heartbeat_log('domain2_drain_start')
         do i = 1, ny
             do j = 1, nx
                 if (domain(i, j) .eq. 2) then
@@ -1994,21 +2886,29 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                 end if
             end do
         end do
+        call debug_progress_log('domain2_drain_done', 0)
+        call debug_heartbeat_log('domain2_drain_done')
 
         ! hs -> hs_idx, hr -> hr_idx, hg -> hg_idx
+        call debug_progress_log('postprocess_idx_sync_start', 0)
         call sub_riv_ij2idx(hr, hr_idx)
         call sub_slo_ij2idx(hs, hs_idx)
         call sub_slo_ij2idx(hg, hg_idx)
+        call debug_progress_log('postprocess_idx_sync_done', 0)
+        call debug_heartbeat_log('postprocess_idx_sync_done')
         !convert to i,j in IRIC GUI 20250505
-        tmp_idx=maxloc(hr)
-        write (*, *) "max hr: ", maxval(hr), "loc : ", tmp_idx(2) , ny+1-tmp_idx(1) 
-        tmp_idx=maxloc(hs)
-        write (*, *) "max hs: ", maxval(hs), "loc : ", tmp_idx(2) , ny+1-tmp_idx(1) 
-        if (gw_switch .eq. 1) then
-        tmp_idx=maxloc(hg)
-        write (*, *) "max hg: ", maxval(hg), "loc : ", tmp_idx(2) , ny+1-tmp_idx(1) 
-        endif
-        tmp_idx(:)=0
+        call debug_progress_log('console_summary_start', 0)
+        if(console_step)then
+            tmp_idx=maxloc(hr)
+            write (*, *) "max hr: ", maxval(hr), "loc : ", tmp_idx(2) , ny+1-tmp_idx(1) 
+            tmp_idx=maxloc(hs)
+            write (*, *) "max hs: ", maxval(hs), "loc : ", tmp_idx(2) , ny+1-tmp_idx(1) 
+            if (gw_switch .eq. 1) then
+                tmp_idx=maxloc(hg)
+                write (*, *) "max hg: ", maxval(hg), "loc : ", tmp_idx(2) , ny+1-tmp_idx(1) 
+            endif
+            tmp_idx(:)=0
+        end if
         !write (*, *) "max hr: ", maxval(hr), "loc : ", maxloc(hr)
         !write (*, *) "max hs: ", maxval(hs), "loc : ", maxloc(hs)
         !if (gw_switch .eq. 1) write (*, *) "max hg: ", maxval(hg), "loc : ", maxloc(hg)
@@ -2016,29 +2916,39 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
         !***** count total rain volume *****
 
         sum_qp_t = sum_qp_t + qp_t*dt
+        call debug_progress_log('console_summary_and_rain_sum_done', 0)
+        call debug_heartbeat_log('console_summary_and_rain_sum_done')
 
 !-----RSR model: Landslide, debris flow, Slope erosion, Driftwood------
 
         !***** Debris flow calculation (added RSR model) 20240724 *****
+                     call debug_progress_log('debris_section_start', 0)
+                     call debug_heartbeat_log('debris_section_start')
                      if (t.gt.T_bebris_off/dt .and. debris_end_switch==1 .and. debris_end_switch==1)then
                       debris_switch= -1 !skip debris flow computation after t>T_bebris_off
                       j_drf =0
-                      write(*,*) "Landslide Debris flow and drift wood computations have been switch off at time =", T_bebris_off,"s", "t/maxT=", t,"/",maxt
+                      if(console_step) write(*,*) "Landslide Debris flow and drift wood computations have been switch off at time =", T_bebris_off,"s", "t/maxT=", t,"/",maxt
                      endif
 !added 20240115
                     
                       if(debris_switch==-1)then
-                        write(*,*) 'Number_of_unstable_mesh=', LS_num
-                        write(*,*) "debris_total = ", debris_total
-                        write(*,*) "hki_total = ", hki_total
+                        if(console_step)then
+                            write(*,*) 'Number_of_unstable_mesh=', LS_num
+                            write(*,*) "debris_total = ", debris_total
+                            write(*,*) "hki_total = ", hki_total
+                        end if
                       endif
                      if(debris_switch == 1 .and. t*dt.ge.t_beddeform_start-0.00001) then
 
                         !Initialize vo_total_l
-		                do l = 1, link_count
+                        do l = 1, link_count
 			                vo_total_l(l) = 0.d0
 		                end do
+                        call debug_progress_log('debris_before_cal_landslide', 0)
+                        call debug_heartbeat_log('debris_before_cal_landslide')
                         call cal_Landslide ( hs_idx )
+                        call debug_progress_log('debris_after_cal_landslide', 0)
+                        call debug_heartbeat_log('debris_after_cal_landslide')
                         n_LS = 0
 !$omp parallel do private(k) reduction(+ : n_LS) 
                         do k = 1, slo_count
@@ -2058,8 +2968,13 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                             call sub_slo_idx2ij( LS_idx, LS )
                         endif
                         if(n_LS >= 1)then
+                            call debug_progress_log('debris_before_cal_mspnt', 0)
+                            call debug_heartbeat_log('debris_before_cal_mspnt')
                             call cal_mspnt ( hs_idx )
+                            call debug_progress_log('debris_after_cal_mspnt', 0)
+                            call debug_heartbeat_log('debris_after_cal_mspnt')
                             call sub_slo_idx2ij( dzslo_mspnt_idx, dzslo_mspnt )
+                            call sub_slo_idx2ij( dzslo_mspnt_cum_idx, dzslo_mspnt_cum )
                             do k = 1, riv_count
                                 l = link_to_riv(k)
                                 vo_total_l(l) = vo_total_l(l) + vo_total(k)  !consider remaining sediment in previous timestep
@@ -2074,9 +2989,12 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                                 end do
                             end if
                         end if
-                        write(*,*) "debris_total = ", debris_total
-                        write(*,*) "hki_total = ", hki_total
-                      if(detail_console==1)then
+                        if(console_step)then
+                            write(*,*) 'Number_of_unstable_mesh=', LS_num
+                            write(*,*) "debris_total = ", debris_total
+                            write(*,*) "hki_total = ", hki_total
+                        end if
+                      if(detail_console==1 .and. console_step)then
                         if(j_drf == 1)then
                             write(*,*) "wood_total = ", wood_total
                             write(*,'(a)') '    l    k    qr     hr      area        vo_total_l(l)         cw(l)       vw(l)      qw(l)'
@@ -2087,10 +3005,14 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                         end if
                       end if
                      end if
+                     call debug_progress_log('debris_section_done', 0)
+                     call debug_heartbeat_log('debris_section_done')
         !**********************************************
 
 !******* renew the information of slope area & the sediment supply from slope to river channel during dt duration time 203231204
                     if(sed_switch == 2 .and. t*dt.ge.t_beddeform_start-0.00001) then
+                    call debug_progress_log('slope_to_river_sed_supply_start', 0)
+                    call debug_heartbeat_log('slope_to_river_sed_supply_start')
                     
                     !20240328 moved here: width modification to avoid channel closing
 !                        do k = 1, riv_count
@@ -2200,7 +3122,7 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                         !for slope erosion
                         call sub_riv_idx2ij(inflow_sedi, inflow_sedi_ij)
                         call sub_riv_idx2ij(overflow_sedi, overflow_sedi_ij)
-                        if(slo_sedi_cal_switch>0)then
+                        if(slo_sedi_cal_switch>0 .and. console_step)then
                          !convert to i,j in IRIC GUI 20250505
                          tmp_idx=maxloc(-1.d0*dzslo)
                          write(*,*) "max slope erosion depth: ", maxval(-1.d0*dzslo), " loc: ", tmp_idx(2) , ny+1-tmp_idx(1)   
@@ -2211,20 +3133,28 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
                          write(*,*) "total slope erosion volume = ", slope_erosion_total
                          tmp_idx(:)=0
                         end if
+                    call debug_progress_log('slope_to_river_sed_supply_done', 0)
+                    call debug_heartbeat_log('slope_to_river_sed_supply_done')
                      end if
 
         !***** surface water level calculation (added RSR model) 20240724 *****
+        call debug_progress_log('h_surf_calc_start', 0)
+        call debug_heartbeat_log('h_surf_calc_start')
         do k = 1, slo_count
             i = slo_idx2i(k)
             j = slo_idx2j(k)
             !h_surf(i,j) = hs_idx(k) - da_idx(k) ! modified 20231204
+            if(riv(i,j).eq.1 .and. domain(i,j).eq.1) h_surf(i,j) = max(hs_idx(k), &
+                hr(i,j)-depth(i,j)-height(i,j), 0.d0)
             if(riv(i,j).eq.0 .and. domain(i,j).eq.1) h_surf(i,j) = hs_idx(k) - da_idx(k)
 			if(h_surf(i,j).le.0.) h_surf(i,j) = 0.d0
         end do
+        call debug_progress_log('h_surf_calc_done', 0)
+        call debug_heartbeat_log('h_surf_calc_done')
 !-------RSR until here
 
         !******* OUTPUT *****************************************
-!$omp single
+!!$omp single disabled: no surrounding parallel region is used here.
         ! For TSAS Output
         !call RRI_TSAS(t, hs_idx, hr_idx, hg_idx, qs_ave_idx, &
         !              qr_ave_idx, qg_ave_idx, qp_t_idx)
@@ -2235,7 +3165,8 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
         ! open output files
         if (t .eq. out_next) then
 
-            write (*, *) "OUTPUT :", t, time
+            call debug_progress_log('output_section_start', 0)
+            if(console_step) write (*, *) "OUTPUT :", t, time
             if(dam_switch == 1) call dam_write !this line was added for RSR 20240724 !need to modify
 
         !-------added for RSR model 20240724
@@ -2484,16 +3415,21 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
             !call dt_check_riv(hr_idx, tt, ddt_chk_riv)
             !call dt_check_slo(hs_idx, tt, ddt_chk_slo)
 
+            call debug_progress_log('output_section_done', 0)
         end if
 
         ! check water balance
+        call debug_progress_log('storage_check_start', 0)
         if (mod(t, 1) .eq. 0) then
             call storage_calc(hs, hr, hg, ss, sr, si, sg)
-            write (*, '(6e15.3)') rain_sum, pevp_sum, aevp_sum, sout, ss + sr + si + sg, &
-                (rain_sum - aevp_sum - sout - (ss + sr + si + sg) + sinit)
+            if(console_step)then
+                write (*, '(6e15.3)') rain_sum, pevp_sum, aevp_sum, sout, ss + sr + si + sg, &
+                    (rain_sum - aevp_sum - sout - (ss + sr + si + sg) + sinit)
+            end if
             if (outswitch_storage == 1) write (1000, '(1000e15.7)') rain_sum, pevp_sum, aevp_sum, sout, ss + sr + si + sg, &
                 (rain_sum - aevp_sum - sout - (ss + sr + si + sg) + sinit), ss, sr, si, sg
         end if
+        call debug_progress_log('storage_check_done', 0)
 
         !iRIC Cancel check and Flush
         call iric_check_cancel(ierr)
@@ -2502,7 +3438,8 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
             call iric_cgns_close()
             stop
         end if
-!$omp end single
+        call debug_progress_log('step_done', 0)
+!!$omp end single disabled: no surrounding parallel region is used here.
     end do
 
     if (sed_switch .ne. 0) then
@@ -2511,5 +3448,159 @@ endif     !endif for (t*dt.ge.t_beddeform_start.and.sed_switch .ne. 0)
     call iric_cgns_close
 
 !pause
+
+contains
+
+    subroutine debug_progress_log(phase, sub_iter)
+        implicit none
+        character(*), intent(in) :: phase
+        integer, intent(in) :: sub_iter
+        integer :: ios
+        integer :: dbg_int_i, dbg_int_j, dbg_slo_k, dbg_riv_k, dbg_link
+        integer :: dbg_domain, dbg_riv
+        real(8) :: dbg_hr_now, dbg_hs_now, dbg_depth_now, dbg_capacity_now
+        real(8) :: dbg_sumdzb_now, dbg_dzb_now, dbg_qr_now, dbg_qsb_now, dbg_qss_now
+        real(8) :: dbg_max_hr, dbg_max_hs, dbg_max_sumdzb, dbg_min_depth, dbg_max_abs_qr
+
+        if(debug_inundation_switch /= 1) return
+        if(.not. console_step) return
+
+        dbg_int_i = ny - debug_inundation_j + 1
+        dbg_int_j = debug_inundation_i
+        dbg_slo_k = 0
+        dbg_riv_k = 0
+        dbg_link = 0
+        dbg_domain = -9999
+        dbg_riv = -9999
+        dbg_hr_now = -9999.d0
+        dbg_hs_now = -9999.d0
+        dbg_depth_now = -9999.d0
+        dbg_capacity_now = -9999.d0
+        dbg_sumdzb_now = -9999.d0
+        dbg_dzb_now = -9999.d0
+        dbg_qr_now = -9999.d0
+        dbg_qsb_now = -9999.d0
+        dbg_qss_now = -9999.d0
+        dbg_max_hr = -9999.d0
+        dbg_max_hs = -9999.d0
+        dbg_max_sumdzb = -9999.d0
+        dbg_min_depth = -9999.d0
+        dbg_max_abs_qr = -9999.d0
+
+        if(allocated(hr_idx)) dbg_max_hr = maxval(hr_idx)
+        if(allocated(hs_idx)) dbg_max_hs = maxval(hs_idx)
+        if(allocated(sumdzb_idx)) dbg_max_sumdzb = maxval(sumdzb_idx)
+        if(allocated(depth_idx)) dbg_min_depth = minval(depth_idx)
+        if(allocated(qr_ave_idx)) dbg_max_abs_qr = maxval(abs(qr_ave_idx))
+
+        if(dbg_int_i >= 1 .and. dbg_int_i <= ny .and. dbg_int_j >= 1 .and. dbg_int_j <= nx)then
+            dbg_domain = domain(dbg_int_i, dbg_int_j)
+            dbg_riv = riv(dbg_int_i, dbg_int_j)
+            if(allocated(slo_ij2idx)) dbg_slo_k = slo_ij2idx(dbg_int_i, dbg_int_j)
+            if(allocated(riv_ij2idx)) dbg_riv_k = riv_ij2idx(dbg_int_i, dbg_int_j)
+            if(dbg_slo_k > 0 .and. allocated(hs_idx))then
+                if(dbg_slo_k <= ubound(hs_idx, 1)) dbg_hs_now = hs_idx(dbg_slo_k)
+            end if
+            if(dbg_riv_k > 0)then
+                if(allocated(link_to_riv))then
+                    if(dbg_riv_k <= ubound(link_to_riv, 1)) dbg_link = link_to_riv(dbg_riv_k)
+                end if
+                if(allocated(hr_idx))then
+                    if(dbg_riv_k <= ubound(hr_idx, 1)) dbg_hr_now = hr_idx(dbg_riv_k)
+                end if
+                if(allocated(depth_idx))then
+                    if(dbg_riv_k <= ubound(depth_idx, 1)) dbg_depth_now = depth_idx(dbg_riv_k)
+                end if
+                if(allocated(depth_idx) .and. allocated(height_idx))then
+                    if(dbg_riv_k <= ubound(depth_idx, 1) .and. dbg_riv_k <= ubound(height_idx, 1)) &
+                        dbg_capacity_now = depth_idx(dbg_riv_k) + height_idx(dbg_riv_k)
+                end if
+                if(allocated(sumdzb_idx))then
+                    if(dbg_riv_k <= ubound(sumdzb_idx, 1)) dbg_sumdzb_now = sumdzb_idx(dbg_riv_k)
+                end if
+                if(allocated(dzb_temp))then
+                    if(dbg_riv_k <= ubound(dzb_temp, 1)) dbg_dzb_now = dzb_temp(dbg_riv_k)
+                end if
+                if(allocated(qr_ave_idx))then
+                    if(dbg_riv_k <= ubound(qr_ave_idx, 1)) dbg_qr_now = qr_ave_idx(dbg_riv_k)
+                end if
+                if(allocated(qsb_idx))then
+                    if(dbg_riv_k <= ubound(qsb_idx, 1)) dbg_qsb_now = qsb_idx(dbg_riv_k)
+                end if
+                if(allocated(qss_idx))then
+                    if(dbg_riv_k <= ubound(qss_idx, 1)) dbg_qss_now = qss_idx(dbg_riv_k)
+                end if
+            end if
+        end if
+
+        if(dbg_progress_header_written == 0)then
+            open(1179, file='debug_progress.csv', status='replace', action='write', iostat=ios)
+            if(ios /= 0)then
+                write(*,*) 'debug_progress_open_failed:', t, trim(phase), ios
+                return
+            end if
+            write(1179,'(a)') 'step,time_s,time_h,model_time_s,phase,sub_iter,ddt_s,dt_s,dt_riv_s,'// &
+                'iidt,sed_switch,t_bed_freeze_s,riv_thresh,debug_gui_i,debug_gui_j,debug_int_i,debug_int_j,'// &
+                'debug_slo_k,debug_riv_k,debug_link,debug_domain,debug_riv,debug_hr_m,debug_hs_m,'// &
+                'debug_depth_m,debug_capacity_m,debug_sumdzb_m,debug_dzb_temp_m,debug_qr_m3_s,'// &
+                'debug_qsb_m3_s,debug_qss_m3_s,max_hr_m,max_hs_m,max_sumdzb_m,min_depth_m,max_abs_qr_m3_s'
+            dbg_progress_header_written = 1
+        else
+            open(1179, file='debug_progress.csv', status='old', action='write', position='append', iostat=ios)
+            if(ios /= 0)then
+                write(*,*) 'debug_progress_open_failed:', t, trim(phase), ios
+                return
+            end if
+        end if
+
+        write(1179,'(*(g0,:,","))') t, dble(t)*dble(dt), dble(t)*dble(dt)/3600.d0, time, trim(phase), sub_iter, &
+            ddt, dble(dt), dble(dt_riv), iidt, sed_switch, t_bed_freeze, riv_thresh, &
+            debug_inundation_i, debug_inundation_j, dbg_int_i, dbg_int_j, dbg_slo_k, dbg_riv_k, dbg_link, &
+            dbg_domain, dbg_riv, dbg_hr_now, dbg_hs_now, dbg_depth_now, dbg_capacity_now, dbg_sumdzb_now, &
+            dbg_dzb_now, dbg_qr_now, dbg_qsb_now, dbg_qss_now, dbg_max_hr, dbg_max_hs, dbg_max_sumdzb, &
+            dbg_min_depth, dbg_max_abs_qr
+        close(1179)
+    end subroutine debug_progress_log
+
+    subroutine debug_heartbeat_log(phase)
+        implicit none
+        character(*), intent(in) :: phase
+        integer :: ios
+        real(8) :: hb_max_hr, hb_max_hs, hb_max_sumdzb, hb_min_depth
+
+        if(debug_inundation_switch /= 1) return
+        if(.not. console_step) return
+
+        hb_max_hr = -9999.d0
+        hb_max_hs = -9999.d0
+        hb_max_sumdzb = -9999.d0
+        hb_min_depth = -9999.d0
+
+        if(allocated(hr_idx)) hb_max_hr = maxval(hr_idx)
+        if(allocated(hs_idx)) hb_max_hs = maxval(hs_idx)
+        if(allocated(sumdzb_idx)) hb_max_sumdzb = maxval(sumdzb_idx)
+        if(allocated(depth_idx)) hb_min_depth = minval(depth_idx)
+
+        if(dbg_heartbeat_header_written == 0)then
+            open(1180, file='debug_heartbeat.txt', status='replace', action='write', iostat=ios)
+            if(ios /= 0)then
+                write(*,*) 'debug_heartbeat_open_failed:', t, trim(phase), ios
+                return
+            end if
+            write(1180,'(a)') 'step,time_s,time_h,model_time_s,phase,out_next,tt,ierr,'// &
+                'max_hr_m,max_hs_m,max_sumdzb_m,min_depth_m'
+            dbg_heartbeat_header_written = 1
+        else
+            open(1180, file='debug_heartbeat.txt', status='old', action='write', position='append', iostat=ios)
+            if(ios /= 0)then
+                write(*,*) 'debug_heartbeat_open_failed:', t, trim(phase), ios
+                return
+            end if
+        end if
+
+        write(1180,'(*(g0,:,","))') t, dble(t)*dble(dt), dble(t)*dble(dt)/3600.d0, time, &
+            trim(phase), out_next, tt, ierr, hb_max_hr, hb_max_hs, hb_max_sumdzb, hb_min_depth
+        close(1180)
+    end subroutine debug_heartbeat_log
 
 end program RRI

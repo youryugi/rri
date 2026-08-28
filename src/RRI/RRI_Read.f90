@@ -560,20 +560,37 @@ call cg_iric_read_integer(cgns_f, "eight_dir", eight_dir, ier)
     call cg_iric_read_integer(cgns_f, "sed_switch", sed_switch, ier)
     write (*, '("sed_switch : ", i7)') sed_switch
     write (*, *)
+    channel_blockage_switch = 0
+    channel_blockage_leakage = 0.d0
+    channel_blockage_exponent = 5.d0/3.d0
+    channel_capacity_qr_switch = 0
+    river_overtop_neighbor_switch = 0
+    river_slope_preexchange_switch = 0
     !In case sediment computation, read the following
     if (sed_switch >= 1)then
         call cg_iric_read_real(cgns_f, "t_beddeform_start", t_beddeform_start, ier)
         write (*, '("t_beddeform_start(hour): ", f12.1)') t_beddeform_start
         t_beddeform_start = t_beddeform_start*3600.
+        t_bed_freeze = 0.d0
+        call cg_iric_read_real(cgns_f, "t_bed_freeze", t_bed_freeze, ier)
+        if(ier/=0) t_bed_freeze = 0.d0
+        write (*, '("t_bed_freeze(hour): ", f12.1)') t_bed_freeze
+        t_bed_freeze = t_bed_freeze*3600.   ! hours -> seconds; during time<t_bed_freeze: transport & fm update, but bed elevation frozen
         call cg_iric_read_real(cgns_f, "s", s, ier)
         write (*, '("s : ", f12.2)') s
+        grav = 9.81d0
         call cg_iric_read_real(cgns_f, "grav", grav, ier)
+        if(ier/=0) grav = 9.81d0
         write (*, '("grav : ", f12.2)') grav
         call cg_iric_read_real(cgns_f, "t_Crit", t_Crit, ier)
         write (*, '("t_Crit : ", f12.3)') t_Crit
+        kin_visc = 1.004d-6
         call cg_iric_read_real(cgns_f, "kin_visc", kin_visc, ier)
+        if(ier/=0) kin_visc = 1.004d-6
         write (*, '("kin_visc : ", f12.3)') kin_visc
+        karmans = 0.4d0
         call cg_iric_read_real(cgns_f, "karmans", karmans, ier)
+        if(ier/=0) karmans = 0.4d0
         write (*, '("karmans : ", f12.1)') karmans
         call cg_iric_read_real(cgns_f, "lambda", lambda, ier)
         write (*, '("lambda : ", f12.1)') lambda
@@ -596,17 +613,31 @@ call cg_iric_read_integer(cgns_f, "eight_dir", eight_dir, ier)
         write (*, '("min_num_cell_link : ", i7)') min_num_cell_link
         call cg_iric_read_real(cgns_f, "perosion", perosion, ier)
         write (*, '("perosion : ", f12.5)') perosion
+        put_rate_fac = 1.d0
+        call cg_iric_read_real(cgns_f, "put_rate_fac", put_rate_fac, ier)
+        if(ier/=0 .or. put_rate_fac<=0.d0) put_rate_fac = 1.d0
+        write (*, '("put_rate_fac : ", f12.5)') put_rate_fac
+        d_wash = 1.d-4
+        call cg_iric_read_real(cgns_f, "d_wash", d_wash, ier)
+        if(ier/=0 .or. d_wash<=0.d0) d_wash = 1.d-4
+        write (*, '("d_wash : ", es12.4)') d_wash
         call cg_iric_read_real(cgns_f, "min_slope", min_slope, ier)
         write (*, '("min_slope : ", f12.5)') min_slope
         call cg_iric_read_real(cgns_f, "max_slope", max_slope, ier)
         write (*, '("max_slope : ", f12.2)') max_slope
         call cg_iric_read_real(cgns_f, "min_hr", min_hr, ier)
         write (*, '("min_hr : ", f12.5)') min_hr
+        alpha_ss1 = 0.5d0
         call cg_iric_read_real(cgns_f, "alpha_ss1", alpha_ss1, ier)
+        if(ier/=0) alpha_ss1 = 0.5d0
         write (*, '("alpha_ss1 : ", f12.5)') alpha_ss1
+        alpha_ss2 = 0.1d0
         call cg_iric_read_real(cgns_f, "alpha_ss2", alpha_ss2, ier)
+        if(ier/=0) alpha_ss2 = 0.1d0
         write (*, '("alpha_ss2 : ", f12.5)') alpha_ss2
+        thresh_ss = 0.3d0
         call cg_iric_read_real(cgns_f, "thresh_ss", thresh_ss, ier)
+        if(ier/=0) thresh_ss = 0.3d0
         write (*, '("thresh_ss : ", f12.5)') thresh_ss
        !moved to rri setting 20250312 
       !  call cg_iric_read_real(cgns_f, "hr0", hr0, ier)
@@ -615,6 +646,37 @@ call cg_iric_read_integer(cgns_f, "eight_dir", eight_dir, ier)
       !  write (*, '("Initial water depth of slope cells: ", f12.5)') wc0
         call cg_iric_read_integer(cgns_f, "cut_overdepo_switch", cut_overdepo_switch, ier) 
          write (*, '("Enforcing sediment overflow: ", i7)') cut_overdepo_switch
+        pass_bedload_switch = 0
+        call cg_iric_read_integer(cgns_f, "pass_bedload_switch", pass_bedload_switch, ier)
+        if(ier/=0) pass_bedload_switch = 0
+         write (*, '("Pass bedload downstream when channel capacity is reduced: ", i7)') pass_bedload_switch
+        pass_bedload_depth_thresh = 0.05d0
+        call cg_iric_read_real(cgns_f, "pass_bedload_depth_thresh", pass_bedload_depth_thresh, ier)
+        if(ier/=0 .or. pass_bedload_depth_thresh<0.d0) pass_bedload_depth_thresh = 0.05d0
+         write (*, '("Remaining channel depth threshold for passing bedload downstream(m): ", f12.5)') pass_bedload_depth_thresh
+        call cg_iric_read_integer(cgns_f, "channel_blockage_switch", channel_blockage_switch, ier)
+        if(ier/=0) channel_blockage_switch = 0
+         write (*, '("Reduce river conveyance according to bed aggradation: ", i7)') channel_blockage_switch
+        call cg_iric_read_real(cgns_f, "channel_blockage_leakage", channel_blockage_leakage, ier)
+        if(ier/=0) channel_blockage_leakage = 0.d0
+        if(channel_blockage_leakage<0.d0) channel_blockage_leakage = 0.d0
+        if(channel_blockage_leakage>1.d0) channel_blockage_leakage = 1.d0
+         write (*, '("Residual conveyance ratio at complete blockage: ", f12.5)') channel_blockage_leakage
+        call cg_iric_read_real(cgns_f, "channel_blockage_exponent", channel_blockage_exponent, ier)
+        if(ier/=0 .or. channel_blockage_exponent<=0.d0) channel_blockage_exponent = 5.d0/3.d0
+         write (*, '("Exponent for conveyance reduction by remaining channel depth ratio: ", f12.5)') channel_blockage_exponent
+        channel_capacity_qr_switch = 0
+        call cg_iric_read_integer(cgns_f, "channel_capacity_qr_switch", channel_capacity_qr_switch, ier)
+        if(ier/=0) channel_capacity_qr_switch = 0
+         write (*, '("Limit river discharge by remaining channel capacity: ", i7)') channel_capacity_qr_switch
+        river_overtop_neighbor_switch = 0
+        call cg_iric_read_integer(cgns_f, "river_overtop_neighbor_switch", river_overtop_neighbor_switch, ier)
+        if(ier/=0) river_overtop_neighbor_switch = 0
+         write (*, '("Distribute river overtopping water to adjacent non-river cells: ", i7)') river_overtop_neighbor_switch
+        river_slope_preexchange_switch = 0
+        call cg_iric_read_integer(cgns_f, "river_slope_preexchange_switch", river_slope_preexchange_switch, ier)
+        if(ier/=0) river_slope_preexchange_switch = 0
+         write (*, '("Perform river-slope exchange before slope routing: ", i7)') river_slope_preexchange_switch
         !Non-uniform
         if(sed_type_switch ==2)then
             call cg_iric_read_real(cgns_f, "Em", Em, ier)
@@ -635,6 +697,10 @@ call cg_iric_read_integer(cgns_f, "eight_dir", eight_dir, ier)
     call cg_iric_read_integer(cgns_f, "debris_switch", debris_switch, ier)
     write (*, '("debris_switch : ", i7)') debris_switch
     if (debris_switch >= 1)then
+        debris_rate_fac = 1.d0
+        call cg_iric_read_real(cgns_f, "debris_rate_fac", debris_rate_fac, ier)
+        if(ier/=0 .or. debris_rate_fac<=0.d0) debris_rate_fac = 1.d0
+        write (*, '("debris_rate_fac : ", f12.5)') debris_rate_fac
         call cg_iric_read_real(cgns_f, "cohe", cohe, ier)
         write (*, '("cohesion: ", f12.2)') cohe
         call cg_iric_read_real(cgns_f, "phi", phi, ier)
@@ -844,6 +910,20 @@ call cg_iric_read_integer(cgns_f, "eight_dir", eight_dir, ier)
         write(*,'("outfile_h_surf: ", a)') trim(adjustl(outfile_h_surf))
     end if
 
+    debug_inundation_switch = 0
+    outfile_debug_inundation = 'debug_inundation.csv'
+    outfile_debug_sed_budget = 'debug_sed_budget.csv'
+    outfile_debug_spread = 'debug_inundation_spread.csv'
+    debug_inundation_i = 114
+    debug_inundation_j = 92
+    debug_inundation_radius = 2
+    debug_inundation_header_written = 0
+    debug_sed_budget_header_written = 0
+    debug_spread_header_written = 0
+    ! Distribution build: keep the point-debug machinery disabled so ordinary
+    ! runs do not create debug_inundation/progress/heartbeat CSV files.
+    debug_inundation_switch = 0
+
 !added 20260208
     outfile_sdout = ''
     call cg_iric_read_integer(cgns_f, "sd_out_switch", sd_out_switch, ier)
@@ -894,8 +974,7 @@ call cg_iric_read_integer(cgns_f, "eight_dir", eight_dir, ier)
     infilt_limit(:) = 0.d0
     do i = 1, num_of_landuse
         if (soildepth(i) .gt. 0.d0 .and. ksv(i) .gt. 0.d0) infilt_limit(i) = soildepth(i)*gammaa(i)
-        !if (soildepth(i) .gt. 0.d0 .and. ka(i) .gt. 0.d0) da(i) = soildepth(i)*gammaa(i) !modified 20250312
-         da(i) = soildepth(i)*gammaa(i)
+        if (soildepth(i) .gt. 0.d0 .and. ka(i) .gt. 0.d0) da(i) = soildepth(i)*gammaa(i)
         if (soildepth(i) .gt. 0.d0 .and. ka(i) .gt. 0.d0 .and. gammam(i) .gt. 0.d0) &
             dm(i) = soildepth(i)*gammam(i)
     end do
