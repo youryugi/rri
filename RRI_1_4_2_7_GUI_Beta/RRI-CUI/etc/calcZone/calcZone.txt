@@ -1,0 +1,8 @@
+../../Project/kinu_dam/topo/adem100m_yuni.txt
+../../Project/kinu_dam/topo/dir100m_yuni.txt
+../../Project/kinu_dam/topo/acc100m_yuni.txt
+0   ! utm: 1 / ll: 0
+20  ! div
+20  ! acc_ratio
+0.1 ! riv_ratio
+./zone.txt

@@ -1,0 +1,8 @@
+C:/RRI/RRI_1_4_2_7_GUI_Beta/RRI_1_4_2_7_GUI_Beta/RRI-GUI_v5.0.6_P/Project/eu_basin/rain/Temp_Gauge.txt
+C:/RRI/RRI_1_4_2_7_GUI_Beta/RRI_1_4_2_7_GUI_Beta/RRI-GUI_v5.0.6_P/Project/eu_basin/rain/rain.dat
+C:/RRI/RRI_1_4_2_7_GUI_Beta/RRI_1_4_2_7_GUI_Beta/RRI-GUI_v5.0.6_P/Project/eu_basin/rain/rain_Map.dat
+ncols  240
+nrows  149
+xll  10.26
+yll  42.90
+cellsize 0.0083333333333333

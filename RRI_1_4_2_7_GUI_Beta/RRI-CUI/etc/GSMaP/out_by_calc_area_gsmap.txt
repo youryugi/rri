@@ -1,0 +1,22 @@
+ horizontal_resolution [d] :   0.1000000    
+ temporal_resolution [h]   :            1
+ 
+ xll :    110.2000    
+ yll :   -8.300000    
+ xur :    113.0000    
+ yur :   -6.600000    
+ 
+ xll_rain :    110.2500    
+ yll_rain :   -8.450001    
+ xur_rain :    113.0500    
+ yur_rain :   -6.549999    
+ 
+ jleft   :         1102
+ ibottom :          684
+ jright  :         1130
+ itop    :          665
+ 
+ xllcorner_rain (raster):    110.2000    
+ yllcorner_rain (raster):   -8.500001    
+ cellsize_rain :   0.1000000    
+ 

@@ -1,0 +1,7 @@
+ 2007   12   24    0    0        	: Start time  (Year Month Day Hour Min ( UTC ))
+   96                            	: Number of gif files( ÅÅ "outnum" of RRI_Input.txt )
+ 3.75                              	: Timestep (hourly) ( Å‡ "lasth / outnum" of RRI_Input.txt )
+adem.txt
+					: Dem file name (for lat,lon)
+./runoff.kml
+                               		: Output file name

@@ -1,0 +1,12 @@
+../../Project/kinu_dam/topo/adem100m_yuni.txt
+../../Project/kinu_dam/topo/dir100m_yuni.txt
+../../Project/kinu_dam/topo/acc100m_yuni.txt
+../../Project/kinu_dam/riv/width.txt
+0    ! utm: 1 / ll: 0
+0    ! manning: 1 / darcy : 0
+0    ! acc_thresh
+10.  ! rain (mm/h)
+0.03 ! nr (m-s)
+0.3  ! ns (m-s)
+0.1  ! ka (m/s)
+./tc_dist.txt

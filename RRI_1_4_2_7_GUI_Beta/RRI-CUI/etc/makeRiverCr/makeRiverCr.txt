@@ -1,0 +1,8 @@
+5s_9-1_kyushu_aacc.txt
+rriras_region_12_width_creager_eq_Sc_15.txt
+rriras_region_12_depth_creager_eq_Sc_15.txt
+rriras_region_12_height_creager_eq_Sc_15.txt
+15.872
+6.853 0.216
+50
+0

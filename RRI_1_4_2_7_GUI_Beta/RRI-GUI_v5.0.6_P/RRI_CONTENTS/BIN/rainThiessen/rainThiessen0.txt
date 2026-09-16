@@ -1,0 +1,9 @@
+G:\CTI\TEST_FOLDER\rain\rain_mawlamyine_2013.txt
+24
+G:\CTI\TEST_FOLDER\rain\Rain.dat
+G:\CTI\TEST_FOLDER\rain\Rain_Map.txt
+ncols  289
+nrows  323
+xll  97.61
+yll  15.20
+cellsize 0.0041666666666667

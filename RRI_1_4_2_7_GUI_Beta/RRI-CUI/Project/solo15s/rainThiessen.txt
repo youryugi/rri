@@ -1,0 +1,9 @@
+./rain/gauge_1d.txt
+24
+./rain/rain.dat
+./rain/gauge_map.txt
+ncols  673
+nrows 409
+xll 110.2
+yll -8.3
+cellsize 0.00416666666666

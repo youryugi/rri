@@ -1,0 +1,30 @@
+        Index to TRMM Near-Real-Time Examples and Documentation
+
+                            George J. Huffman
+                            13 February 2009
+
+
+Introduction
+
+The FTP site ftp://meso.gsfc.nasa.gov/pub/trmmdocs/rt contains 
+a variety of detailed documentation and programming examples for the 
+Near-Real-Time TRMM Multi-Satellite Precipitation Analysis (TMPA-RT) 
+data sets, which are available on the anonymous FTP site 
+ftp://trmmopen.gsfc.nasa.gov/pub/merged/ .  This index is a brief 
+guide to the documentation.  Routinely updated examples and archived 
+cases are posted to the TRMM 
+web site at http://trmm.gsfc.nasa.gov .
+
+
+Index
+
+3B4XRT_README.pdf                  Short README on accessing the data 
+                                   sets.
+3B4XRT_index                       This index document.
+3B4XRT_doc.pdf                     Detailed documentation.
+3B4XRT_index                       This index document.
+read3B4XRT.c                       C example.
+read_header.f                      FORTRAN header-read example.
+read_rt_file.f                     FORTRAN single-read example.
+read_rt_file.pro                   IDL example.
+read_rt_lines.f                    FORTRAN line-by-line example.

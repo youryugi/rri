@@ -1,0 +1,8 @@
+0.25   # cellsize_rain
+0.125  # xul_data (x upper left)
+59.875 # yul_data (y upper left)
+334    # ncols
+284    # nrows
+67.55   # xll
+33.5666666667  # yll
+0.008333333333333 # cellsize

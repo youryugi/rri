@@ -1,0 +1,331 @@
+2010.9.16: Ver. 1.0.1
+
+ RRIモデルパッケージリリース。
+
+2010.10.1: Ver. 1.0.2
+
+ 流量境界条件を入力できるように機能追加。
+
+2010.10.28: Ver. 1.0.3
+
+ Green Ampt式による水の損失を考慮できるように機能追加。
+
+2011.2.3: Ver.1.0.4
+
+ OpenMPによる並列化対応。
+ 河道計算の効率化による計算時間の短縮。
+ 簡易ダムモデルの追加、Tecplot出力モジュールの追加。
+
+2011.5.23: Ver.1.0.5
+
+ 全てのグリッドのインデックス化による計算効率化。
+
+2011.8.1: Ver.1.1
+
+ 2次元Diffusive / 1次元Kinematicを選択可能に。
+ 降雨・境界条件データの時間ステップが変化する場合に対応。
+ 入力ファイルの変更 (RRI_Input_Format_Ver1)
+
+2011.11.22: Ver.1.1.1
+
+ 潮位境界条件を与えられるように機能追加。
+ u方向、v方向の流量(流速)を出力。
+ ダムモデルの改良。
+
+2011.12.28: Ver.1.2
+
+ 水位と流量の境界条件を分けて設定できるように変更。
+ グリッド間（東側・南側）に堤防を設定できるように機能追加。
+ 分流・放水路を考慮できるように機能追加。
+
+ !2011.2.1: 
+ !蒸発散を考慮する際に、GreenAmptモデルの積算浸透量
+ !からも水を引くように変更。-> 2011.2.6 コメントアウト
+
+2012.3.27: Ver.1.2.1
+
+ timeの変数定義をrealからreal(8)に修正
+
+ RRI_Riv.f90における "from a tributary (levee height =< 0) to 
+ a main river (levee height > 0) : no reverse flow"以下の
+ "if( height_idx(k) .le. 0.d0 .and. ..."の行は
+ height > 0を本川とみなして、本川から支川に逆流するのを防ぐオプション。
+ しかし、本川沿いに無堤区間がある場合に不具合が生じるのでコメントアウト
+ このオプションを利用する場合は、本川沿いの無堤区間を0.01 mなどにしておく。
+
+ RRI.f90: 河道セルに height > 0 がある場合は標高を上げない
+
+2012.6.12: Ver.1.3
+
+ 雨量と蒸発散量とを別ファイルで入力するように変更
+ これまでのRRIモデルは表層に水がなければ蒸発をゼロと仮定していたが、
+ 1.3ではグリーンアンプトの積算浸透量(gampt_ff)からも水を差し引く。
+ (その場合はRRI_Evpの"Activate the following line"に続く1行を活きにしておく)
+ 連続計算を可能にするためgampt_ffの入出力オプションを追加。
+
+ 深部の地下水帯への水の浸透とその流出を計算するモジュールを開発(RRI_GW.f90)。
+ ただし、動作確認はできていないので、まだ実装していない。
+
+ qu, qvの出力に関するバグフィックス
+ qs_ave_idx(k)をqs_ave(i, j)に変換するうえで、これまではsub_slo_idx2ij
+ を使っていたが、変数のサイズが異なっていて正しく変換できていなかったので、
+ 新たにsub_slo_idx2ijidx2ij4を作成。
+
+ T-SASの出力を追加
+
+2012.11.11: Ver.1.3.1
+
+ 河川と斜面との水のやりとりの計算法を大幅に変更
+ (完全越流ともぐり越流を考慮する)
+
+ where (height(:,:) .lt. 0.d0) height(:,:) = 0.d0
+ を追加して、入力の height が 0以下の場所は0にしておく
+ (-999などが入っている場合に計算に不具合が生じるため)
+
+2013.1.11: Ver.1.3.2
+
+ 境界条件の設定方法を二通り準備した。
+ 1 : 降雨と同じフォーマットで二次元データで与える方法 (従来法)
+ 2 : 特定の地点について、地点の座標とその場所の境界条件を与える方法 (新規追加)
+ これにより、境界条件のファイルサイズが大きくなりすぎて、
+ 読み込みに時間がかかる問題を解消できる。
+
+ demAdjust2でslopeの計算結果を出力する機能を削除
+
+ 河道ファイル読み込みのフラッグを２にすると、河道のある
+ グリッドセルでも、height分だけ標高を上げるようなオプションを追加
+ （フラッグが１の場合は、河道のないグリッドセルだけでheight分の標高を上げる）
+
+ 蒸発散ファイルの読み込みのフラッグを２にすると、
+ グリーンアンプトモデルの積算浸透量からは水を差し引かないオプションを追加
+ （フラッグが１の場合は、hsとして水が無ければ、積算浸透量から水を差し引く）
+
+2013.2.2: v 1.3.3
+
+1) RRI_Evp.f90 (2013/2/2)
+
+ hs < dm の場合に qe_t_idx * hs / dm で
+ 蒸発抑制がかかるように変更
+
+2) バイナリ出力を可能にした
+
+3) RRI_Riv.f90 (2013/7/15) (1.3.3でも以下が未対応のものがあるので注意)
+ 以下をコメントアウトした
+ ! from a tributary (levee height =< 0) to a main river (levee height > 0) : no reverse flow
+ !if( height_idx(k) .le. 0.d0 .and. height_idx(kk) .gt. 0.d0 ) dh = max( (zb_p - zb_n) / distance, 0.001 )
+
+
+2013.4.4: v 1.4
+
+ 河道断面・長さを任意で設定できるように変更
+
+ RRI_Section.f90 を新たに作成
+
+ qr_idx の単位は、これまで [m/s] であったが、
+ (グリッドセルの面積で割った流量であったが、)
+ v 1.4からは [m3/s] の単位を持つように変更。
+ (つまり、実際の河川流量に変更。)
+
+ (注意)
+ RRI_DivやRRI_Dam.f90に実流量を入れている場合は同上の変更が必要となる。
+
+
+2013.4.4: v 1.4.1 (ベータ版)
+2014.7.1: v 1.4.1
+
+ 境界条件の設定方法について、
+ フラッグ1 : 1次元ファイル
+ フラッグ2 : 2次元ファイル から読み取るように再設定した。
+
+ 地下水の影響を考慮できるように改良中
+
+ RRI_Input.txtの100行目にあったtecout.datの出力をやめて、
+ ./location.txtを読み込むようにする。
+ -> q_*.dat として流量を出力する。
+
+ (RRI_Input.txt)のバグフィクス
+
+ qs_ave_idx = qs_ave_idx / dble(dt) / 6.d0
+ の位置が、これまでdoループの中にあったが、修正して、外に移動する
+
+ call sub_riv_ij2idx( hr, hs_idx ) を call sub_riv_ij2idx( hr, hr_idx ) に修正
+
+
+2014.11.28: v 1.4.2b (ベータ版)
+2015.2.12: v 1.4.2
+
+ qg_ave_idx = qg_ave_idx / dble(dt) / 6.d0
+ の位置が、これまでdoループの中にあったが、修正して、外に移動する
+
+ RRI_Slope.f90 の !omp parallel に dif_p, dif_n, dw を追加
+
+ RRIパッケージのフォルダ構成を変更(bin, bin32を追加し、Projectフォルダを導入)
+
+ 分派(RRI_div)の設定変更: 設定ファイル(div.txt)の5桁目に分派率を記載する
+
+ 2015.6.24: v 1.4.2のままで追加バグフィックス
+
+ 水位境界条件を読み込む場合で、かつ設定していない流出点への流量がゼロになっていた。
+  　原因は、RRI_Riv.f90 (L159) で 誤って cycle としていたため。
+  　if( bound_riv_wlev_idx(1, kk) .gt. -100.0 ) dh = ((zb_p + hr_p) - (zb_n + hr_n)) / distance
+  　に修正した。
+
+ RRI_Div.f90 で、L14が div_rate(k) となっていたが div_rate(l) に修正した
+
+ 未変更 (2015.8.31時点)
+ area_ratio = width / len_riv としていたが、
+ area_ratio = width * len_riv / length / length に修正すべき。
+
+ (2015.11.10)
+ 雨の読み込みの際、小数点等の関係で、qp(itemp, ny, nx) のny, nxの範囲を超えて
+ しまうことによるエラーが出たので、以下のサイクル文を追加して回避するようにした。
+ (rainBasinも同様)
+
+  do i = 1, ny
+   if(rain_i(i) .lt. 1 .or. rain_i(i) .gt. ny_rain ) cycle
+   do j = 1, nx
+    if(rain_j(j) .lt. 1 .or. rain_j(j) .gt. nx_rain ) cycle
+    qp_t(i, j) = qp(itemp, rain_i(i), rain_j(j))
+   enddo
+  enddo
+
+ 2016.2.17: v 1.4.2のままで追加バグフィックス
+
+ RRI_Section.f90で 
+ width(i, j) = sec_b(id, div_max) としていたが、
+ width(i, j) = sec_b(id, k) として sec_depth(id)の高さの幅に設定。
+
+ 2016.7.31: RRI_1_4_2_2
+
+ RRI_Dam.f90で
+ ダムへの流入量を上流河川の流量の足し算で算定していたが、
+ その方法では斜面からの流入量を無視してしまっているので、
+ dam_qin(:) = qr_idx(:)として、ダム地点の調整前の流量を
+ 流入量とみなすように変更した。
+
+ 2017.6.23: RRI_1_4_2_3 (gampt_ff_idx設定のバグフィックス)
+
+ RRI.f90で
+ sub_slo_ij2idx( gampt_ff, gampt_ff_idx )の位置が、
+ これまでL853(地下水計算のルーチン内)にあった。
+ その結果、地下水を考慮しない計算の場合に、
+ gampt_ff -> gampt_ff_idx が実行できていなかった。
+ (Hot Startと連続計算とを比較して両者が一致しないために気が付いた。)
+ 対処：call sub_slo_ij2idx( gampt_ff, gampt_ff_idx ) の位置を、
+ SLOPE CALCULAATION のルーチン内であるL731に移動して修正した。
+
+ 2021.9.25: RRI_1_4_2_4リリース
+ RRI_1_4_2_3 からの変更点は以下の通り
+
+ 2019.9.15 RRI_Sub.f90
+
+ L99  dir(i,j).eq.-1を追加
+ L375 dir(i,j).eq.-1を追加
+
+ RRI.f90に以下を追加
+
+ !******* OUTPUT FOR UNSTEADY MODEL (RIV = -1) ***********
+
+ 2020.12.2 RRI_dam.f90
+
+ ダムモデルを一定率一定量方式に対応できるように改良
+ ダムモデルの貯水量を状態量として読み込めるように変更
+
+ 2021.1.9 RRI.f90
+
+ ddt_min_riv, ddt_min_slo が設定値より下回らないように変更。
+ ddt = ddt_min_rivに達しているときは、
+ ルンゲクッタの各ステップで最終段階の水位から流量を再計算するよう変更。
+
+ 2021.2.14 RRI_Riv.f90
+ !width(i, j) = sec_b(id, div_max)
+ width(i, j) = sec_b(id, sec_div(id)) ! modified on Feb 14, 2021
+
+ div_maxの値は全断面のsec_divの最大値を取った値。
+ 水深の分割数sec_divが一定の値とならない場合にエラーとなる。
+ div_maxの部分を、sec_div(id)に変更。
+
+ 2021.2.14 RRI.f90
+
+ L1197-L1203
+ roの出力にdir = -2における降雨量(m3/s換算)をID = 4として追加した。
+
+ 2021.4.15 RRI_Riv.f90
+
+ L214: 矩形断面の流量計算の潤辺を w ではなく、(w + 2h)に変更。
+ q = a * r ** (2.d0 / 3.d0) * w * h
+
+ 2021.4.19 RRI_Read.f90
+
+ L103 エラーメッセージの誤り
+
+ if( gammam(i) .gt. gammaa(i) ) stop "gammag must be smaller than gammaa"
+ 　↓  gammag→gammam
+ if( gammam(i) .gt. gammaa(i) ) stop "gammam must be smaller than gammaa"
+
+ 2021.4.19 RRI_RivSlo.f90
+
+ RRI_Riv_sloの河道延長を片岸→両岸(２倍)に変更
+
+ 2021.4.19 RRI_Section.f90
+
+ 任意断面のheightで、0未満なら0に置き換える。
+ height(i, j) = sec_height(id)
+ if(height(i,j)<0.d0) height(i,j)=0.d0  ←追加
+
+ 2021.7.1 RRI.f90
+ 
+ "hydro_hr.txt" として、location.txt で指定された場所の
+ 流量だけではなく河道の水深を出力する。
+
+ (2021.9.27 に1.4.2.4を公開したが、その後以下のバグを修正。1.4.2.5に変更)
+
+2021.11.27: Ver. 1.4.2.5
+
+ 2021.11.27 RRI_Riv.f90
+
+ ! boundary condition for river (discharge boundary) と
+ ! dam control の順序を入れ替える。
+
+ （dam controlを先に、boundary conditionを後にする）
+ これにより、ダム地点に流量境界条件を設定した際に、
+ ダムモデルで計算される放流量ではなく、境界条件で 
+ 設定した流量が優先されるようになる。
+
+ 2021.11.27 RRI_Dam.f90
+
+ ダムの入力条件が old version で1行しかない場合に
+ エラーが発生する。if文のバグを修正。
+
+ 2021.11.27 RRI.f90
+ where(riv.eq.1) area_ratio = width / len_riv を
+ where(riv.eq.1) area_ratio = width * len_riv / area
+ に変更。元の式は、len_riv = sqrt(area) で計算した場合
+ （すなわち河道の長さを別途設定しない場合)にしか適用できない。
+ 河道の長さを別ファイルで指定する場合には上記のように設定する
+ 必要がある。
+
+2021.11.27: Ver. 1.4.2.6 Beta
+
+2021.12.21 RRI_Div.f90
+ 分派先への流量配分ができていないため、RRI_Div.f90を修正
+
+2021.12.27 RRI_Section.f90
+ 任意断面を設定した際にriv(i, j) = 1の設定ができていなかった。
+ accの閾値もしくはrivfileで河道として設定した場所しか、
+ 任意断面が反映されていない問題を解消した。
+
+2022.12.7: Ver.1.4.2.7
+
+・1.4.2.6 で修正した分派の計算プログラムに冗長性があったので修正。
+  (1.4.2.6でも結果には大きな影響はないことを確認済み)
+
+・OpenMP指示行 (RRI_GW.f90: L57, RRI_Riv.f90: L140, RRI_Slope.f90: L98)
+  一部の変数についてprivate定義がもれていたので追加
+
+・RRI_Slope.f90 L519 qp_t = 0.d0 設定を追加
+
+・注意点：Intel Fortran oneAPI でコンパイルをしたので、同ソフトが
+インストールされていないPC環境では、w_ifort_runtime_p_2022.2.0.9553.exe 
+によるライブラリのインストールが必要。
+

@@ -1,0 +1,44 @@
+2007  12  24  00        # start time
+360              	# lasth [hour]
+96			# outnum [-]
+
+./Model/infile/solo30s/rain_solo_30s_gauge.dat
+./Model/infile/solo30s/adem_30s_solo.txt
+
+110.2d0          # xllcorner_rain
+-8.3d0           # yllcorner_rain
+0.00833333d0 0.00833333d0   # cellsize_rain
+
+1 1 0 1 1 1 0 0 0 1
+./Model/out/hs_
+./Model/out/hr_
+./Model/out/hg_
+./Model/out/qr_
+./Model/out/qu_
+./Model/out/qv_
+./Model/out/gu_
+./Model/out/gv_
+./Model/out/gampt_ff_
+
+./calcTecplot_out.dat
+
+TITLE     = "Internally created data set"
+VARIABLES = "X"
+"Y"
+"DEM (m)"
+"Rainfall (mm/h)"
+"Water depth hs (m)"
+"Water depth hr (m)"
+"Water depth hg (m)"
+"River discharge qr (m3/s)"
+"Slope discharge qu (m3/s)"
+"Slope discharge qv (m3/s)"
+"Ground discharge gu (m3/s) "
+"Ground discharge gv (m3/s)"
+"g-ampt (m)"
+
+ZONE T="Contour T =" 
+STRANDID=1, SOLUTIONTIME=
+I=336, J=204, K=1, ZONETYPE=Ordered
+DATAPACKING=POINT
+DT=(SINGLE SINGLE SINGLE SINGLE SINGLE SINGLE SINGLE SINGLE SINGLE SINGLE SINGLE SINGLE SINGLE)

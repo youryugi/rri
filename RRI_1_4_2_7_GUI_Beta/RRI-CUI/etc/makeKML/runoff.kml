@@ -1,0 +1,1442 @@
+<Folder>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-24T00:00Z</begin>
+   <end>2007-12-24T03:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000001.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-24T03:45Z</begin>
+   <end>2007-12-24T07:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000002.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-24T07:30Z</begin>
+   <end>2007-12-24T11:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000003.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-24T11:15Z</begin>
+   <end>2007-12-24T15:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000004.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-24T15:00Z</begin>
+   <end>2007-12-24T18:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000005.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-24T18:45Z</begin>
+   <end>2007-12-24T22:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000006.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-24T22:30Z</begin>
+   <end>2007-12-25T02:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000007.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-25T02:15Z</begin>
+   <end>2007-12-25T06:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000008.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-25T06:00Z</begin>
+   <end>2007-12-25T09:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000009.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-25T09:45Z</begin>
+   <end>2007-12-25T13:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000010.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-25T13:30Z</begin>
+   <end>2007-12-25T17:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000011.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-25T17:15Z</begin>
+   <end>2007-12-25T21:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000012.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-25T21:00Z</begin>
+   <end>2007-12-26T00:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000013.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-26T00:45Z</begin>
+   <end>2007-12-26T04:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000014.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-26T04:30Z</begin>
+   <end>2007-12-26T08:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000015.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-26T08:15Z</begin>
+   <end>2007-12-26T12:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000016.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-26T12:00Z</begin>
+   <end>2007-12-26T15:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000017.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-26T15:45Z</begin>
+   <end>2007-12-26T19:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000018.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-26T19:30Z</begin>
+   <end>2007-12-26T23:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000019.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-26T23:15Z</begin>
+   <end>2007-12-27T03:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000020.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-27T03:00Z</begin>
+   <end>2007-12-27T06:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000021.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-27T06:45Z</begin>
+   <end>2007-12-27T10:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000022.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-27T10:30Z</begin>
+   <end>2007-12-27T14:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000023.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-27T14:15Z</begin>
+   <end>2007-12-27T18:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000024.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-27T18:00Z</begin>
+   <end>2007-12-27T21:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000025.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-27T21:45Z</begin>
+   <end>2007-12-28T01:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000026.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-28T01:30Z</begin>
+   <end>2007-12-28T05:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000027.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-28T05:15Z</begin>
+   <end>2007-12-28T09:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000028.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-28T09:00Z</begin>
+   <end>2007-12-28T12:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000029.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-28T12:45Z</begin>
+   <end>2007-12-28T16:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000030.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-28T16:30Z</begin>
+   <end>2007-12-28T20:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000031.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-28T20:15Z</begin>
+   <end>2007-12-29T00:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000032.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-29T00:00Z</begin>
+   <end>2007-12-29T03:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000033.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-29T03:45Z</begin>
+   <end>2007-12-29T07:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000034.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-29T07:30Z</begin>
+   <end>2007-12-29T11:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000035.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-29T11:15Z</begin>
+   <end>2007-12-29T15:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000036.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-29T15:00Z</begin>
+   <end>2007-12-29T18:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000037.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-29T18:45Z</begin>
+   <end>2007-12-29T22:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000038.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-29T22:30Z</begin>
+   <end>2007-12-30T02:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000039.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-30T02:15Z</begin>
+   <end>2007-12-30T06:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000040.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-30T06:00Z</begin>
+   <end>2007-12-30T09:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000041.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-30T09:45Z</begin>
+   <end>2007-12-30T13:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000042.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-30T13:30Z</begin>
+   <end>2007-12-30T17:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000043.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-30T17:15Z</begin>
+   <end>2007-12-30T21:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000044.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-30T21:00Z</begin>
+   <end>2007-12-31T00:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000045.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-31T00:45Z</begin>
+   <end>2007-12-31T04:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000046.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-31T04:30Z</begin>
+   <end>2007-12-31T08:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000047.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-31T08:15Z</begin>
+   <end>2007-12-31T12:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000048.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-31T12:00Z</begin>
+   <end>2007-12-31T15:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000049.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-31T15:45Z</begin>
+   <end>2007-12-31T19:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000050.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-31T19:30Z</begin>
+   <end>2007-12-31T23:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000051.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2007-12-31T23:15Z</begin>
+   <end>2008-01-01T03:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000052.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-01T03:00Z</begin>
+   <end>2008-01-01T06:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000053.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-01T06:45Z</begin>
+   <end>2008-01-01T10:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000054.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-01T10:30Z</begin>
+   <end>2008-01-01T14:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000055.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-01T14:15Z</begin>
+   <end>2008-01-01T18:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000056.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-01T18:00Z</begin>
+   <end>2008-01-01T21:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000057.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-01T21:45Z</begin>
+   <end>2008-01-02T01:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000058.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-02T01:30Z</begin>
+   <end>2008-01-02T05:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000059.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-02T05:15Z</begin>
+   <end>2008-01-02T09:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000060.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-02T09:00Z</begin>
+   <end>2008-01-02T12:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000061.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-02T12:45Z</begin>
+   <end>2008-01-02T16:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000062.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-02T16:30Z</begin>
+   <end>2008-01-02T20:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000063.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-02T20:15Z</begin>
+   <end>2008-01-03T00:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000064.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-03T00:00Z</begin>
+   <end>2008-01-03T03:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000065.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-03T03:45Z</begin>
+   <end>2008-01-03T07:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000066.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-03T07:30Z</begin>
+   <end>2008-01-03T11:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000067.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-03T11:15Z</begin>
+   <end>2008-01-03T15:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000068.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-03T15:00Z</begin>
+   <end>2008-01-03T18:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000069.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-03T18:45Z</begin>
+   <end>2008-01-03T22:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000070.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-03T22:30Z</begin>
+   <end>2008-01-04T02:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000071.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-04T02:15Z</begin>
+   <end>2008-01-04T06:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000072.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-04T06:00Z</begin>
+   <end>2008-01-04T09:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000073.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-04T09:45Z</begin>
+   <end>2008-01-04T13:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000074.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-04T13:30Z</begin>
+   <end>2008-01-04T17:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000075.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-04T17:15Z</begin>
+   <end>2008-01-04T21:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000076.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-04T21:00Z</begin>
+   <end>2008-01-05T00:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000077.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-05T00:45Z</begin>
+   <end>2008-01-05T04:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000078.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-05T04:30Z</begin>
+   <end>2008-01-05T08:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000079.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-05T08:15Z</begin>
+   <end>2008-01-05T12:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000080.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-05T12:00Z</begin>
+   <end>2008-01-05T15:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000081.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-05T15:45Z</begin>
+   <end>2008-01-05T19:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000082.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-05T19:30Z</begin>
+   <end>2008-01-05T23:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000083.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-05T23:15Z</begin>
+   <end>2008-01-06T03:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000084.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-06T03:00Z</begin>
+   <end>2008-01-06T06:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000085.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-06T06:45Z</begin>
+   <end>2008-01-06T10:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000086.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-06T10:30Z</begin>
+   <end>2008-01-06T14:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000087.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-06T14:15Z</begin>
+   <end>2008-01-06T18:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000088.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-06T18:00Z</begin>
+   <end>2008-01-06T21:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000089.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-06T21:45Z</begin>
+   <end>2008-01-07T01:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000090.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-07T01:30Z</begin>
+   <end>2008-01-07T05:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000091.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-07T05:15Z</begin>
+   <end>2008-01-07T09:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000092.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-07T09:00Z</begin>
+   <end>2008-01-07T12:45Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000093.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-07T12:45Z</begin>
+   <end>2008-01-07T16:30Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000094.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-07T16:30Z</begin>
+   <end>2008-01-07T20:15Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000095.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+ <GroundOverlay>
+  <TimeSpan>
+   <begin>2008-01-07T20:15Z</begin>
+   <end>2008-01-08T00:00Z</end>
+  </TimeSpan>
+  <Icon>
+    <href>hs_kml/hs_000096.gif</href>
+  </Icon>
+  <LatLonBox>
+   <north>  -6.60000</north>
+   <south>  -8.30000</south>
+   <east> 113.00000</east>
+   <west> 110.20000</west>
+  </LatLonBox>
+ </GroundOverlay>
+</Folder>

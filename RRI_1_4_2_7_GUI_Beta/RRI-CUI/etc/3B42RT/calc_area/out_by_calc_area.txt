@@ -1,0 +1,19 @@
+ xll :    67.55000    
+ yll :    33.56667    
+ xur :    70.33334    
+ yur :    35.93333    
+ 
+ xll_rain :    67.37500    
+ yll_rain :    33.37500    
+ xur_rain :    70.37500    
+ yur_rain :    36.12500    
+ 
+ jleft   :          269
+ ibottom :          106
+ jright  :          281
+ itop    :           95
+ 
+ xllcorner_rain (raster):    67.25000    
+ yllcorner_rain (raster):    33.25000    
+ cellsize_rain :   0.2500000    
+ 

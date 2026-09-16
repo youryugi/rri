@@ -1,0 +1,519 @@
+2023/08/02 15:23:53　雨量データ変換プログラム Console Start!
+2023/08/02 15:23:53　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930160000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:57　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930163000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:57　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930170000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:57　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930173000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:57　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930180000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:57　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930183000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:57　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930190000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:57　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930193000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:57　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930200000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930203000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930210000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930213000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930220000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930223000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930230000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930233000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001000000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001003000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001010000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001013000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001020000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001023000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001030000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:58　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001033000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001040000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001043000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001050000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001053000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001060000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001063000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001070000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001073000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001080000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001083000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001090000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001093000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001100000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001103000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001110000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:23:59　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001113000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001120000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001123000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001130000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001133000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001140000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001143000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001150000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001153000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001160000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001163000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001170000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930160000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930163000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930170000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:00　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930173000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:01　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930180000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:01　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930183000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:01　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930190000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:01　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930193000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:01　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930200000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:01　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930203000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:01　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930210000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:01　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930213000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:01　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930220000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:01　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930223000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930230000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930233000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001000000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001003000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001010000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001013000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001020000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001023000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001030000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001033000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001040000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:02　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001043000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001050000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001053000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001060000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001063000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001070000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001073000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001080000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001083000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001090000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001093000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001100000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001103000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001110000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001113000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001120000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:03　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001123000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:04　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001130000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:04　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001133000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:04　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001140000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:04　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001143000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:04　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001150000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:04　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001153000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:04　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001160000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:04　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001163000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:04　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001170000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -nxny
+2023/08/02 15:24:04　◆　処理開始
+2023/08/02 15:24:04　メッシュ番号の配列抽出！
+2023/08/02 15:24:10　    対象メッシュ:5338,5238
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001053000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001010000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930233000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001053000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001053000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930203000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001083000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930203000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930203000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001083000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001083000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:10　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001053000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001060000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001060000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001060000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:10　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001083000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930203000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001090000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930210000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001090000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001090000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930210000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930210000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:10　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001060000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930210000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001063000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930213000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001063000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001063000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930213000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930213000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:10　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001090000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001093000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001093000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001093000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930213000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001093000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930220000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930220000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930220000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001100000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001100000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001100000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930220000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001100000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930223000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001103000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930223000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930223000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001103000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001103000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930223000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001103000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930230000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930230000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930230000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001110000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001110000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001110000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930163000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930163000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930163000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001070000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001143000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001143000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001143000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001110000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001120000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001120000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001120000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930230000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001000000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001000000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001000000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930163000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930170000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930170000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930170000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001143000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001120000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001150000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001123000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001150000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001150000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001123000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001123000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930170000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930173000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930173000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930173000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001000000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001003000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001003000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001003000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930173000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930180000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930180000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930180000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001150000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001123000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001153000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001130000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001003000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001130000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001130000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:11　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001010000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001010000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001010000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930180000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:11　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001063000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930183000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001070000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930183000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930183000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001070000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001070000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001010000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001130000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001013000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001013000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001013000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001133000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001133000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001133000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930183000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930193000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930193000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930193000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001070000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001073000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001073000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001073000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001013000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001133000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001020000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930193000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001140000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001140000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001140000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930200000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930200000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930200000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001113000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001023000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001113000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001113000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001073000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001080000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001080000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001080000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930200000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930203000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930203000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930203000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001140000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001160000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001160000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001160000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001113000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930223000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930223000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930223000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001080000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930233000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930203000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930233000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930233000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930210000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930210000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930210000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930223000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001160000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001163000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001163000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001163000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930230000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930230000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930230000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930233000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001000000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930210000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001000000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001000000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930213000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930213000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930213000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:12　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930230000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001153000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001153000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:12　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:12　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001013000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001013000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001013000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001000000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001163000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001170000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001170000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001170000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930213000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001003000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001003000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001003000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001033000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001033000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001033000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001013000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001020000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001020000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001020000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001153000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001043000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001043000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001043000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001003000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001033000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001063000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001063000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001063000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001073000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001170000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001073000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001073000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001103000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001103000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001103000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001020000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001043000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001023000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001023000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001023000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001050000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001050000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001050000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001063000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001020000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001020000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001073000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001133000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001133000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001133000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001103000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001080000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001080000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001080000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001110000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:12　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001023000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001023000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001100000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930173000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001100000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001100000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930173000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930173000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001023000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001050000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001030000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001030000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001030000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001053000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001053000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001053000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001133000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001080000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001140000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001140000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001140000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001100000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001083000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001083000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001083000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001163000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001163000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001163000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001023000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001030000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001053000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930173000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930160000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930160000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930160000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930180000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930180000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930180000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001060000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001060000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001060000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001140000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001083000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001143000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001163000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001143000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001143000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001170000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001170000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001170000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001060000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930190000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930160000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930190000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930190000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930180000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001143000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930183000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930183000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930183000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001170000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001150000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001150000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001150000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001040000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001040000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001040000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001150000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930190000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001153000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930193000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001153000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001153000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930193000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930193000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930183000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001040000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001043000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001043000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001043000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001153000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930193000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930200000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930200000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930200000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001043000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:11　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001070000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001070000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930233000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930233000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001050000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001050000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001050000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001070000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930200000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930233000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001050000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001020000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:13　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001030000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001030000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001030000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:13　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001090000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001090000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001090000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:14　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001030000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:14　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001033000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:14　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001033000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001033000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:15　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001090000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:15　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:15　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001093000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:15　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001093000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001093000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:14　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:15　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930163000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:15　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001033000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:15　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930163000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930163000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:15　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:15　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001093000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:15　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:15　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930163000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:15　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:15　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930170000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:15　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930170000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930170000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin bin
+2023/08/02 15:24:15　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930170000_SRF_GPV_Ggis1km_Prr60lv_FH01-06_grib2.bin
+2023/08/02 15:24:15　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001010000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001010000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001130000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:15　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001130000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001130000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:15　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001010000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:15　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:15　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001130000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:15　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930160000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930190000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:16　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930160000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930160000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:16　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930190000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930190000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:16　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930160000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:16　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:16　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930190000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:16　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001160000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:17　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001160000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001160000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:17　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001160000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:17　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930220000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:13　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001110000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001110000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:18　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\09\30\Z__C_RJTD_20220930220000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930220000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:18　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001110000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:18　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20220930220000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:18　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:18　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:18　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001113000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:18　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001113000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001113000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:18　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001113000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:18　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:18　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001120000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:18　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001120000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001120000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:18　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001120000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:18　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:18　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001123000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:18　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001123000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001123000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:18　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001123000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:18　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:10　Binaryデータ絞り込み：C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001040000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:19　D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\Users\kakinuma-d977bt\Desktop\ANAL-rainfall\Obsdata\2022\10\01\Z__C_RJTD_20221001040000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin -no_header -order raw -ijbox 1601:1680:1 1441:1600:1 D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001040000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin bin
+2023/08/02 15:24:19　Binaryファイル読込：D:\RRI\RRI-GUI_PRISM\GetJmbscRadar\tempbin\Z__C_RJTD_20221001040000_SRF_GPV_Ggis1km_Prr60lv_ANAL_grib2.bin
+2023/08/02 15:24:19　    保存フォルダ:D:/RRI/RRI-GUI_PRISM/Project/test/rain
+2023/08/02 15:24:19　□　sysupdate d:\data\datetime\jmbsc\DateJmaJ.txt,  2022/10/02 02:00
+2023/08/02 15:24:19　□　sysupdate d:\data\datetime\jmbsc\DateJmaY.txt,  2022/10/02 02:00
+2023/08/02 15:24:19　◆　処理終了
+
+2023/08/02 15:24:19　雨量データ変換プログラム Console End!

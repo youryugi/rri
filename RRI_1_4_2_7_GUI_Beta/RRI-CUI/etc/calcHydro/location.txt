@@ -1,0 +1,9 @@
+Warsak     191      322
+Kabul      204      374
+Tarbela    196      402
+Kalabagh   265      332
+Chashma    294      323
+Taunsa     410      291
+Guddu      536      223
+Sukkur     579      171
+Kotri      714      139

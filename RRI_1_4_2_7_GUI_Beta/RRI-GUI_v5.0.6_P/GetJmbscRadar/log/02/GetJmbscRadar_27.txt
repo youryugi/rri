@@ -1,0 +1,966 @@
+2022/05/27 17:18:55　雨量データ変換プログラム Console Start!
+2022/05/27 17:18:56　雨量データ変換プログラム Console End!
+2022/05/27 17:20:57　雨量データ変換プログラム Console Start!
+2022/05/27 17:20:57　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:57　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:58　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:58　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:58　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:58　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:58　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:58　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:58　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:59　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:59　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:59　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:59　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:20:59　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:20:59　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:20:59　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:20:59　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:21:00　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:21:00　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:21:00　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:21:00　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:21:00　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:21:01　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:21:01　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:21:01　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:21:01　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:21:01　◆　処理開始
+2022/05/27 17:21:01　メッシュ番号の配列抽出！
+2022/05/27 17:21:14　    対象メッシュ:5340
+2022/05/27 17:21:14　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:14　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:14　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:14　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:14　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:14　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:14　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:14　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:15　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:15　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:15　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:15　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:15　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050000.dat作成
+2022/05/27 17:21:15　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:15　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:15　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050200.dat作成
+2022/05/27 17:21:15　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:15　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:15　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:15　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:15　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:15　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050100.dat作成
+2022/05/27 17:21:15　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:15　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:15　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:15　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050050.dat作成
+2022/05/27 17:21:15　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:15　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:15　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:14　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:15　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:16　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050110.dat作成
+2022/05/27 17:21:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:16　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050010.dat作成
+2022/05/27 17:21:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:16　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050000.dat作成
+2022/05/27 17:21:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:16　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050100.dat作成
+2022/05/27 17:21:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:16　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050120.dat作成
+2022/05/27 17:21:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:16　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050020.dat作成
+2022/05/27 17:21:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:16　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050150.dat作成
+2022/05/27 17:21:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:17　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050110.dat作成
+2022/05/27 17:21:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:17　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050010.dat作成
+2022/05/27 17:21:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:17　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050130.dat作成
+2022/05/27 17:21:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:17　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050030.dat作成
+2022/05/27 17:21:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:17　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050200.dat作成
+2022/05/27 17:21:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:17　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050120.dat作成
+2022/05/27 17:21:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:17　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050020.dat作成
+2022/05/27 17:21:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:18　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:18　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050140.dat作成
+2022/05/27 17:21:18　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:18　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:18　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:18　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050040.dat作成
+2022/05/27 17:21:18　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:18　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:21:18　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:18　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:18　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050150.dat作成
+2022/05/27 17:21:18　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:21:18　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:18　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:18　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:18　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050050.dat作成
+2022/05/27 17:21:18　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:18　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:18　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050030.dat作成
+2022/05/27 17:21:18　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:18　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:18　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050130.dat作成
+2022/05/27 17:21:18　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:18　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:21:18　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:19　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:21:19　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:19　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:21:19　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050140.dat作成
+2022/05/27 17:21:19　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050040.dat作成
+2022/05/27 17:21:19　□　sysupdate D:\data\datetime\err\notfound31.txt,  2018/07/05 02:00
+2022/05/27 17:21:19　□　sysupdate D:\data\datetime\err\notfound32.txt,  2018/07/05 02:00
+2022/05/27 17:21:19　◆　処理終了
+
+2022/05/27 17:21:19　雨量データ変換プログラム Console End!
+2022/05/27 17:26:08　雨量データ変換プログラム Console Start!
+2022/05/27 17:26:09　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:09　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:09　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:09　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:09　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:09　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:09　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:09　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:10　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:10　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:10　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:10　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:10　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:26:10　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:11　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:11　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:11　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:11　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:11　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:11　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:11　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:11　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:12　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:12　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:12　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:12　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:26:12　◆　処理開始
+2022/05/27 17:26:12　メッシュ番号の配列抽出！
+2022/05/27 17:26:22　    対象メッシュ:5340
+2022/05/27 17:26:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:23　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050100.dat作成
+2022/05/27 17:26:23　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050000.dat作成
+2022/05/27 17:26:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:23　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050200.dat作成
+2022/05/27 17:26:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:23　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050150.dat作成
+2022/05/27 17:26:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:23　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050050.dat作成
+2022/05/27 17:26:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:24　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050010.dat作成
+2022/05/27 17:26:24　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050110.dat作成
+2022/05/27 17:26:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:24　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050000.dat作成
+2022/05/27 17:26:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:24　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050200.dat作成
+2022/05/27 17:26:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:24　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050100.dat作成
+2022/05/27 17:26:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:24　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050020.dat作成
+2022/05/27 17:26:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:24　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050120.dat作成
+2022/05/27 17:26:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:25　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:25　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:25　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050030.dat作成
+2022/05/27 17:26:25　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:25　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:25　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:25　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:25　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050130.dat作成
+2022/05/27 17:26:25　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:25　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:25　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:25　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050010.dat作成
+2022/05/27 17:26:25　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:25　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:25　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:25　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:25　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050110.dat作成
+2022/05/27 17:26:25　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050020.dat作成
+2022/05/27 17:26:25　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:25　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:25　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:25　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050040.dat作成
+2022/05/27 17:26:25　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:25　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:25　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:25　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050140.dat作成
+2022/05/27 17:26:25　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:26:26　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:26　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:26　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:26　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050120.dat作成
+2022/05/27 17:26:26　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:26　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:26　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050050.dat作成
+2022/05/27 17:26:26　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:26　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:26　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:26:26　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050030.dat作成
+2022/05/27 17:26:26　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:26　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:26　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaJ\201807050150.dat作成
+2022/05/27 17:26:26　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:26　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:26　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:26　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050130.dat作成
+2022/05/27 17:26:26　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:26:26　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:26　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050040.dat作成
+2022/05/27 17:26:26　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:26:26　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_002/rain
+2022/05/27 17:26:26　□　C:/rri/test/RRI-GUI/Project/T0527_002/rain\JmaY\201807050140.dat作成
+2022/05/27 17:26:27　□　sysupdate D:\data\datetime\err\notfound31.txt,  2018/07/05 02:00
+2022/05/27 17:26:27　□　sysupdate D:\data\datetime\err\notfound32.txt,  2018/07/05 02:00
+2022/05/27 17:26:27　◆　処理終了
+
+2022/05/27 17:26:27　雨量データ変換プログラム Console End!
+2022/05/27 17:44:37　雨量データ変換プログラム Console Start!
+2022/05/27 17:44:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:44:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:40　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:40　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:40　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:40　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:40　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:40　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:41　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:41　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:41　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:41　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:41　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:44:41　◆　処理開始
+2022/05/27 17:44:41　メッシュ番号の配列抽出！
+2022/05/27 17:44:53　    対象メッシュ:5340
+2022/05/27 17:44:53　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:53　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:53　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:53　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:53　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:53　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:53　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:54　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:54　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:54　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:54　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:54　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050000.dat作成
+2022/05/27 17:44:54　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050100.dat作成
+2022/05/27 17:44:54　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:54　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:54　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:54　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:54　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:54　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:54　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050050.dat作成
+2022/05/27 17:44:54　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:54　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:54　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:54　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:54　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:54　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050110.dat作成
+2022/05/27 17:44:54　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:54　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:54　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:54　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050010.dat作成
+2022/05/27 17:44:54　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:54　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:54　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:54　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:54　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050100.dat作成
+2022/05/27 17:44:54　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:54　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:55　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:53　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:53　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:55　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:55　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:55　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050120.dat作成
+2022/05/27 17:44:55　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:55　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:55　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:55　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:55　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050020.dat作成
+2022/05/27 17:44:55　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:55　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:55　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:55　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:55　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050200.dat作成
+2022/05/27 17:44:55　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:55　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:55　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:55　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:55　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050030.dat作成
+2022/05/27 17:44:55　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:55　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:55　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:55　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:55　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:55　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050130.dat作成
+2022/05/27 17:44:55　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:55　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:55　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:55　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:55　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:55　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050110.dat作成
+2022/05/27 17:44:55　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:55　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:55　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050150.dat作成
+2022/05/27 17:44:55　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:55　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:56　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:56　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:56　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050040.dat作成
+2022/05/27 17:44:56　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:56　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:56　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:56　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:56　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:56　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050140.dat作成
+2022/05/27 17:44:56　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:56　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:44:56　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:56　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:56　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:56　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050000.dat作成
+2022/05/27 17:44:56　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:56　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:56　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050200.dat作成
+2022/05/27 17:44:56　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:56　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:56　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:56　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:56　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050120.dat作成
+2022/05/27 17:44:56　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:56　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:56　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:56　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:44:56　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:56　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050050.dat作成
+2022/05/27 17:44:56　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:56　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaJ\201807050150.dat作成
+2022/05/27 17:44:56　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:56　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:56　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050010.dat作成
+2022/05/27 17:44:56　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:56　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:56　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:56　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050020.dat作成
+2022/05/27 17:44:56　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:56　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:57　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:57　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050130.dat作成
+2022/05/27 17:44:57　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:57　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:57　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:57　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:57　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050030.dat作成
+2022/05/27 17:44:57　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:57　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1520:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:44:57　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:57　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:57　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050140.dat作成
+2022/05/27 17:44:57　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:44:57　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_003/rain
+2022/05/27 17:44:57　□　C:/rri/test/RRI-GUI/Project/T0527_003/rain\JmaY\201807050040.dat作成
+2022/05/27 17:44:57　□　sysupdate D:\data\datetime\err\notfound31.txt,  2018/07/05 02:00
+2022/05/27 17:44:57　□　sysupdate D:\data\datetime\err\notfound32.txt,  2018/07/05 02:00
+2022/05/27 17:44:57　◆　処理終了
+
+2022/05/27 17:44:57　雨量データ変換プログラム Console End!
+2022/05/27 17:51:04　雨量データ変換プログラム Console Start!
+2022/05/27 17:51:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:06　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:06　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:06　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:06　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:06　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:06　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:51:06　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:07　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:07　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:07　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:07　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:07　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:08　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:08　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:08　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:08　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:08　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:08　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:09　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:51:09　◆　処理開始
+2022/05/27 17:51:09　メッシュ番号の配列抽出！
+2022/05/27 17:51:21　    対象メッシュ:5340,5240
+2022/05/27 17:51:21　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:21　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:21　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:21　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:21　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:21　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:21　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:21　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:21　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:21　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:21　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:21　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:22　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:22　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:22　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:22　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:22　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050000.dat作成
+2022/05/27 17:51:22　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:22　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:22　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050100.dat作成
+2022/05/27 17:51:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:22　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050200.dat作成
+2022/05/27 17:51:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:22　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:22　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:22　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050150.dat作成
+2022/05/27 17:51:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:22　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050050.dat作成
+2022/05/27 17:51:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:22　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:22　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:22　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:22　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:22　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050010.dat作成
+2022/05/27 17:51:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:22　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050110.dat作成
+2022/05/27 17:51:22　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:22　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:22　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:22　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:22　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:22　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:23　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050000.dat作成
+2022/05/27 17:51:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:23　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050100.dat作成
+2022/05/27 17:51:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:23　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050120.dat作成
+2022/05/27 17:51:23　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050020.dat作成
+2022/05/27 17:51:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:23　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050130.dat作成
+2022/05/27 17:51:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:23　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050030.dat作成
+2022/05/27 17:51:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:23　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050010.dat作成
+2022/05/27 17:51:23　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:23　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:23　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050110.dat作成
+2022/05/27 17:51:23　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:23　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:23　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050200.dat作成
+2022/05/27 17:51:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:24　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050140.dat作成
+2022/05/27 17:51:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:24　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050020.dat作成
+2022/05/27 17:51:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:24　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050120.dat作成
+2022/05/27 17:51:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:24　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050150.dat作成
+2022/05/27 17:51:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:24　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:24　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050030.dat作成
+2022/05/27 17:51:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:24　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050130.dat作成
+2022/05/27 17:51:24　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:51:24　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:25　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050040.dat作成
+2022/05/27 17:51:25　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:51:25　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:25　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:51:25　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:25　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:25　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050040.dat作成
+2022/05/27 17:51:25　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaY\201807050140.dat作成
+2022/05/27 17:51:25　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:51:25　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_001/rain
+2022/05/27 17:51:25　□　C:/rri/test/RRI-GUI/Project/T0527_001/rain\JmaJ\201807050050.dat作成
+2022/05/27 17:51:25　□　sysupdate D:\data\datetime\err\notfound31.txt,  2018/07/05 02:00
+2022/05/27 17:51:25　□　sysupdate D:\data\datetime\err\notfound32.txt,  2018/07/05 02:00
+2022/05/27 17:51:25　◆　処理終了
+
+2022/05/27 17:51:25　雨量データ変換プログラム Console End!
+2022/05/27 17:56:23　雨量データ変換プログラム Console Start!
+2022/05/27 17:56:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:24　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 17:56:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:25　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:26　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:27　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:27　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:27　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 17:56:27　◆　処理開始
+2022/05/27 17:56:27　メッシュ番号の配列抽出！
+2022/05/27 17:56:36　    対象メッシュ:5340,5240
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:37　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:37　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:37　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:37　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:37　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:37　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:37　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:37　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:37　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:37　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:37　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:37　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:37　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:38　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:38　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:38　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:38　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:38　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:38　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:37　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:38　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:38　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:38　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:38　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:38　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:38　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:38　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:38　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:38　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:38　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:38　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:38　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:38　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:38　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:38　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:38　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:39　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:39　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:39　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:39　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 17:56:39　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:39　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 17:56:39　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 17:56:39　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:39　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_S001/rain
+2022/05/27 17:56:39　□　sysupdate D:\data\datetime\err\notfound31.txt,  2018/07/05 02:00
+2022/05/27 17:56:39　□　sysupdate D:\data\datetime\err\notfound32.txt,  2018/07/05 02:00
+2022/05/27 17:56:39　◆　処理終了
+
+2022/05/27 17:56:39　雨量データ変換プログラム Console End!
+2022/05/27 18:03:02　雨量データ変換プログラム Console Start!
+2022/05/27 18:03:02　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:02　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:02　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:02　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:03　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:03　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:03　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:03　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:03　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:03　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:03　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:03　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:04　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -nxny
+2022/05/27 18:03:04　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:04　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:04　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:04　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:04　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:04　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:05　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -nxny
+2022/05/27 18:03:05　◆　処理開始
+2022/05/27 18:03:05　メッシュ番号の配列抽出！
+2022/05/27 18:03:15　    対象メッシュ:5340,5240
+2022/05/27 18:03:15　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:15　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:15　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:15　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:15　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:15　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:15　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:15　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:15　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:15　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:15　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:15　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:15　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050000.dat作成
+2022/05/27 18:03:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:16　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050100.dat作成
+2022/05/27 18:03:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:16　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050200.dat作成
+2022/05/27 18:03:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050050.dat作成
+2022/05/27 18:03:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:16　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050150.dat作成
+2022/05/27 18:03:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050010.dat作成
+2022/05/27 18:03:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:16　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050110.dat作成
+2022/05/27 18:03:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704150000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050000.dat作成
+2022/05/27 18:03:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704160000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704170000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050100.dat作成
+2022/05/27 18:03:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:16　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:16　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:16　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:16　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050200.dat作成
+2022/05/27 18:03:17　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050120.dat作成
+2022/05/27 18:03:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704151000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:17　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050030.dat作成
+2022/05/27 18:03:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:17　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050130.dat作成
+2022/05/27 18:03:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704161000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:17　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050010.dat作成
+2022/05/27 18:03:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:17　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050110.dat作成
+2022/05/27 18:03:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:17　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050040.dat作成
+2022/05/27 18:03:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:17　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050140.dat作成
+2022/05/27 18:03:17　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin bin
+2022/05/27 18:03:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704162000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:17　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:17　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704155000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:16　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:18　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050120.dat作成
+2022/05/27 18:03:18　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050020.dat作成
+2022/05/27 18:03:18　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:18　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:18　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704165000_SRF_GPV_Ggis1km_Prr60lv_Aper10min_ANAL_grib2.bin
+2022/05/27 18:03:18　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:18　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:18　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050050.dat作成
+2022/05/27 18:03:18　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaJ\201807050150.dat作成
+2022/05/27 18:03:18　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704163000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:18　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:18　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050130.dat作成
+2022/05/27 18:03:18　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:18　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:17　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:18　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704164000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:18　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:18　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050140.dat作成
+2022/05/27 18:03:18　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704152000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:18　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:18　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050020.dat作成
+2022/05/27 18:03:18　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:18　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:19　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704153000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:19　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:19　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050030.dat作成
+2022/05/27 18:03:19　Binaryデータ絞り込み：C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:19　C:\rri\test\RRI-GUI\GetJmbscRadar\.\tools\wgrib2\wgrib2.exe C:\rri\test\RRI-GUI\GetJmbscRadar\data\2018\07\04\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin -no_header -order raw -ijbox 1761:1840:1 1441:1600:1 C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin bin
+2022/05/27 18:03:19　Binaryファイル読込：C:\rri\test\RRI-GUI\GetJmbscRadar\tempbin\Z__C_RJTD_20180704154000_SRF_GPV_Ggis1km_Prr60lv_Fper10min_FH01-06_grib2.bin
+2022/05/27 18:03:19　    保存フォルダ:C:/rri/test/RRI-GUI/Project/T0527_004/rain
+2022/05/27 18:03:19　□　C:/rri/test/RRI-GUI/Project/T0527_004/rain\JmaY\201807050040.dat作成
+2022/05/27 18:03:19　□　sysupdate D:\data\datetime\err\notfound31.txt,  2018/07/05 02:00
+2022/05/27 18:03:19　□　sysupdate D:\data\datetime\err\notfound32.txt,  2018/07/05 02:00
+2022/05/27 18:03:19　◆　処理終了
+
+2022/05/27 18:03:19　雨量データ変換プログラム Console End!

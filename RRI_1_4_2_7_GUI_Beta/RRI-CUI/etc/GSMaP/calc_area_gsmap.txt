@@ -1,0 +1,7 @@
+0.1    # GSMaP horizontal_resolution [deg]
+1      # GSMaP temporal_resolution [h]
+336    # ncols
+204    # nrows
+110.2  # xll
+-8.3   # yll
+0.008333333333333 # cellsize

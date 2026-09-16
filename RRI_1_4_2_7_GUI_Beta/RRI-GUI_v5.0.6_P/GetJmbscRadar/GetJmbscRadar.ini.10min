@@ -1,0 +1,14 @@
+[RADAR]
+CM_RiverName = ‘S‘
+RD_Kind_ID = 31, 32
+MeshRootDir_org = ..\testdata\速報版-予報短時間降水,解析雨量20210719-20210721\data
+MeshOutputDir = ..\testdata\速報版-予報短時間降水,解析雨量20210719-20210721\rain
+StartDateTime = 2021/07/19 09:00:00
+EndDateTime = 2021/07/22 08:50:00
+Kdo_LeftUpper = 139.501563
+Ido_LeftUpper = 37.998958
+Kdo_RightLower = 139.998438
+Ido_RightLower = 37.667708
+rain_dat = 1
+JMAJ_dat = 1
+JMAY_dat = 1
