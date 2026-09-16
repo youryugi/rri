@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<MD_Metadata xmlns="http://www.iscgm.org/spec/2.0/GMMP_MetadataSchema" xmlns:gmmp="http://www.iscgm.org/spec/2.0/GMMP_MetadataSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.iscgm.org/spec/2.0/GMMP_MetadataSchema gmmp.xsd">
+
+  <fileIdentifier>gm_lc_v2</fileIdentifier>
+
+  <language>en</language>
+
+  <characterSet>004</characterSet>
+  <contact>
+    <organisationName>International Steering Committee for Global Mapping (ISCGM) </organisationName>
+    <contactInfo>
+      <phone>
+        <voice>+81 29 864 6910</voice>
+        <facsimile>+81 29 864 8087</facsimile>
+      </phone>
+      <address>
+        <deliveryPoint>c/o Geospatial Information Authority of Japan, Kitasato 1</deliveryPoint>
+        <city>Tsukuba</city>
+        <administrativeArea>Ibaraki</administrativeArea>
+        <postalCode>305-0811</postalCode>
+        <country>Japan</country>
+        <electronicMailAddress>sec@iscgm.org</electronicMailAddress>
+      </address>
+      <onlineResource>
+        <linkage>http://www.iscgm.org/</linkage>
+      </onlineResource>
+    </contactInfo>
+    <role>007</role>
+  </contact>
+
+  <dateStamp>2013-07-19</dateStamp>
+
+  <metadataStandardName>Global Map Metadata Profile</metadataStandardName>
+
+  <metadataStandardVersion>2.0</metadataStandardVersion>
+
+  <referenceSystemInfo>
+    <MD_CRS>
+      <projection>
+        <code>Geographic</code>
+      </projection>
+      <ellipsoid>
+        <code>WGS84</code>
+      </ellipsoid>
+      <datum>
+        <code>WGS84</code>
+      </datum>
+    </MD_CRS>
+  </referenceSystemInfo>
+
+  <identificationInfo>
+    <MD_DataIdentification>
+      <citation>
+        <title>Global Map Land cover layer- Global Land Cover by National Mapping Organizations (GLCNMO)</title>
+        <date>
+          <date>2013-07-19</date>
+          <dateType>002</dateType>
+        </date>
+        <edition>Version 2.0</edition>
+      </citation>
+      <abstract>GLCNMO represents land cover types. The data shows a representative land cover type of the unit area of ground surface.</abstract>
+      
+      <credit>Geospatial Information Authority of Japan, Chiba University and collaborating organizations</credit>
+          
+      <pointOfContact>
+        <organisationName>Geospatial Information Authority of Japan</organisationName>
+        <contactInfo>
+          <phone>
+            <voice>+81 29 864 1564</voice>
+            <facsimile>+81 29 864 6923</facsimile>
+      </phone>
+          <address>
+            <deliveryPoint>Kitasato 1</deliveryPoint>
+            <city>Tsukuba</city>
+            <administrativeArea>Ibaraki</administrativeArea>
+            <postalCode>305-0811</postalCode>
+            <country>Japan</country>
+            <electronicMailAddress>chikyuchizu@gsi.go.jp</electronicMailAddress>
+      </address>
+          <onlineResource>
+            <linkage>http://www.gsi.go.jp/</linkage>
+      </onlineResource>
+    </contactInfo>
+        <role>006</role>
+  </pointOfContact>
+      
+        <pointOfContact>
+        <organisationName>Center for Environmental Remote Sensing (CEReS), Chiba University</organisationName>
+        <contactInfo>
+          <address>
+            <deliveryPoint>1-33 Yayoi-cho, Inage-ku</deliveryPoint>
+            <city>Chiba</city>
+            <administrativeArea>Chiba</administrativeArea>
+            <postalCode>263-8522</postalCode>
+            <country>Japan</country>
+            <electronicMailAddress></electronicMailAddress>
+      </address>
+          <onlineResource>
+            <linkage>http://www.cr.chiba-u.jp/index.html</linkage>
+      </onlineResource>
+    </contactInfo>
+        <role>006</role>
+  </pointOfContact>
+ 
+   <pointOfContact>
+    <organisationName>International Steering Committee for Global Mapping (ISCGM) </organisationName>
+    <contactInfo>
+      <phone>
+        <voice>+81 29 864 6910</voice>
+        <facsimile>+81 29 864 8087</facsimile>
+      </phone>
+      <address>
+        <deliveryPoint>c/o Geospatial Information Authority of Japan, Kitasato 1</deliveryPoint>
+        <city>Tsukuba</city>
+        <administrativeArea>Ibaraki</administrativeArea>
+        <postalCode>305-0811</postalCode>
+        <country>Japan</country>
+        <electronicMailAddress>sec@iscgm.org</electronicMailAddress>
+      </address>
+      <onlineResource>
+        <linkage>http://www.iscgm.org/</linkage>
+      </onlineResource>
+    </contactInfo>
+    <role>005</role>
+  </pointOfContact>
+       
+      <resourceConstraints>
+        <MD_LegalConstraints>
+          <useLimitation> Users who wish to use data shall write in the necessary items on Registration for the Use of Global Map form in the Home page of ISCGM. For more information, please see "Agreement for use" (http://www.iscgm.org/).</useLimitation>
+          <useConstraints>001</useConstraints>
+          <otherConstraints>Users shall mark the data source and indicate copyright on the product when they used the data in order to make known that they used the data for their products.</otherConstraints>
+        </MD_LegalConstraints>
+      </resourceConstraints>
+      <spatialRepresentationType>002</spatialRepresentationType>
+      <spatialResolution>
+        <distance>
+          <value>15</value>
+          <uom>
+            <UnitOfMeasure>
+              <name>arcsecond</name>
+            </UnitOfMeasure>
+          </uom>
+        </distance>
+      </spatialResolution>
+      <language>en</language>
+      <characterSet>004</characterSet>
+      <topicCategory>001</topicCategory>
+      <topicCategory>002</topicCategory>
+      <topicCategory>010</topicCategory>
+      <topicCategory>012</topicCategory>
+      <extent>
+        <description>This data set covers the whole world.</description>
+        <geographicElement>
+          <EX_GeographicBoundingBox>
+            <westBoundLongitude>90</westBoundLongitude>
+            <eastBoundLongitude>120</eastBoundLongitude>
+            <southBoundLatitude>0</southBoundLatitude>
+            <northBoundLatitude>30</northBoundLatitude>
+          </EX_GeographicBoundingBox>
+        </geographicElement>
+      </extent>
+    </MD_DataIdentification>
+  </identificationInfo>
+
+  <distributionInfo>
+    <MD_Distribution>
+      <distributionFormat>
+        <MD_Format>
+          <name>BIL (Band Interleaved by Line)</name>
+          <version>-</version>
+        </MD_Format>
+      </distributionFormat>
+      <transferOptions>
+        <MD_DigitalTransferOptions>
+          <onLine>
+            <linkage>http://www.iscgm.org/</linkage>
+          </onLine>
+        </MD_DigitalTransferOptions>
+      </transferOptions>
+    </MD_Distribution>
+  </distributionInfo>
+
+  <dataQualityInfo>
+    <DQ_DataQuality>
+      <scope>
+        <level>005</level>
+      </scope>
+      <lineage>
+        <LI_Lineage>
+          <statement>Global Map Land cover layer- GLCNMO version 2 was developed using MODIS 2008 data.</statement>
+        </LI_Lineage>
+      </lineage>
+    </DQ_DataQuality>
+  </dataQualityInfo>
+
+</MD_Metadata>

@@ -1,0 +1,7 @@
+Code,Manning's roughness,Topography,Class name
+1,1,0,Paddy field
+2,0.4,0,Plowed field
+3,0.6,1,Mountainous region
+4,0.2,0,Urban
+5,0.1,0,Water area
+

@@ -1,0 +1,21 @@
+Code,Manning's roughness,Topography,Class name
+1,0.3,1,Broadleaf Deciduous Forest
+2,0.3,1,Broadleaf Evergreen Forest
+3,0.3,1,Needleleaf Deciduous Forest
+4,0.3,1,Needleleaf Evergreen Forest
+5,0.3,1,Mixed Forest
+6,0.3,1,Tree Open
+7,0.3,1,Shrub
+8,0.3,0,Herbaceous
+9,0.3,0,Herbaceous with Sparse Tree/Shrub
+10,0.3,0,Sparse vegetation
+11,0.3,0,Cropland
+12,0.3,0,Paddy field
+13,0.3,0,Cropland / Other Vegetation Mosaic
+14,0.3,0,Mangrove
+15,0.3,0,Wetland
+16,0.3,0,Bare area, consolidated (gravel, rock)
+17,0.3,0,Bare area, unconsolidated (sand)
+18,0.3,0,Urban
+19,0.3,1,Snow / Ice
+20,0.3,0,Water bodies
