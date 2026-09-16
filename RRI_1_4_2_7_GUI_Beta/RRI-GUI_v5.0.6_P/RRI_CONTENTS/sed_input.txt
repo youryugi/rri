@@ -1,0 +1,107 @@
+
+2.65         #specific gravity of sediment
+9.81         #grav (gravitational acceleration)
+0.047        #critical shear stress
+
+1.004E-6     #kin_visc (kinematic viscosity of H2O)
+0.4          #karmans (von Karmans constant)
+8.5          #Ar_const
+1.37E-7      #a_const
+0.4          #lambda
+
+2            # uniform(1) or non-uniform(2)
+0.0003       # ds_river- diameter of uniform sediment size (m)
+
+1            #number of sediment files
+./sed_files/sed_
+
+15           # no. of sediment particles
+0.064          # thickness of exchange layer
+40          # maximum number of layers (also set in the code as Nbmax, RRI_Mod3.f90 Line13)
+10          # initial number of layers
+0.01          # Minimum bedload layer thickness (when bedload layer thickness is given as a dynamic coefficient)
+
+0 0 0 0 0 0 0          #output files added by yorozuya 2015/05/20
+./out/qsb/qsb_
+./out/qss/qss_
+./out/qsw/qsw_s
+./out/qdd/qdd_
+./out/zb/zb_
+./out/sdm/sdm_
+./out/sdm/nb_
+./out/qsb/qsb_01
+./out/qsb/qsb_02
+./out/qsb/qsb_03
+./out/qsb/qsb_04
+./out/qsb/qsb_05
+./out/qsb/qsb_06
+./out/qsb/qsb_07
+./out/qsb/qsb_08
+./out/qsb/qsb_09
+./out/qsb/qsb_10
+./out/qsb/qsb_11
+./out/qsb/qsb_12
+./out/qsb/qsb_13
+./out/qsb/qsb_14
+./out/qsb/qsb_15
+./out/qsb/qsb_16
+./out/qsb/qsb_17
+./out/qsb/qsb_18
+./out/qss/qss_01
+./out/qss/qss_02
+./out/qss/qss_03
+./out/qss/qss_04
+./out/qss/qss_05
+./out/qss/qss_06
+./out/qss/qss_07
+./out/qss/qss_08
+./out/qss/qss_09
+./out/qss/qss_10
+./out/qss/qss_11
+./out/qss/qss_12
+./out/qss/qss_13
+./out/qss/qss_14
+./out/qss/qss_15
+./out/qss/qss_16
+./out/qss/qss_17
+./out/qss/qss_18
+
+1
+./topo/sed.txt 
+
+1             #output sediment distribution files
+./location.txt
+./out/sdistr/sed
+
+1	      #output sediment file (originally test file)
+./out/sediment_
+
+! local information
+2.0          #Maximum erosion depth: perosion(RRI.f90 Line 612)
+10.0         #minimum degree of existance of EM: th_em(RRI.f90 Line 621)
+1000.        #minimum height of riverbed evolution: zm_re(RRI.f90 Line 1318)
+1000.        #minimum height of contribution E and D to riverbed equation: zm_ss(RRI_sediment.f90 Line 102)
+
+1            #k-location of upstream end of each catchment: ibedpro1 (RRI_sub.f90 Line 708)
+1            #k-location of upstream end of each catchment: ibedpro2 (RRI_sub.f90 Line 710)
+1            #k-location of upstream end of each catchment: ibedpro3 (RRI_sub.f90 Line 712)
+1            #k-location of upstream end of each catchment: ibedpro4 (RRI_sub.f90 Line 714)
+1            #k-location of upstream end of each catchment: ibedpro5 (RRI_sub.f90 Line 716)
+1            #k-location of upstream end of each catchment: ibedpro6 (RRI_sub.f90 Line 718)
+1            #k-location of upstream end of each catchment: ibedpro7 (RRI_sub.f90 Line 720)
+1            #k-location of upstream end of each catchment: ibedpro8 (RRI_sub.f90 Line 722)
+
+1.0          #magnification rate of rainfall: raint(RRI.f90 Line 681)
+1.0          #allowable erosion rate: mzbt(RRI.f90 Line 1305)
+
+0            #1; conduct smooth during calculation ismooth or 0; not conduct(RRI.f90 Line 756)
+
+1000         # iidt: number to obtain dt for sediment (dt_sediment = dt/real(iidt), it is usually 10000)
+
+1          # isus: isus = 1: non-equilibrium(inc. Ds/Es/Dw/Ew), 2:equilibrium(exc. Es/Ds, inc. Ew/Dw), 3:equilibrium(exc. Es/Ds/Ew/Dw)
+
+3          # isedeq (bedload transport equation): 1: Ashida-Michiue formula 2:MPM formula 3:Egashira formula
+2          # isuseq (suspended sediment equation): 1: Lane-Karinske formula 2:Density stratified flow model
+./out/timeout_
+
+1111	  #Max_acc_0th_riv (set the maximum acc number of the upstream end river channel;Basically is used for cell type)

@@ -1,0 +1,3 @@
+location.txt
+C:/rri/test/RRI-GUI/Project/oote_180616_180619_v2/out/hr_
+hydro_hr_
