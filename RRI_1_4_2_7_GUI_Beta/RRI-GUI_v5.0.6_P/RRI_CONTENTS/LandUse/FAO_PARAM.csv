@@ -1,0 +1,14 @@
+Code,Vertical saturated hydraulic conductivity,Effective porosity,Saction at the wetting front,Lateral saturated hydraulic conductivity,Unsaturated porosity,Beta,Class name
+1,6.54E-05,0.417,0.0495,6.54E-01,0.02,4,Sand
+2,1.66E-05,0.401,0.0613,1.66E-01,0.035,4,Loamy sand
+3,6.00E-06,0.412,0.1101,6.00E-02,0.041,4,Sandy loam
+4,3.67E-06,0.434,0.0889,3.67E-02,0.027,4,Loam
+5,1.89E-06,0.486,0.1668,1.89E-02,0.015,4,Silt loam
+6,1.36E-06,0.408,0.198,1.36E-02,0.042,4,Silt
+7,8.33E-07,0.33,0.2185,8.33E-03,0.068,4,Sandy clay loam
+8,5.56E-07,0.309,0.2088,5.56E-03,0.075,4,Clay loam
+9,5.56E-07,0.432,0.273,5.56E-03,0.04,4,Silty clay loam
+10,3.33E-07,0.321,0.239,3.33E-03,0.109,4,Sandy clay
+11,2.78E-07,0.423,0.2922,2.78E-03,0.056,4,Silty clay
+12,1.67E-07,0.385,0.3163,1.67E-03,0.09,4,Clay
+,,,,,,,
