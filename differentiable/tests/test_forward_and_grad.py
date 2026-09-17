@@ -26,9 +26,9 @@ from examples.synthetic_basin import build_synthetic_basin, make_rain_pulse, DTY
 def test_forward_runs():
     grid, params, outlet = build_synthetic_basin()
     model = RRIModel(grid, n_substeps_slope=4, n_substeps_river=4)
-    T = 40
-    rain = make_rain_pulse(T, grid.ny, grid.nx)
-    dt = 300.0  # 5 minutes
+    T = 80
+    rain = make_rain_pulse(T, grid.ny, grid.nx, start=4, duration=12)
+    dt = 150.0  # 2.5 minutes -- see test_mass_balance for why not 300s
 
     out = model.simulate(rain, params, dt, outlet_riv_index=outlet)
     qr = out["qr_outlet"]
@@ -43,6 +43,19 @@ def test_forward_runs():
 
 def test_mass_balance(grid, params, model, rain, dt, outlet):
     # Re-run keeping track of everything needed for a mass-balance check.
+    #
+    # Why dt=150s and not the old 300s: the river<->slope exchange, ET, and
+    # sink-drain steps run once per *outer* dt regardless of substep count
+    # (model.py's operator-splitting order matches RRI.f90's own), so their
+    # contribution to the splitting error is O(dt), not shrinkable by
+    # raising n_substeps_slope/river (verified directly: ns 4->16 at a
+    # fixed dt=300s left the error flat at ~8.4%, while halving dt at a
+    # fixed ns=4 dropped it to <1%). This got a lot more visible after
+    # fixing exchange.py's missing "both banks" factor of 2 (see
+    # HANDOFF.md section 6a) -- exchange moving ~2x more water per outer
+    # step doubles this splitting error's absolute size at the same dt.
+    # 150s keeps this smoke test's error comfortably under the 5% bar
+    # without having to also raise n_substeps (which wouldn't help).
     hs, gampt_ff, hr = model.initial_state(dtype=DTYPE)
     total_rain_in = 0.0
     total_infilt = 0.0
@@ -70,19 +83,17 @@ def test_mass_balance(grid, params, model, rain, dt, outlet):
     assert rel_err < 0.05, f"mass balance relative error too large: {rel_err:.3%}"
 
 
-def test_gradients():
+def _build_stiff_gradient_scenario():
+    """Shallow soil layer + heavier storm than the smoke test above, so
+    storage actually rises past `da` somewhere in the domain and the
+    Manning surface-flow branch (the only place `ns_slope` enters the
+    RHS) is exercised -- otherwise its gradient is *correctly* zero. This
+    is also numerically stiffer than the smoke test, which is the point:
+    it exercises the same regime that needs either enough fixed substeps
+    or (see `test_gradients_adaptive`) real adaptive stepping to avoid
+    diverging to NaN.
+    """
     grid, params, outlet = build_synthetic_basin()
-    # This scenario (thin soil layer, heavy storm, see below) is numerically
-    # stiffer than the smoke test above -- the reference Fortran handles
-    # that by shrinking its adaptive RK step; we use a fixed step, so we
-    # compensate with more substeps. Too few substeps here would blow up
-    # to NaN (a stability failure, not a gradient bug -- see integrate.py).
-    model = RRIModel(grid, n_substeps_slope=20, n_substeps_river=20)
-
-    # Use a shallow soil layer + a heavier storm than the smoke test above,
-    # so storage actually rises past `da` somewhere in the domain and the
-    # Manning surface-flow branch (the only place `ns_slope` enters the
-    # RHS) is exercised -- otherwise its gradient is *correctly* zero.
     soildepth = torch.full_like(params.slope.soildepth, 0.05)
     gammaa = params.slope.gammaa
     da = soildepth * gammaa
@@ -101,23 +112,121 @@ def test_gradients():
     params.river.ns_river = ns_river
     params.ksv = ksv
 
+    grad_params = {"ns_slope": ns_slope, "ka": ka, "ns_river": ns_river, "ksv": ksv}
+    return grid, params, outlet, grad_params
+
+
+def _check_gradients(model, grid, params, outlet, grad_params, tag, use_checkpointing=False):
     T = 30
     rain = make_rain_pulse(T, grid.ny, grid.nx, peak_mm_per_hr=80.0, start=2, duration=10)
     dt = 300.0
-    out = model.simulate(rain, params, dt, outlet_riv_index=outlet)
+    out = model.simulate(rain, params, dt, outlet_riv_index=outlet, use_checkpointing=use_checkpointing)
     loss = (out["qr_outlet"] ** 2).sum()
     loss.backward()
 
-    for name, p in [("ns_slope", ns_slope), ("ka", ka), ("ns_river", ns_river), ("ksv", ksv)]:
+    for name, p in grad_params.items():
         assert p.grad is not None, f"no gradient reached {name}"
         assert torch.isfinite(p.grad).all(), f"non-finite gradient for {name}"
         gnorm = p.grad.norm().item()
-        print(f"[grad] |d(loss)/d({name})| = {gnorm:.6e}")
+        print(f"[grad{tag}] |d(loss)/d({name})| = {gnorm:.6e}")
         assert gnorm > 0.0, f"zero gradient for {name}"
+
+
+def test_gradients():
+    # This scenario is numerically stiffer than the smoke test above -- the
+    # reference Fortran handles that by shrinking its adaptive RK step; we
+    # use a fixed step, so we compensate with more substeps. Too few
+    # substeps here would blow up to NaN (a stability failure, not a
+    # gradient bug -- see integrate.py).
+    grid, params, outlet, grad_params = _build_stiff_gradient_scenario()
+    model = RRIModel(grid, n_substeps_slope=20, n_substeps_river=20)
+    _check_gradients(model, grid, params, outlet, grad_params, tag="")
+
+
+def test_gradients_adaptive():
+    """Same stiff scenario, but through `integrate_adaptive` (see
+    HANDOFF.md section 6a and integrate.py's module docstring): confirms
+    gradients still flow correctly through the real Cash-Karp RKF45 path,
+    not just fixed-step RK4. `eps`/`ddt_min` are tightened from RRI's own
+    defaults for the same reason `test_reference_agreement.py` tightens
+    them -- this synthetic catchment's depths are centimetre-scale, far
+    below what the 1cm-absolute default tolerance was sized for.
+    """
+    grid, params, outlet, grad_params = _build_stiff_gradient_scenario()
+    model = RRIModel(grid, adaptive=True, eps=1e-6, ddt_min_slope=1e-4, ddt_min_river=1e-4)
+    _check_gradients(model, grid, params, outlet, grad_params, tag="-adaptive")
+
+
+def test_gradients_checkpointed_match_uncheckpointed():
+    """`simulate(..., use_checkpointing=True)` trades ~2x forward compute
+    (each step's internal substeps are recomputed once during backward)
+    for O(n_substeps)->O(1) memory per step -- confirmed necessary on a
+    real (not toy) grid: backpropagating through just 200 un-checkpointed
+    outer steps at n_substeps_slope=40 on the real Solo scenario's
+    18582-cell domain (see HANDOFF.md's calibration-plan notes) OOMs a
+    32GB GPU outright. Checkpointing is mathematically exact (not an
+    approximation), so this checks the gradients it produces are
+    *identical* to the un-checkpointed path on this small synthetic
+    scenario, not just "close enough".
+    """
+    grid, params, outlet, grad_params = _build_stiff_gradient_scenario()
+    model = RRIModel(grid, n_substeps_slope=20, n_substeps_river=20)
+    T = 30
+    rain = make_rain_pulse(T, grid.ny, grid.nx, peak_mm_per_hr=80.0, start=2, duration=10)
+    dt = 300.0
+    out = model.simulate(rain, params, dt, outlet_riv_index=outlet, use_checkpointing=True)
+    loss = (out["qr_outlet"] ** 2).sum()
+    loss.backward()
+
+    # exact values from test_gradients() (same scenario, same seed-free
+    # deterministic setup) -- checkpointing must reproduce them exactly.
+    expected = {"ns_slope": 1.172758e+00, "ka": 2.216010e-01, "ns_river": 1.956847e+02, "ksv": 4.376833e+05}
+    for name, p in grad_params.items():
+        gnorm = p.grad.norm().item()
+        print(f"[grad-checkpointed] |d(loss)/d({name})| = {gnorm:.6e}")
+        rel_err = abs(gnorm - expected[name]) / expected[name]
+        assert rel_err < 1e-6, f"checkpointed gradient for {name} disagrees with un-checkpointed: {gnorm} vs {expected[name]}"
+
+
+def test_checkpoint_substeps_match_uncheckpointed():
+    """`RRIModel(checkpoint_substeps=True)` nests a second level of
+    checkpointing inside `integrate_fixed`'s RK4 substep loop (see its
+    docstring) -- needed because on a real grid, `n_substeps_{slope,river}`
+    is large enough that even *one* outer step's local backward graph
+    (all substeps unrolled) is too big to hold, independent of outer-step
+    count (confirmed OOMing at 25+ GB on the real Solo scenario at just
+    T=5 outer steps -- see HANDOFF.md). Like outer-step checkpointing,
+    this is mathematically exact, not an approximation: checked here
+    against the same hardcoded expected gradients as
+    `test_gradients_checkpointed_match_uncheckpointed`, with *both*
+    checkpoint levels turned on together (the real usage pattern).
+    """
+    grid, params, outlet, grad_params = _build_stiff_gradient_scenario()
+    model = RRIModel(grid, n_substeps_slope=20, n_substeps_river=20, checkpoint_substeps=True)
+    _check_gradients(model, grid, params, outlet, grad_params, tag="-nested-checkpoint", use_checkpointing=True)
+
+    expected = {"ns_slope": 1.172758e+00, "ka": 2.216010e-01, "ns_river": 1.956847e+02, "ksv": 4.376833e+05}
+    for name, p in grad_params.items():
+        gnorm = p.grad.norm().item()
+        rel_err = abs(gnorm - expected[name]) / expected[name]
+        assert rel_err < 1e-6, f"nested-checkpoint gradient for {name} disagrees: {gnorm} vs {expected[name]}"
+
+
+def test_checkpoint_substeps_rejects_track_qr_avg():
+    grid, params, outlet = build_synthetic_basin()
+    try:
+        RRIModel(grid, checkpoint_substeps=True, track_qr_avg=True)
+        assert False, "expected ValueError for checkpoint_substeps + track_qr_avg"
+    except ValueError:
+        pass
 
 
 if __name__ == "__main__":
     grid, params, model, rain, dt, outlet, out = test_forward_runs()
     test_mass_balance(grid, params, model, rain, dt, outlet)
     test_gradients()
+    test_gradients_adaptive()
+    test_gradients_checkpointed_match_uncheckpointed()
+    test_checkpoint_substeps_match_uncheckpointed()
+    test_checkpoint_substeps_rejects_track_qr_avg()
     print("\nAll checks passed.")

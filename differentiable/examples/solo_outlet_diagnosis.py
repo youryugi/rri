@@ -44,7 +44,12 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--steps", type=int, default=2160)
     ap.add_argument("--substeps-slope", type=int, default=40)
-    ap.add_argument("--substeps-river", type=int, default=40)
+    ap.add_argument("--substeps-river", type=int, default=200)
+    ap.add_argument("--adaptive", action="store_true")
+    ap.add_argument("--eps", type=float, default=0.01)
+    ap.add_argument("--ddt-min-slope", type=float, default=1.0)
+    ap.add_argument("--ddt-min-river", type=float, default=0.1)
+    ap.add_argument("--track-qr-avg", action="store_true")
     ap.add_argument("--device", default="cuda")
     ap.add_argument("--outlet-slope", type=float, default=None,
                      help="override RiverParams.outlet_slope (default in the model is 1e-3)")
@@ -83,7 +88,11 @@ def main():
     params.infilt_limit = params.infilt_limit.to(device)
     rain_seq = rain_seq.to(device)
 
-    model = RRIModel(grid, n_substeps_slope=args.substeps_slope, n_substeps_river=args.substeps_river)
+    model = RRIModel(
+        grid, n_substeps_slope=args.substeps_slope, n_substeps_river=args.substeps_river,
+        adaptive=args.adaptive, eps=args.eps, ddt_min_slope=args.ddt_min_slope, ddt_min_river=args.ddt_min_river,
+        track_qr_avg=args.track_qr_avg,
+    )
     init_state = tuple(x.to(device) for x in model.initial_state(dtype=dtype))
 
     # Record qr along the whole Cepu->outlet chain (148 points) -- cheap,
@@ -101,7 +110,7 @@ def main():
     print(f"[check] finite along chain: {finite.all().item()} "
           f"({(~finite).sum().item()} non-finite cells)")
 
-    torch.save({
+    save_dict = {
         "chain": chain,
         "chain_i": grid.riv_i.cpu()[chain].tolist(),
         "chain_j": grid.riv_j.cpu()[chain].tolist(),
@@ -109,7 +118,10 @@ def main():
         "dt": DT,
         "steps": args.steps,
         "outlet_slope": params.river.outlet_slope,
-    }, args.save)
+    }
+    if "qr_avg_outlet" in out:
+        save_dict["qr_avg_chain"] = out["qr_avg_outlet"].cpu()
+    torch.save(save_dict, args.save)
     print(f"[save] wrote {args.save}")
 
     # Quick summary: peak qr and peak step for a handful of positions

@@ -8,8 +8,20 @@ start with a short time window (`--steps`) to catch stability/NaN issues
 cheaply before committing to the full 360h/2160-step event.
 
 Usage:
-  python examples/solo_validation.py --steps 20 --substeps 20
-  python examples/solo_validation.py --steps 2160 --substeps 20 --device cuda
+  python examples/solo_validation.py --steps 20
+  python examples/solo_validation.py --steps 2160 --device cuda
+
+Substep defaults (slope=40, river=200) were determined empirically (see
+HANDOFF.md section 6a): n_substeps=20 for both diverges to NaN around
+simulated hour 79 (heaviest rain block). n_substeps=40 for both avoids
+NaN but under-resolves the river routing specifically on the near-flat
+(~2e-4 bed slope) mainstem reach below the Cepu gauge, producing spurious
+noisy discharge spikes at individual river cells that compound into a
+hydrograph that never turns over (2.7x the real peak by hour 346).
+Raising *only* `--substeps-river` to 200 (river cells are ~17x cheaper
+per substep than slope cells here: 1095 vs 18582) fully resolves this --
+verified to match an all-200 (slope+river) run to 3 decimal places along
+the whole 148-cell chain to the outlet, at ~3.7x lower cost.
 """
 from __future__ import annotations
 
@@ -32,8 +44,18 @@ DT = 600.0  # seconds, matches RRI_Input.txt
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--steps", type=int, default=20, help="number of dt=600s outer steps to run")
-    ap.add_argument("--substeps-slope", type=int, default=20)
-    ap.add_argument("--substeps-river", type=int, default=20)
+    ap.add_argument("--substeps-slope", type=int, default=40)
+    ap.add_argument("--substeps-river", type=int, default=200)
+    ap.add_argument("--adaptive", action="store_true",
+                     help="use RRI's real adaptive Cash-Karp RKF45 stepping instead of fixed substeps "
+                          "(ignores --substeps-*; see integrate.py / HANDOFF.md section 6a)")
+    ap.add_argument("--eps", type=float, default=0.01, help="adaptive-mode absolute storage tolerance [m]")
+    ap.add_argument("--ddt-min-slope", type=float, default=1.0)
+    ap.add_argument("--ddt-min-river", type=float, default=0.1)
+    ap.add_argument("--track-qr-avg", action="store_true",
+                     help="also report a ddt-weighted time-average discharge (qr_avg_outlet), matching what "
+                          "RRI's own hydro.txt actually is (qr_ave) rather than the instantaneous end-of-step "
+                          "value qr_outlet always is -- see HANDOFF.md section 6a")
     ap.add_argument("--device", default="cpu")
     ap.add_argument("--save", default=None, help="path to save qr_outlet series + gauge names as .pt")
     args = ap.parse_args()
@@ -76,7 +98,13 @@ def main():
     params.infilt_limit = params.infilt_limit.to(device)
     rain_seq = rain_seq.to(device)
 
-    model = RRIModel(grid, n_substeps_slope=args.substeps_slope, n_substeps_river=args.substeps_river)
+    model = RRIModel(
+        grid, n_substeps_slope=args.substeps_slope, n_substeps_river=args.substeps_river,
+        adaptive=args.adaptive, eps=args.eps, ddt_min_slope=args.ddt_min_slope, ddt_min_river=args.ddt_min_river,
+        track_qr_avg=args.track_qr_avg,
+    )
+    if args.adaptive:
+        print(f"[run] adaptive mode: eps={args.eps} ddt_min_slope={args.ddt_min_slope} ddt_min_river={args.ddt_min_river}")
 
     # `diag.qr[outlet_riv_index]` supports fancy indexing with a list, so one
     # simulate() call reports every gauge's hydrograph.
@@ -105,8 +133,11 @@ def main():
         print(f"[gauge {name:10s}] peak qr = {qr.max().item():10.3f} m^3/s "
               f"at step {int(qr.argmax())}/{args.steps}, finite={torch.isfinite(qr).all().item()}")
 
+    save_dict = {"names": outlet_names, "qr": qr_all.cpu(), "dt": DT, "steps": args.steps}
+    if "qr_avg_outlet" in out:
+        save_dict["qr_avg"] = out["qr_avg_outlet"].cpu()
     if args.save:
-        torch.save({"names": outlet_names, "qr": qr_all.cpu(), "dt": DT, "steps": args.steps}, args.save)
+        torch.save(save_dict, args.save)
         print(f"[save] wrote {args.save}")
 
 

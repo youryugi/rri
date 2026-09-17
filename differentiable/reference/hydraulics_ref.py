@@ -56,7 +56,11 @@ def hq_slope(
 
 
 def hq_river(h: float, dh_signed: float, width: float, ns_river: float) -> float:
+    """Rectangular-channel hydraulic radius R = (width*h)/(width+2h),
+    matching RRI_Riv.f90::hq_riv as of its "v1.4.2.4" change (see
+    rri_torch/hydraulics.py's docstring for the comment trail showing the
+    older wide-channel h~R approximation this replaced)."""
     dh = abs(dh_signed)
     a = math.sqrt(dh) / ns_river
-    m = 5.0 / 3.0
-    return a * (h ** m) * width
+    r = (width * h) / (width + 2.0 * h) if (width + 2.0 * h) > 0.0 else 0.0
+    return a * (r ** (2.0 / 3.0)) * width * h

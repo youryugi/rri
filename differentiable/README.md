@@ -30,7 +30,7 @@ middle draining two symmetric hillslopes — used by the tests and the demos.
 | `river.py` | `RRI_Riv.f90` (`funcr`, `qr_calc`) | Diffusive-wave routing along the river's D8 tree, using `index_add` scatter-add for conservative flux accumulation. |
 | `exchange.py` | `RRI_RivSlo.f90` (`funcrs_dt`) | The 4-case weir-type river<->slope exchange. |
 | `processes.py` | `RRI_Infilt.f90`, `RRI_Evp.f90` | Green-Ampt infiltration and simple potential-ET extraction. |
-| `integrate.py` | — | Fixed-step RK4 integration (see below for why this isn't the Fortran's adaptive RKF45). |
+| `integrate.py` | `RRI_Mod2.f90`/`RRI.f90` (`runge_mod`, the adaptive stepping in the main loop) | Fixed-step RK4 integration (the default, for gradient-based work -- see below), plus a real adaptive Cash-Karp RKF45 integrator matching RRI's own step-size control exactly, for validation runs. |
 | `model.py` | `RRI.f90` main loop | Assembles the above with the same operator-splitting order as the reference: river routing -> slope routing -> ET -> river/slope exchange -> infiltration -> drain outlet cells. |
 
 `reference/` is a second, independent (no `rri_torch`/PyTorch import)
@@ -52,22 +52,31 @@ tractable; each is a plausible place to extend later.
   (discharge/water-level time series). Every slope cell is treated with
   the 8-direction diffusive scheme; every river reach is a plain
   rectangular channel.
-- **Fixed-step RK4 instead of adaptive RKF45.** The reference integrates
-  both slope and river ODEs with an embedded, error-controlled
-  Runge-Kutta-Fehlberg 4(5) scheme that shrinks its step until a local
-  error estimate is satisfied. An adaptive step count that depends on the
-  (learnable) parameters is awkward for a gradient-based workflow: it
-  changes the computational graph's shape from run to run and can put
-  kinks in the loss surface at step-accept/reject boundaries. We use a
-  plain fixed number of RK4 substeps per forcing interval instead — you
-  choose `n_substeps_slope` / `n_substeps_river` and are responsible for
-  picking them large enough (as you would size `dt`/`dt_riv` in the
-  original model). **This is a real numerical stability tradeoff, not just
-  an accuracy one:** with too few substeps the explicit scheme can diverge
-  to NaN outright, especially with thin soil layers / large storms (see
-  `tests/test_forward_and_grad.py::test_gradients` for a scenario that
-  needs 20 substeps where 4 blows up). If you see NaNs, increase
-  `n_substeps_*` before suspecting anything else.
+- **Fixed-step RK4 by default, real adaptive RKF45 available.** The
+  reference integrates both slope and river ODEs with an embedded,
+  error-controlled Runge-Kutta-Fehlberg 4(5) scheme that shrinks its step
+  until a local error estimate is satisfied. An adaptive step count that
+  depends on the (learnable) parameters is awkward for a gradient-based
+  workflow: it changes the computational graph's shape from run to run
+  and can put kinks in the loss surface at step-accept/reject boundaries.
+  `integrate.integrate_fixed` (the default -- `n_substeps_slope` /
+  `n_substeps_river`) sidesteps this entirely; you're responsible for
+  picking substep counts large enough (as you would size `dt`/`dt_riv` in
+  the original model). **This is a real numerical stability tradeoff, not
+  just an accuracy one:** with too few substeps the explicit scheme can
+  diverge to NaN outright, especially with thin soil layers / large
+  storms, or a real-world basin with a much stiffer reach than a
+  synthetic test catchment ever exercises (see
+  `tests/test_forward_and_grad.py::test_gradients` for a small-scale
+  example needing 20 substeps where 4 blows up, and
+  `differentiable/HANDOFF.md` section 6a for a real 15,751 km^2 basin
+  needing 200 substeps on its stiffest reach). If you see NaNs, increase
+  `n_substeps_*` before suspecting anything else. For validation/forward-
+  only work where matching the reference's real step-size control matters
+  more than a smooth loss surface, `integrate.integrate_adaptive` (wire
+  up via `RRIModel(..., adaptive=True)`) implements RRI's actual Cash-Karp
+  scheme -- gradients still flow through it (see its docstring for the
+  autograd caveat), but prefer the fixed-step integrator for calibration.
 - **The "don't overshoot" correction in the river/slope exchange** is an
   Fortran `do ... exit` loop of up to 10 iterations per cell; we replace
   it with a fixed `N_CORRECTION = 6` unrolled passes (a no-op past
@@ -126,6 +135,18 @@ same synthetic catchment:
    scheme is a valid discretization of the same adaptive-RK physics RRI
    actually uses, not a different approximation that happens to look
    reasonable.
+3. **A small explicit river confluence (two tributaries merging into one
+   cell) agrees exactly** between `river_rhs`'s vectorized `index_add`
+   inflow accumulation and `reference`'s plain dict `+=` loop
+   (`test_river_confluence`) -- the synthetic catchment above is a single
+   straight channel with no confluence, so this exercises a code path
+   nothing else here does.
+
+Separately, `differentiable/HANDOFF.md` (section 7) documents a real-data
+validation against the actual compiled Fortran binary on a real 15,751
+km^2 basin (not just the synthetic catchment), which is how two real
+formula bugs were actually found and fixed -- worth reading if you're
+about to trust this model's output against real observations.
 
 **A finding worth knowing if you reuse `reference`'s adaptive mode on your
 own catchment:** RRI's `eps` adaptive-step tolerance is an *absolute*

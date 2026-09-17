@@ -96,10 +96,23 @@ def hq_slope(
 
 
 def hq_river(h: torch.Tensor, dh: torch.Tensor, width: torch.Tensor, ns_river: torch.Tensor) -> torch.Tensor:
-    """Manning's-equation discharge [m^3/s] for a wide rectangular channel
+    """Manning's-equation discharge [m^3/s] for a rectangular channel
     (RRI_Riv.f90: `hq_riv`, without the optional cross-section table).
+
+    Uses the true rectangular-channel hydraulic radius
+    R = (width*h) / (width + 2*h) (area / wetted perimeter), matching
+    RRI's own formula as of the "v1.4.2.4" change in `hq_riv` (the comment
+    trail in RRI_Riv.f90 shows an *older* `q = a * h**(5/3) * width` --
+    the wide-channel approximation R=~h -- was replaced by this exact
+    form). Solo River's channels (width/depth ~15-20) are not wide enough
+    for that approximation to be accurate: R comes out ~10% below h at
+    those proportions, which is a real, measurable source of discharge
+    bias -- see HANDOFF.md section 6a for the validation run that
+    surfaced this.
     """
     dh = dh.abs()
+    h = torch.clamp(h, min=0.0)
     a = safe_sqrt(dh) / torch.clamp(ns_river, min=_EPS)
-    m = 5.0 / 3.0
-    return a * torch.clamp(h, min=0.0) ** m * width
+    perimeter = torch.clamp(width + 2.0 * h, min=_EPS)
+    r = torch.clamp((width * h) / perimeter, min=_EPS)  # see safe_sqrt: floor before a <1 power for gradient safety
+    return a * r ** (2.0 / 3.0) * width * h

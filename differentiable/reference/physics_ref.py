@@ -130,8 +130,9 @@ def river_slope_exchange_ref(
         hr_top = hr[(i, j)] - depth
 
         if (height == 0.0 and hr_top < 0.0) or (height > 0.0 and hr_top < 0.0 and hs_top <= height):
-            # case (a): slope -> river, free fall
-            hrs = _MU1 * hs_top * math.sqrt(_G * max(hs_top, 0.0)) * dt * len_riv / grid.area
+            # case (a): slope -> river, free fall. `* 2.0`: RRI_RivSlo.f90's
+            # "v1.4.2.4" both-banks correction -- see rri_torch/exchange.py.
+            hrs = _MU1 * hs_top * math.sqrt(_G * max(hs_top, 0.0)) * dt * len_riv * 2.0 / grid.area
             hrs = min(hrs, hs_top)
             hs[i, j] -= hrs
             hr[(i, j)] += hrs * grid.area / (width * len_riv)
@@ -163,9 +164,9 @@ def river_slope_exchange_ref(
             if h1 <= 0.0:
                 hrs = 0.0
             elif h2 / h1 <= 2.0 / 3.0:
-                hrs = -_MU2 * h1 * math.sqrt(2.0 * _G * max(h1, 0.0)) * dt * len_riv / grid.area
+                hrs = -_MU2 * h1 * math.sqrt(2.0 * _G * max(h1, 0.0)) * dt * len_riv * 2.0 / grid.area
             else:
-                hrs = -_MU3 * h2 * math.sqrt(2.0 * _G * max(h1 - h2, 0.0)) * dt * len_riv / grid.area
+                hrs = -_MU3 * h2 * math.sqrt(2.0 * _G * max(h1 - h2, 0.0)) * dt * len_riv * 2.0 / grid.area
             ar = len_riv * width / grid.area
             if abs(hrs) > abs(-(hr_top - height) * ar):
                 hrs = -(hr_top - height) * ar
@@ -196,9 +197,9 @@ def river_slope_exchange_ref(
             if h1 <= 0.0:
                 hrs = 0.0
             elif h2 / h1 <= 2.0 / 3.0:
-                hrs = _MU2 * h1 * math.sqrt(2.0 * _G * max(h1, 0.0)) * dt * len_riv / grid.area
+                hrs = _MU2 * h1 * math.sqrt(2.0 * _G * max(h1, 0.0)) * dt * len_riv * 2.0 / grid.area
             else:
-                hrs = _MU3 * h2 * math.sqrt(2.0 * _G * max(h1 - h2, 0.0)) * dt * len_riv / grid.area
+                hrs = _MU3 * h2 * math.sqrt(2.0 * _G * max(h1 - h2, 0.0)) * dt * len_riv * 2.0 / grid.area
             if hrs > (hs_top - height):
                 hrs = hs[i, j] - height
             qrs[(i, j)] = hrs

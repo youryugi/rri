@@ -41,9 +41,19 @@ class ExchangeGeometry:
 
 
 def _weir_flow(h1: torch.Tensor, h2: torch.Tensor, mu2: float, mu3: float, dt: float, len_riv: torch.Tensor, area: float) -> torch.Tensor:
-    """Free/submerged broad-crested weir formula shared by cases (c)/(d)."""
-    free = mu2 * h1 * safe_sqrt(2.0 * _G * h1) * dt * len_riv / area
-    submerged = mu3 * h2 * safe_sqrt(2.0 * _G * (h1 - h2)) * dt * len_riv / area
+    """Free/submerged broad-crested weir formula shared by cases (c)/(d).
+
+    The `* 2.0` (both banks of the channel can overtop, not just one) is
+    RRI_RivSlo.f90's "v1.4.2.4" correction -- the comment trail there shows
+    an older `... * dt * len / area` (one bank) preceding it. Missing this
+    halved every river<->slope exchange rate; see HANDOFF.md section 6a
+    for the real-data validation run that surfaced it (a much bigger
+    contributor to the Cepu-gauge bias than the outlet-slope/exchange-
+    convergence leads checked earlier, on the order of the hydraulic-
+    radius fix in `hydraulics.hq_river`).
+    """
+    free = mu2 * h1 * safe_sqrt(2.0 * _G * h1) * dt * len_riv * 2.0 / area
+    submerged = mu3 * h2 * safe_sqrt(2.0 * _G * (h1 - h2)) * dt * len_riv * 2.0 / area
     q = torch.where(torch.clamp(h2, min=0.0) / torch.clamp(h1, min=_EPS) <= 2.0 / 3.0, free, submerged)
     return torch.where(h1 <= 0.0, torch.zeros_like(h1), q)
 
@@ -80,7 +90,8 @@ def river_slope_exchange(
     # any remaining river cell (numerically ambiguous boundary between
     # cases) exchanges nothing rather than raising, unlike the Fortran.
 
-    hrs_a = torch.clamp(_MU1 * hs_top * safe_sqrt(_G * hs_top) * dt * len_riv / area, max=hs_top)
+    # `* 2.0`: same v1.4.2.4 both-banks correction as `_weir_flow` above.
+    hrs_a = torch.clamp(_MU1 * hs_top * safe_sqrt(_G * hs_top) * dt * len_riv * 2.0 / area, max=hs_top)
 
     h1_c = hr_top - height
     h2_c = hs_top - height

@@ -35,11 +35,16 @@ def rmse(obs, sim):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--run", required=True, help="path to a solo_validation.py --save .pt file")
+    ap.add_argument("--instantaneous", action="store_true",
+                     help="compare against the instantaneous end-of-step qr even if qr_avg was saved "
+                          "(default: prefer qr_avg, since that's what hydro.txt's qr_ave actually is)")
     args = ap.parse_args()
 
     d = torch.load(args.run, weights_only=False)
     names = d["names"]
-    qr = d["qr"].numpy()  # (T, n_gauges)
+    use_avg = ("qr_avg" in d) and not args.instantaneous
+    qr = (d["qr_avg"] if use_avg else d["qr"]).numpy()  # (T, n_gauges)
+    print(f"[sim] comparing against {'time-averaged qr_avg (RRI qr_ave-equivalent)' if use_avg else 'instantaneous end-of-step qr'}")
     if "Cepu" not in names:
         print("Cepu not among saved gauges:", names)
         return
@@ -51,10 +56,13 @@ def main():
     print(f"[ref] hydro.txt: {len(t_ref)} hourly points, t in [{t_ref[0]:.0f}, {t_ref[-1]:.0f}]s")
     print(f"[sim] rri_torch: {n_steps} steps @ dt={DT}s, t in [{DT:.0f}, {n_steps*DT:.0f}]s")
 
-    # rri_torch's step k (0-indexed) reports discharge at the END of the
-    # window [k*dt, (k+1)*dt], i.e. time (k+1)*dt. hydro.txt is hourly
-    # starting at t=3600s, so hourly point m (1-indexed) <-> sim step
-    # index (m*3600/dt - 1).
+    # rri_torch's step k (0-indexed) covers the window [k*dt, (k+1)*dt] and
+    # is indexed by its end time (k+1)*dt -- qr[k] is instantaneous at that
+    # instant, qr_avg[k] is the ddt-weighted time-average *over* that same
+    # window (matching what RRI.f90 actually resets and re-accumulates
+    # `qr_ave` over every outer step, not over the full reporting hour --
+    # see HANDOFF.md section 6a). hydro.txt is hourly starting at t=3600s,
+    # so hourly point m (1-indexed) <-> sim step index (m*3600/dt - 1).
     stride = int(round(3600.0 / DT))
     n_hours = min(len(t_ref), n_steps // stride)
     sim_idx = np.arange(1, n_hours + 1) * stride - 1

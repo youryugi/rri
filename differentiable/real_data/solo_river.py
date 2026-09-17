@@ -14,6 +14,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 import math
 import os
+from typing import Optional
 
 import numpy as np
 
@@ -174,8 +175,27 @@ def read_rain_dat(path: str) -> RainData:
 # obs/*.data and obs/location_solo_30s_all.txt
 # ---------------------------------------------------------------------------
 
-def read_obs_series(path: str) -> tuple[np.ndarray, np.ndarray]:
-    """Plain `<index> <value>` pairs, one per line (see evalHydro.f90)."""
+def read_obs_series(path: str, step_hours: Optional[float] = None) -> tuple[np.ndarray, np.ndarray]:
+    """Plain `<time> <value>` pairs, one per line, e.g. `obs/disc_*.data`.
+
+    `step_hours`: the first column is **not** simulation-hours -- it's
+    the `calcHydro.f90` post-processing tool's output-step index
+    (continuous-valued here, since observations don't land exactly on
+    model output steps), where step index relates to hours as
+    `hour = step_index * (lasth / outnum)` (`RRI-CUI/etc/calcHydro/calcHydro.f90`
+    writes `t` -- a raw step counter, never converted to hours -- as the
+    first column of its own `hydro_<name>.txt` output; `disc_*.data`'s
+    first column is the same unit). For Solo (`lasth=360`, `outnum=96`)
+    this is 3.75, and e.g. `disc_cepu.data`'s `0, 6.4, 12.8, ..., 96`
+    becomes exactly `0, 24, 48, ..., 360` -- one observation per day of
+    the 15-day event (see HANDOFF.md section 8.3 for the full derivation
+    and NSE-based verification: reading the column as hours directly
+    gives NSE=-2.32 against the official simulated hydrograph; converting
+    with `step_hours=3.75` gives NSE=0.295). Pass the project's own
+    `lasth/outnum` here -- default `None` returns the raw column
+    unconverted (e.g. if the caller wants to match `calcHydro.f90`'s own
+    output-step convention directly instead of real hours).
+    """
     idx, val = [], []
     with open(path) as f:
         for line in f:
@@ -185,7 +205,10 @@ def read_obs_series(path: str) -> tuple[np.ndarray, np.ndarray]:
             a, b = line.split()
             idx.append(float(a))
             val.append(float(b))
-    return np.array(idx), np.array(val)
+    idx = np.array(idx)
+    if step_hours is not None:
+        idx = idx * step_hours
+    return idx, np.array(val)
 
 
 def read_locations(path: str) -> dict[str, tuple[int, int]]:
